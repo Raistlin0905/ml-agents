@@ -29,7 +29,8 @@ cd ml-agents
 # Create virtual environment
 python -m venv venv
 
-# Activate it (Windows Command Prompt)
+# Always activate the virtual environment after specifying the project path.
+# Activate it (Windows Command Prompt) 
 venv\Scripts\activate.bat
 
 # For PowerShell or macOS/Linux, use:
@@ -64,6 +65,14 @@ Open a terminal, navigate to your `ml-agents` project root, and run the learn.py
 ```bash
 python -m mlagents.trainers.learn
 ```
+If this shows an error, you can either resume the training (keep the previous data) or force to overwrite previous data.
+```bash
+python -m mlagents.trainers.learn --resume
+```
+```bash
+python -m mlagents.trainers.learn --force
+```
+
 **Expected Output**  
 The command will start and hang at a message like:
 ```bash
