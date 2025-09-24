@@ -1,20 +1,12 @@
-
-
-
-
-
-
-
-
 ## **Setting up the Virtual Environment**
 !!! (I dunno if it's different on other machines that are not Windows) !!!!
 
 ### Prerequisites
 
 > [!CAUTION]
-> Python 3.10.x (required)
+> Python 3.10.12 (required)
 
-Download Python 3.10.11 from [python.org](https://www.python.org/downloads/release/python-31011/)  
+Download Python 3.10.12 from [python.org](https://www.python.org/downloads/release/python-31012/)  
 During installation, check "Add python.exe to PATH"  
 
 ### 1. Clone the Repository
@@ -29,7 +21,8 @@ cd ml-agents
 # Create virtual environment
 python -m venv venv
 
-# Activate it (Windows Command Prompt)
+# Always activate the virtual environment after specifying the project path.
+# Activate it (Windows Command Prompt) 
 venv\Scripts\activate.bat
 
 # For PowerShell or macOS/Linux, use:
@@ -38,12 +31,20 @@ venv\Scripts\activate.bat
 ```
 
 ### 3. Install Dependencies
+
+#### For Mac users (Apple Silicon):
+```bash
+# Install grpcio pre-built wheel for Apple Silicon
+pip install https://github.com/pietrodn/grpcio-mac-arm-build/releases/download/1.50.0/grpcio-1.50.0-cp310-cp310-macosx_11_0_arm64.whl
+```
+
+#### For all platforms:
 ```bash
 # Install mlagents_envs first
 pip install -e ./ml-agents-envs
 
 # Then install the main package
-pip install -e .
+pip install -e ./ml-agents
 ```
 
 ### 4. Verify Installation
@@ -60,10 +61,18 @@ This section guides you through the process of verifying that your Python enviro
 - Your Python virtual environment (venv) is activated.
 
 ### 1. Start the Python Training Process
-Open a terminal, navigate to your `ml-agents` project root, and run the learn.py module. This will start the process and wait for a connection from Unity.
+Open a terminal, navigate to your `ml-agents/ml-agents` project directory, and run the learn.py module. This will start the process and wait for a connection from Unity.
 ```bash
 python -m mlagents.trainers.learn
 ```
+If this shows an error, you can either resume the training (keep the previous data) or force to overwrite previous data.
+```bash
+python -m mlagents.trainers.learn --resume
+```
+```bash
+python -m mlagents.trainers.learn --force
+```
+
 **Expected Output**  
 The command will start and hang at a message like:
 ```bash
