@@ -1,36 +1,110 @@
-# How to Contribute to ML-Agents
+# GitHub Contribution Guidelines
 
-## 1.Fork the repository
-Fork the ML-Agents repository by clicking on the "Fork" button in the top right corner of the GitHub page. This creates a copy of the repository under your GitHub account.
+## Branch Naming Convention
 
-## 2. Set up your development environment
-Clone the forked repository to your local machine using Git. Install the necessary dependencies and follow the instructions provided in the project's documentation to set up your development environment properly.
+- Features: `feature/{feature-name}`
+- Bug fixes: `fix/{bug-description}`
 
-## 3. Choose an issue or feature
-Browse the project's issue tracker or discussions to find an open issue or feature that you would like to contribute to. Read the guidelines and comments associated with the issue to understand the requirements and constraints.
+## Workflow
 
-## 4. Make your changes
-Create a new branch for your changes based on the main branch of the ML-Agents repository. Implement your code changes or add new features as necessary. Ensure that your code follows the project's coding style and conventions.
+### 1. Update Main Branch
 
-* Example: Let's say you want to add support for a new type of reward function in the ML-Agents framework. You can create a new branch named feature/reward-function to implement this feature.
+```bash
+git checkout main
+git pull origin main
+```
 
-## 5. Test your changes
-Run the appropriate tests to ensure your changes work as intended. If necessary, add new tests to cover your code and verify that it doesn't introduce regressions.
+### 2. Create New Branch
 
-* Example: For the reward function feature, you would write tests to check different scenarios and expected outcomes of the new reward function.
+For a feature:
+```bash
+git checkout -b feature/add-user-dashboard
+```
 
-## 6. Submit a pull request
-Push your branch to your forked repository and submit a pull request (PR) to the ML-Agents main repository. Provide a clear and concise description of your changes, explaining the problem you solved or the feature you added.
+For a bug fix:
+```bash
+git checkout -b fix/login-button-crash
+```
 
-* Example: In the pull request description, you would explain how the new reward function works, its benefits, and any relevant implementation details.
+### 3. Make Changes and Commit
 
-## 7. Respond to feedback
-Be responsive to any feedback or comments provided by the project maintainers. Address the feedback by making necessary revisions to your code and continue the discussion if required.
+```bash
+git add .
+git commit -m "Add user dashboard with profile display"
+```
 
-## 8. Continuous integration and code review
-The ML-Agents project utilizes automated continuous integration (CI) systems to run tests on pull requests. Address any issues flagged by the CI system and actively participate in the code review process by addressing comments from reviewers.
+### 4. Push to GitHub
 
-## 9. Merge your changes
-Once your pull request has been approved and meets all the project's requirements, a project maintainer will merge your changes into the main repository. Congratulations, your contribution has been successfully integrated!
+```bash
+git push origin feature/add-user-dashboard
+```
 
-**Remember to always adhere to the project's code of conduct, be respectful, and follow any specific contribution guidelines provided by the ML-Agents project. Happy contributing!**
+### 5. Create Pull Request
+
+1. Go to https://github.com/Raistlin0905/ml-agents
+2. Click "Compare & pull request"
+3. Fill in title and description
+4. Click "Create pull request"
+
+### 6. Address Review Comments (if needed)
+
+```bash
+git add .
+git commit -m "Address review comments"
+git push origin feature/add-user-dashboard
+```
+
+### 7. After Merge
+
+```bash
+git checkout main
+git pull origin main
+git branch -d feature/add-user-dashboard
+```
+
+## Common Commands
+
+```bash
+# Check status
+git status
+
+# View branches
+git branch -a
+
+# Switch branch
+git checkout branch-name
+
+# View commit history
+git log --oneline
+```
+
+## Complete Example
+
+```bash
+# Update main
+git checkout main
+git pull origin main
+
+# Create branch
+git checkout -b feature/add-leaderboard
+
+# Make changes and commit
+git add .
+git commit -m "Add leaderboard page with top 10 scores"
+
+# Push
+git push origin feature/add-leaderboard
+
+# Create PR on GitHub, wait for approval, merge
+
+# Clean up
+git checkout main
+git pull origin main
+git branch -d feature/add-leaderboard
+```
+
+## Rules
+
+- Never commit directly to main
+- Always use pull requests
+- One feature or fix per branch
