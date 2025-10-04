@@ -1,5 +1,4 @@
 ## **Setting up the Virtual Environment**
-!!! (I dunno if it's different on other machines that are not Windows) !!!!
 
 ### Prerequisites
 
