@@ -2,6 +2,9 @@
 from typing import List, Deque, Dict
 import abc
 from collections import deque
+import time
+import psutil
+import platform
 
 from mlagents_envs.logging_util import get_logger
 from mlagents_envs.base_env import BehaviorSpec
@@ -107,6 +110,33 @@ class Trainer(abc.ABC):
         :return: the reward buffer.
         """
         return self._reward_buffer
+    
+    # New method for logging hardware and runtime stats (requires pip psutil)
+    def log_runtime_stats(self, step_interval: int = 1000):
+        """
+        Logs runtime and hardware metrics every `step_interval` steps
+        using the StatsReporter.
+        """
+        # Log hardware info once per run
+        if not hasattr(self, "_hardware_info_logged"):
+            self._stats_reporter.add_property("SystemInfo", {
+                "CPU": platform.processor(),
+                "Machine": platform.machine(),
+                "Platform": platform.platform(),
+                "RAM_GB": round(psutil.virtual_memory().total / 1e9, 2)
+            })
+            self._hardware_info_logged = True
+
+        # Only log runtime stats at given step interval
+        if self._step % step_interval == 0:
+            elapsed = time.time() - getattr(self, "_start_time", time.time())
+            cpu_percent = psutil.cpu_percent()
+            ram_used_gb = psutil.virtual_memory().used / 1e9
+
+            self._stats_reporter.add_stat("Runtime/Elapsed_Seconds", elapsed)
+            self._stats_reporter.add_stat("System/CPU_Percent", cpu_percent)
+            self._stats_reporter.add_stat("System/RAM_Used_GB", ram_used_gb)
+
 
     @abc.abstractmethod
     def save_model(self) -> None:

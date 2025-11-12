@@ -6,6 +6,7 @@ from collections import defaultdict
 from typing import cast
 
 import numpy as np
+import time
 
 from mlagents_envs.logging_util import get_logger
 from mlagents.trainers.buffer import BufferKey
@@ -55,6 +56,7 @@ class OnPolicyTrainer(RLTrainer):
         self.seed = seed
         self.policy: Policy = None  # type: ignore
         self.optimizer: TorchOptimizer = None  # type: ignore
+        self._start_time = time.time() # start tracking runtime for logging purposes 
 
     def _is_ready_update(self):
         """
