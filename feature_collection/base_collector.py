@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
 import sys
-from features import Features
 
 
 # watch that all the formats that come out of
