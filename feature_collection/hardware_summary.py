@@ -4,13 +4,13 @@ from gpu_collector import GPUCollector
 
 def print_hardware_summary() -> None:
     try:
-        disk = DiskInfoCollector().to_dict()
+        disk = DiskCollector().to_dict()
     except Exception as e:
         disk = None
         print("\nStorage Information: unavailable:", str(e))
 
     try:
-        gpu = GPUInfoCollector().to_dict()
+        gpu = GPUCollector().to_dict()
     except Exception as e:
         gpu = {"gpu_count": 0, "gpus": []}
         print("\nGPU Information: unavailable:", str(e))

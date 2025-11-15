@@ -19,13 +19,31 @@ class Features:
     ]
 
     GPU = [
-        "gpu_feature_one",
-        "gpu_feature_two",
+        "gpu_count",
+        "gpus",
+        "gpus0_index",
+        "gpus0_name",
+        "gpus0_vendor",
+        "gpus0_vram_total_gb",
+        "gpus0_vram_used_gb",
+        "gpus0_vram_free_gb",
+        "gpus0_vram_free_pct",
+        "gpus0_utilization_pct",
+        "gpus0_memory_util_pct",
+        "gpus0_temperature_C",
     ]
 
     DISK = [
-        "disk_feature_one",
-        "disk_feature_two",
+        "mount",
+        "disk_total_gb",
+        "disk_used_gb",
+        "disk_free_gb",
+        "disk_percent_used",
+        "filesystem",
+        "read_bytes_total",
+        "write_bytes_total",
+        "read_count_total",
+        "write_count_total",
     ]
 
     ENV = [
@@ -49,4 +67,4 @@ class Features:
 
     @classmethod
     def get_csv_headers(cls) -> list[str]:
-        return cls.MAIN + cls.CPU + cls.RAM + cls.ENV  # + self.GPU + self.DISK
+        return cls.MAIN + cls.CPU + cls.RAM + cls.GPU + cls.DISK + cls.ENV
