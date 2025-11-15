@@ -6,6 +6,7 @@ charset-normalizer==3.4.3
 cloudpickle==3.1.1
 filelock==3.19.1
 fsspec==2025.9.0
+GPUtil==1.4.0
 grpcio @ https://github.com/pietrodn/grpcio-mac-arm-build/releases/download/1.50.0/grpcio-1.50.0-cp310-cp310-macosx_11_0_arm64.whl#sha256=0a9d14ca405681e18bc99df2c72d64cc447ff6375ed26a22a20803980c2f80bc
 gym==0.26.2
 gym-notices==0.1.0
@@ -16,17 +17,21 @@ idna==3.10
 Jinja2==3.1.6
 Markdown==3.9
 MarkupSafe==3.0.2
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@a6e0cd60ce0658aeeb2634b1190066967429cdf9#egg=mlagents&subdirectory=ml-agents
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@a6e0cd60ce0658aeeb2634b1190066967429cdf9#egg=mlagents_envs&subdirectory=ml-agents-envs
+-e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c66ab9ca07afe2df56e809d5018c0476d11a9c76#egg=mlagents&subdirectory=ml-agents
+-e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c66ab9ca07afe2df56e809d5018c0476d11a9c76#egg=mlagents_envs&subdirectory=ml-agents-envs
 mpmath==1.3.0
 networkx==3.4.2
 numpy==1.23.5
+nvidia-ml-py==13.580.82
+nvidia-ml-py3==7.352.0
 onnx==1.15.0
 packaging==25.0
 PettingZoo==1.15.0
 pillow==11.3.0
 protobuf==3.20.3
 psutil==7.1.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
 PyYAML==6.0.2
 requests==2.32.5
 six==1.17.0
@@ -36,5 +41,6 @@ tensorboard-data-server==0.7.2
 torch==2.8.0
 tqdm==4.67.1
 typing_extensions==4.15.0
+tzdata==2025.2
 urllib3==2.5.0
 Werkzeug==3.1.3
