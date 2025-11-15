@@ -23,9 +23,7 @@ def get_row():
 
 def main():
     row = get_row()
-    CSVWriter.append_row(
-        csv_file_path="human_readable.csv", row=row, human_readable=True
-    )
+    CSVWriter.append_row(csv_file_path="human_readable.csv", row=row)
 
 
 if __name__ == "__main__":
