@@ -1,6 +1,5 @@
-
-from .DiskInfoCollector import DiskInfoCollector
-from .GPUInfoCollector import GPUInfoCollector
+from disk_collector import DiskCollector
+from gpu_collector import GPUCollector
 
 
 def print_hardware_summary() -> None:
@@ -25,8 +24,10 @@ def print_hardware_summary() -> None:
         print(f"Filesystem: {disk.get('filesystem') or 'Unknown'}")
         print("Capacity:")
         print(f"Total: {disk.get('disk_total_gb', 0):.1f} GB")
-        print(f"Used: {disk.get('disk_used_gb', 0):.1f} GB "
-              f"({disk.get('disk_percent_used', 0)}%)")
+        print(
+            f"Used: {disk.get('disk_used_gb', 0):.1f} GB "
+            f"({disk.get('disk_percent_used', 0)}%)"
+        )
         print(f"Free: {disk.get('disk_free_gb', 0):.1f} GB")
     else:
         print("\nStorage Information: unavailable")
@@ -46,8 +47,10 @@ def print_hardware_summary() -> None:
             if g.get("vendor"):
                 print(f"Vendor: {g.get('vendor')}")
             if g.get("vram_total_gb") is not None:
-                print(f"VRAM: {g.get('vram_total_gb')} GB "
-                      f"(used {g.get('vram_used_gb')})")
+                print(
+                    f"VRAM: {g.get('vram_total_gb')} GB "
+                    f"(used {g.get('vram_used_gb')})"
+                )
             if g.get("utilization_pct") is not None:
                 print(f"Util: {g.get('utilization_pct')}%")
             if g.get("memory_util_pct") is not None:

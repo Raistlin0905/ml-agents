@@ -15,6 +15,7 @@ it tries to tell you things like:
 - how hard they're working
 - how hot they are (not always available though))
 """
+
 from __future__ import annotations
 from typing import Any, Dict, List, Optional
 
@@ -43,7 +44,7 @@ except Exception:
     wmi = None
 
 
-class GPUInfoCollector:
+class GPUCollector:
     def __init__(self) -> None:
         """initialize the collector and try to enable nvml if available
 
@@ -70,7 +71,9 @@ class GPUInfoCollector:
         try:
             out: Dict[str, Any] = {}
             try:
-                out["nvidia_driver_version"] = pynvml.nvmlSystemGetDriverVersion().decode()
+                out["nvidia_driver_version"] = (
+                    pynvml.nvmlSystemGetDriverVersion().decode()
+                )
             except Exception:
                 out["nvidia_driver_version"] = None
 
@@ -82,74 +85,82 @@ class GPUInfoCollector:
                     name = pynvml.nvmlDeviceGetName(h).decode()
                     mem = pynvml.nvmlDeviceGetMemoryInfo(h)
                     util = None
-                            # see if we can use nvidia's fancy api
+                    # see if we can use nvidia's fancy api
                     try:
                         util = pynvml.nvmlDeviceGetUtilizationRates(h)
                     except Exception:
                         pass
                     temp = None
                     try:
-                        temp = pynvml.nvmlDeviceGetTemperature(h, pynvml.NVML_TEMPERATURE_GPU)
+                        temp = pynvml.nvmlDeviceGetTemperature(
+                            h, pynvml.NVML_TEMPERATURE_GPU
+                        )
                     except Exception:
                         pass
-                            # get all the details from nvidia gpus using their official api
-                    gpus.append({
-                        "index": i,
-                        "name": name,
-                        "vendor": "NVIDIA",
+                        # get all the details from nvidia gpus using their official api
+                    gpus.append(
+                        {
+                            "index": i,
+                            "name": name,
+                            "vendor": "NVIDIA",
                             # backup plan - use nvidia-smi command line tool if the api didn't work
-                        "vram_total_gb": round(mem.total / (1024**3), 2),
-                        "vram_used_gb": round(mem.used  / (1024**3), 2),
-                        "utilization_pct": (util.gpu if util else None),
-                        "memory_util_pct": (util.memory if util else None),
+                            "vram_total_gb": round(mem.total / (1024**3), 2),
+                            "vram_used_gb": round(mem.used / (1024**3), 2),
+                            "utilization_pct": (util.gpu if util else None),
+                            "memory_util_pct": (util.memory if util else None),
                             # check intel gpus on linux using their monitoring tool
-                        "temperature_C": temp,
-                    })
+                            "temperature_C": temp,
+                        }
+                    )
                 except Exception:
                     continue
-                            # handle amd gpus on linux - tries json first, then falls back to text
+                    # handle amd gpus on linux - tries json first, then falls back to text
             return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             return None
 
-
-    #  NVIDIA CLI fallback 
+    #  NVIDIA CLI fallback
     def _from_nvidia_smi(self) -> Optional[Dict[str, Any]]:
         # fallback to parsing nvidia-smi output for gpu info when nvml isn't available
-        
+
         # backup plan - use nvidia-smi command line tool if the api didn't work
         if not shutil.which("nvidia-smi"):
             return None
-                            # ask pytorch what it knows about the gpu - usually just basic info
+            # ask pytorch what it knows about the gpu - usually just basic info
         try:
             q = "name,memory.total,memory.used,utilization.gpu,temperature.gpu"
             out = subprocess.check_output(
                 ["nvidia-smi", f"--query-gpu={q}", "--format=csv,noheader,nounits"],
-                            # windows-specific way to get gpu info (no usage stats though)
-                stderr=subprocess.DEVNULL, text=True, timeout=2.0
+                # windows-specific way to get gpu info (no usage stats though)
+                stderr=subprocess.DEVNULL,
+                text=True,
+                timeout=2.0,
             )
             gpus: List[Dict[str, Any]] = []
             for idx, line in enumerate(l for l in out.splitlines() if l.strip()):
-                            # last resort on windows - parse dxdiag output for basic gpu info
+                # last resort on windows - parse dxdiag output for basic gpu info
                 parts = [p.strip() for p in line.split(",")]
-                if len(parts) < 5: continue
+                if len(parts) < 5:
+                    continue
                 name, mem_total_mb, mem_used_mb, util_pct, temp_c = parts[:5]
-                gpus.append({
-                            # add some useful calculated fields like free memory percentage
-                    "index": idx,
-                    "name": name,
-                    "vendor": "NVIDIA",
-                    "vram_total_gb": round(float(mem_total_mb)/1024.0, 2),
-                    "vram_used_gb": round(float(mem_used_mb)/1024.0,  2),
-                            # try all our detection methods in order, from best to basic
-                    "utilization_pct": int(util_pct),
-                    "temperature_C": int(temp_c),
-                })
+                gpus.append(
+                    {
+                        # add some useful calculated fields like free memory percentage
+                        "index": idx,
+                        "name": name,
+                        "vendor": "NVIDIA",
+                        "vram_total_gb": round(float(mem_total_mb) / 1024.0, 2),
+                        "vram_used_gb": round(float(mem_used_mb) / 1024.0, 2),
+                        # try all our detection methods in order, from best to basic
+                        "utilization_pct": int(util_pct),
+                        "temperature_C": int(temp_c),
+                    }
+                )
             return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             return None
 
-    # Intel (Linux) 
+    # Intel (Linux)
     def _from_intel_gpu_top(self) -> Optional[Dict[str, Any]]:
         """collect intel gpu stats on linux via intel_gpu_top
         returns basic usage and memory info when the tool is present
@@ -158,23 +169,39 @@ class GPUInfoCollector:
         if os.name != "posix" or not shutil.which("intel_gpu_top"):
             return None
         try:
-            out = subprocess.check_output(["intel_gpu_top", "-J"], stderr=subprocess.DEVNULL, text=True, timeout=2.0)
+            out = subprocess.check_output(
+                ["intel_gpu_top", "-J"],
+                stderr=subprocess.DEVNULL,
+                text=True,
+                timeout=2.0,
+            )
             import json
+
             data = json.loads(out)
             eng = data.get("engines", {})
             util = None
             if isinstance(eng, dict):
                 for v in eng.values():
                     if isinstance(v, dict) and "busy" in v:
-                        util = v["busy"]; break
+                        util = v["busy"]
+                        break
             mem = data.get("memory", {})
-            used_gb  = round(float(mem.get("used", 0))/1024.0, 2) if mem else None
-            total_gb = round(float(mem.get("total",0))/1024.0, 2) if mem else None
-            return {"gpu_count": 1, "gpus": [{
-                "index": 0, "name": "Intel Graphics", "vendor": "Intel",
-                "vram_total_gb": total_gb, "vram_used_gb": used_gb,
-                "utilization_pct": util, "temperature_C": None
-            }]}
+            used_gb = round(float(mem.get("used", 0)) / 1024.0, 2) if mem else None
+            total_gb = round(float(mem.get("total", 0)) / 1024.0, 2) if mem else None
+            return {
+                "gpu_count": 1,
+                "gpus": [
+                    {
+                        "index": 0,
+                        "name": "Intel Graphics",
+                        "vendor": "Intel",
+                        "vram_total_gb": total_gb,
+                        "vram_used_gb": used_gb,
+                        "utilization_pct": util,
+                        "temperature_C": None,
+                    }
+                ],
+            }
         except Exception:
             return None
 
@@ -188,56 +215,105 @@ class GPUInfoCollector:
             return None
         # Try JSON first
         try:
-            out = subprocess.check_output(["rocm-smi", "--json"], stderr=subprocess.DEVNULL, text=True, timeout=2.0)
+            out = subprocess.check_output(
+                ["rocm-smi", "--json"],
+                stderr=subprocess.DEVNULL,
+                text=True,
+                timeout=2.0,
+            )
             import json
+
             data = json.loads(out)
             gpus: List[Dict[str, Any]] = []
-            cards = list(data.values()) if isinstance(data, dict) else (data if isinstance(data, list) else [])
+            cards = (
+                list(data.values())
+                if isinstance(data, dict)
+                else (data if isinstance(data, list) else [])
+            )
             for idx, card in enumerate(cards):
-                if not isinstance(card, dict): continue
+                if not isinstance(card, dict):
+                    continue
                 name = card.get("Card series") or card.get("Card SKU") or "AMD GPU"
                 util = card.get("GPU use (%)")
-                temp = card.get("Temperature (Sensor #1) (C)") or card.get("Temperature (Sensor #1)")
-                totB = card.get("VRAM Total (B)"); usedB = card.get("VRAM Used (B)")
-                gpus.append({
-                    "index": idx, "name": name, "vendor": "AMD",
-                    "vram_total_gb": round(float(totB)/(1024**3), 2) if totB else None,
-                    "vram_used_gb": round(float(usedB)/(1024**3), 2) if usedB else None,
-                    "utilization_pct": float(util) if util is not None else None,
-                    "temperature_C": float(temp) if temp is not None else None,
-                })
-            if gpus: return {"gpu_count": len(gpus), "gpus": gpus}
+                temp = card.get("Temperature (Sensor #1) (C)") or card.get(
+                    "Temperature (Sensor #1)"
+                )
+                totB = card.get("VRAM Total (B)")
+                usedB = card.get("VRAM Used (B)")
+                gpus.append(
+                    {
+                        "index": idx,
+                        "name": name,
+                        "vendor": "AMD",
+                        "vram_total_gb": (
+                            round(float(totB) / (1024**3), 2) if totB else None
+                        ),
+                        "vram_used_gb": (
+                            round(float(usedB) / (1024**3), 2) if usedB else None
+                        ),
+                        "utilization_pct": float(util) if util is not None else None,
+                        "temperature_C": float(temp) if temp is not None else None,
+                    }
+                )
+            if gpus:
+                return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             pass
         # Plain text fallback
         try:
-            out = subprocess.check_output(["rocm-smi"], stderr=subprocess.DEVNULL, text=True, timeout=2.0)
-            gpus: List[Dict[str, Any]] = []; idx = 0; util = None; temp = None
+            out = subprocess.check_output(
+                ["rocm-smi"], stderr=subprocess.DEVNULL, text=True, timeout=2.0
+            )
+            gpus: List[Dict[str, Any]] = []
+            idx = 0
+            util = None
+            temp = None
             for line in out.splitlines():
                 s = line.strip()
                 if s.startswith("GPU"):  # new section
                     if idx > 0:
-                        gpus.append({"index": idx-1, "name": "AMD GPU", "vendor": "AMD",
-                                     "vram_total_gb": None, "vram_used_gb": None,
-                                     "utilization_pct": util, "temperature_C": temp})
+                        gpus.append(
+                            {
+                                "index": idx - 1,
+                                "name": "AMD GPU",
+                                "vendor": "AMD",
+                                "vram_total_gb": None,
+                                "vram_used_gb": None,
+                                "utilization_pct": util,
+                                "temperature_C": temp,
+                            }
+                        )
                         util = temp = None
                     idx += 1
                 if "GPU use (%)" in s:
-                    try: util = float(s.split(":")[1].strip().rstrip("%"))
-                    except: pass
+                    try:
+                        util = float(s.split(":")[1].strip().rstrip("%"))
+                    except:
+                        pass
                 if "Temperature" in s and "(C)" in s:
-                    try: temp = float(s.split(":")[1].strip().rstrip("cC").strip())
-                    except: pass
+                    try:
+                        temp = float(s.split(":")[1].strip().rstrip("cC").strip())
+                    except:
+                        pass
             if idx > 0:
-                gpus.append({"index": idx-1, "name": "AMD GPU", "vendor": "AMD",
-                             "vram_total_gb": None, "vram_used_gb": None,
-                             "utilization_pct": util, "temperature_C": temp})
-            if gpus: return {"gpu_count": len(gpus), "gpus": gpus}
+                gpus.append(
+                    {
+                        "index": idx - 1,
+                        "name": "AMD GPU",
+                        "vendor": "AMD",
+                        "vram_total_gb": None,
+                        "vram_used_gb": None,
+                        "utilization_pct": util,
+                        "temperature_C": temp,
+                    }
+                )
+            if gpus:
+                return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             return None
         return None
 
-    # generic fallbacks 
+    # generic fallbacks
     def _from_gputil(self) -> Optional[Dict[str, Any]]:
         """use the GPUtil package to obtain generic gpu statistics
         this gives basic fields
@@ -252,13 +328,21 @@ class GPUInfoCollector:
         gpus: List[Dict[str, Any]] = []
         for d in devices:
             try:
-                gpus.append({
-                    "index": d.id, "name": d.name, "vendor": None,
-                    "vram_total_gb": round(d.memoryTotal/1024.0, 2),
-                    "vram_used_gb": round(d.memoryUsed /1024.0, 2),
-                    "utilization_pct": int(d.load*100) if d.load is not None else None,
-                    "temperature_C": int(d.temperature) if d.temperature is not None else None,
-                })
+                gpus.append(
+                    {
+                        "index": d.id,
+                        "name": d.name,
+                        "vendor": None,
+                        "vram_total_gb": round(d.memoryTotal / 1024.0, 2),
+                        "vram_used_gb": round(d.memoryUsed / 1024.0, 2),
+                        "utilization_pct": (
+                            int(d.load * 100) if d.load is not None else None
+                        ),
+                        "temperature_C": (
+                            int(d.temperature) if d.temperature is not None else None
+                        ),
+                    }
+                )
             except Exception:
                 continue
         return {"gpu_count": len(gpus), "gpus": gpus}
@@ -283,16 +367,26 @@ class GPUInfoCollector:
                     total_gb = props.total_memory / (1024**3)
                 except Exception:
                     pass
-                gpus.append({
-                    "index": i, "name": name, "vendor": None,
-                    "vram_total_gb": round(total_gb, 2) if total_gb else None,
-                    "vram_used_gb": None, "utilization_pct": None, "temperature_C": None,
-                })
-            return {"gpu_count": len(gpus), "gpus": gpus, "cuda_version": getattr(torch.version, "cuda", None)}
+                gpus.append(
+                    {
+                        "index": i,
+                        "name": name,
+                        "vendor": None,
+                        "vram_total_gb": round(total_gb, 2) if total_gb else None,
+                        "vram_used_gb": None,
+                        "utilization_pct": None,
+                        "temperature_C": None,
+                    }
+                )
+            return {
+                "gpu_count": len(gpus),
+                "gpus": gpus,
+                "cuda_version": getattr(torch.version, "cuda", None),
+            }
         except Exception:
             return None
 
-    # Windows Intel/AMD/NVIDIA (static) 
+    # Windows Intel/AMD/NVIDIA (static)
     def _from_windows_wmi(self) -> Optional[Dict[str, Any]]:
         """use wmi on windows to list installed display adapters
         provides static info such as name and memory but no runtime stats or anything cool like that
@@ -309,14 +403,20 @@ class GPUInfoCollector:
                 vram = None
                 try:
                     if getattr(adapter, "AdapterRAM", None):
-                        vram = round(float(adapter.AdapterRAM)/(1024**3), 2)
+                        vram = round(float(adapter.AdapterRAM) / (1024**3), 2)
                 except Exception:
                     pass
-                gpus.append({
-                    "index": idx, "name": name, "vendor": vendor,
-                    "vram_total_gb": vram, "vram_used_gb": None,
-                    "utilization_pct": None, "temperature_C": None,
-                })
+                gpus.append(
+                    {
+                        "index": idx,
+                        "name": name,
+                        "vendor": vendor,
+                        "vram_total_gb": vram,
+                        "vram_used_gb": None,
+                        "utilization_pct": None,
+                        "temperature_C": None,
+                    }
+                )
             return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             return None
@@ -330,35 +430,50 @@ class GPUInfoCollector:
             return None
         try:
             import tempfile
+
             with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as tmp:
                 path = tmp.name
             try:
-                subprocess.check_output(["dxdiag", "/t", path], stderr=subprocess.DEVNULL, timeout=5.0)
+                subprocess.check_output(
+                    ["dxdiag", "/t", path], stderr=subprocess.DEVNULL, timeout=5.0
+                )
                 with open(path, "r", encoding="utf-16", errors="ignore") as f:
                     text = f.read()
             finally:
-                try: os.remove(path)
-                except Exception: pass
+                try:
+                    os.remove(path)
+                except Exception:
+                    pass
 
             lines = [l.strip() for l in text.splitlines()]
-            gpus: List[Dict[str, Any]] = []; cur = {}
+            gpus: List[Dict[str, Any]] = []
+            cur = {}
             for ln in lines:
                 if ln.startswith("Card name:"):
-                    if cur: gpus.append(cur); cur = {}
-                    cur = {"index": len(gpus), "name": ln.split(":",1)[1].strip(),
-                           "vendor": None, "vram_total_gb": None,
-                           "vram_used_gb": None, "utilization_pct": None,
-                           "temperature_C": None}
+                    if cur:
+                        gpus.append(cur)
+                        cur = {}
+                    cur = {
+                        "index": len(gpus),
+                        "name": ln.split(":", 1)[1].strip(),
+                        "vendor": None,
+                        "vram_total_gb": None,
+                        "vram_used_gb": None,
+                        "utilization_pct": None,
+                        "temperature_C": None,
+                    }
                 elif ln.startswith("Manufacturer:") and cur and not cur.get("vendor"):
-                    cur["vendor"] = ln.split(":",1)[1].strip()
+                    cur["vendor"] = ln.split(":", 1)[1].strip()
                 elif "Dedicated Memory:" in ln and cur:
                     try:
-                        mb = float(ln.split(":",1)[1].strip().split(" ")[0])
-                        cur["vram_total_gb"] = round(mb/1024.0, 2)
+                        mb = float(ln.split(":", 1)[1].strip().split(" ")[0])
+                        cur["vram_total_gb"] = round(mb / 1024.0, 2)
                     except Exception:
                         pass
-            if cur: gpus.append(cur)
-            if gpus: return {"gpu_count": len(gpus), "gpus": gpus}
+            if cur:
+                gpus.append(cur)
+            if gpus:
+                return {"gpu_count": len(gpus), "gpus": gpus}
         except Exception:
             return None
         return None
@@ -383,7 +498,11 @@ class GPUInfoCollector:
                         free = None
                     gpu["vram_free_gb"] = free
                     try:
-                        gpu["vram_free_pct"] = round((free / float(total)) * 100, 2) if free is not None and float(total) != 0 else None
+                        gpu["vram_free_pct"] = (
+                            round((free / float(total)) * 100, 2)
+                            if free is not None and float(total) != 0
+                            else None
+                        )
                     except Exception:
                         gpu["vram_free_pct"] = None
                 else:
@@ -395,10 +514,18 @@ class GPUInfoCollector:
                 totals = [p for p in gpus if p.get("vram_total_gb") is not None]
                 if totals:
                     total_sum = sum(p.get("vram_total_gb", 0) for p in totals)
-                    used_sum = sum(p.get("vram_used_gb", 0) for p in gpus if p.get("vram_used_gb") is not None)
+                    used_sum = sum(
+                        p.get("vram_used_gb", 0)
+                        for p in gpus
+                        if p.get("vram_used_gb") is not None
+                    )
                     res["vram_total_gb"] = round(total_sum, 2)
-                    res["vram_used_gb"] = round(used_sum, 2) if used_sum is not None else None
-                    res["vram_free_gb"] = round(total_sum - used_sum, 2) if used_sum is not None else None
+                    res["vram_used_gb"] = (
+                        round(used_sum, 2) if used_sum is not None else None
+                    )
+                    res["vram_free_gb"] = (
+                        round(total_sum - used_sum, 2) if used_sum is not None else None
+                    )
             except Exception:
                 pass
             return res
@@ -410,14 +537,14 @@ class GPUInfoCollector:
         returns a normalized dictionary with a gpu_count and a list under 'gpus'
         """
         for getter in (
-            self._from_nvml,# NVIDIA rich
-            self._from_nvidia_smi,# NVIDIA CLI
-            self._from_rocm_smi, # AMD Linux
-            self._from_intel_gpu_top, # Intel Linux
-            self._from_gputil, # generic NVIDIA
-            self._from_torch, # minimal CUDA info
-            self._from_windows_wmi, # Windows (Intel/AMD/NVIDIA) static
-            self._from_windows_dxdiag, # Windows fallback
+            self._from_nvml,  # NVIDIA rich
+            self._from_nvidia_smi,  # NVIDIA CLI
+            self._from_rocm_smi,  # AMD Linux
+            self._from_intel_gpu_top,  # Intel Linux
+            self._from_gputil,  # generic NVIDIA
+            self._from_torch,  # minimal CUDA info
+            self._from_windows_wmi,  # Windows (Intel/AMD/NVIDIA) static
+            self._from_windows_dxdiag,  # Windows fallback
         ):
             try:
                 res = getter()
@@ -434,9 +561,8 @@ class GPUInfoCollector:
             except Exception:
                 continue
         return {"gpu_count": 0, "gpus": []}
-    
 
-    ''' the dictionary looks like this:
+    """ the dictionary looks like this:
 
     {
         "gpu_count": int,
@@ -461,8 +587,7 @@ class GPUInfoCollector:
     gpu_count | gpu_index | gpu_name | gpu_vendor | gpu_vram_total_gb | gpu_vram_used_gb | gpu_vram_free_gb | gpu_vram_free_pct | gpu_utilization_pct | gpu_memory_util_pct | gpu_temperature_C
 
 
-    '''
-    
+    """
 
     def __del__(self):
         """shut down nvml if we initialized it earlier
