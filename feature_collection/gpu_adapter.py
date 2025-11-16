@@ -15,7 +15,11 @@ class GPUAdapter(FeatureCollector):
             for key, val in current_dict.items():
                 new_key = f"{prefix}_{key}" if prefix else key
 
-                if isinstance(val, dict):
+                if isinstance(val, list):
+                    for index, item in enumerate(val):
+                        if isinstance(item, dict):
+                            stack.append((item, f"{new_key}{index}"))
+                elif isinstance(val, dict):
                     stack.append((val, new_key))
                 else:
                     flat_dict[new_key] = val

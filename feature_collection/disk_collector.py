@@ -25,7 +25,7 @@ class DiskCollector:
     def to_dict(self) -> Dict[str, Any]:
         import shutil, os
 
-        info: Dict[str, Any] = {"mount": self.root}
+        info: Dict[str, Any] = {}
 
         # Core space stats (always available)
         usage = shutil.disk_usage(self.root)

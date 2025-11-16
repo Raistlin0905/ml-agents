@@ -20,7 +20,9 @@ class Features:
 
     GPU = [
         "gpu_count",
-        "gpus",
+        "vram_total_gb",
+        "vram_used_gb",
+        "vram_free_gb",
         "gpus0_index",
         "gpus0_name",
         "gpus0_vendor",
@@ -31,10 +33,19 @@ class Features:
         "gpus0_utilization_pct",
         "gpus0_memory_util_pct",
         "gpus0_temperature_C",
+        "gpus1_index",
+        "gpus1_name",
+        "gpus1_vendor",
+        "gpus1_vram_total_gb",
+        "gpus1_vram_used_gb",
+        "gpus1_vram_free_gb",
+        "gpus1_vram_free_pct",
+        "gpus1_utilization_pct",
+        "gpus1_memory_util_pct",
+        "gpus1_temperature_C",
     ]
 
     DISK = [
-        "mount",
         "disk_total_gb",
         "disk_used_gb",
         "disk_free_gb",
