@@ -8,7 +8,7 @@ class EnvCollector:
         self.run_id = run_id
         self.env_name = env_name
 
-    def collect_features(self) -> dict:
+    def collect_data(self) -> dict:
         channel = EnvSideChannel()
         unity_env = UnityEnvironment(file_name=None, side_channels=[channel])
 
@@ -18,7 +18,7 @@ class EnvCollector:
         first_behavior = behaviors[0]
         spec = unity_env.behavior_specs[first_behavior]
 
-        features = {
+        attributes = {
             "behavior_name": first_behavior,
             "actions_continuous_actions": spec.action_spec.continuous_size,
             "actions_discrete_size": spec.action_spec.discrete_size,
@@ -41,8 +41,8 @@ class EnvCollector:
 
         unity_env.close()
 
-        unity_features = channel.get_features()
+        unity_attributes = channel.get_attributes()
 
-        features.update(unity_features)
+        attributes.update(unity_attributes)
 
-        return features
+        return attributes

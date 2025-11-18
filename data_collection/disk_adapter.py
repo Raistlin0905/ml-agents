@@ -1,8 +1,8 @@
 from disk_collector import DiskCollector
-from base_collector import FeatureCollector
+from base_collector import DataCollector
 
 
-class DiskAdapter(FeatureCollector):
+class DiskAdapter(DataCollector):
 
     def collect_from_windows(self) -> dict:
         return DiskCollector().to_dict()

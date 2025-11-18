@@ -1,4 +1,4 @@
-from feature_collection import Model_Feature_Collector, Data_Object
+from base_collector import DataCollector, DataObject
 import platform
 import subprocess
 import re
@@ -6,21 +6,36 @@ import json
 from typing import Optional
 
 POSSIBLE_ARCHITECTURES = [0, 1, 2]  # mapping: 0->x86, 1->arm, 2->other
-POSSIBLE_VENDORS = [0, 1, 2, 3]     # mapping: 0->Intel, 1->Apple, 2->AMD, 3->other
+POSSIBLE_VENDORS = [0, 1, 2, 3]  # mapping: 0->Intel, 1->Apple, 2->AMD, 3->other
 
-class CPUDataObject(Data_Object):
+
+class CPUDataObject(DataObject):
     def __init__(self):
         self.architecture = POSSIBLE_ARCHITECTURES[0]  # default x86
         self.physical_core_count = -1  # default: non-existent
-        self.thread_count = -1         # default: non-existent [TOTAL thread count over all cpu cores]
-        self.freq = -1                 # unit: kHz, sometimes can not exist
+        self.thread_count = (
+            -1
+        )  # default: non-existent [TOTAL thread count over all cpu cores]
+        self.freq = -1  # unit: kHz, sometimes can not exist
         self.vendor = POSSIBLE_VENDORS[0]  # default: Intel
 
-class CPUFeatureExtractor(Model_Feature_Collector):
+    def to_dict(self):
+        return {
+            "host_cpu_architecture": self.architecture,
+            "host_cpu_physical_core_count": self.physical_core_count,
+            "host_cpu_thread_count": self.thread_count,
+            "host_cpu_clock_frequency": self.freq,
+            "host_cpu_vendor": self.vendor,
+        }
+
+
+class CPUCollector(DataCollector):
     # helpers
     def run_command(self, c: str) -> str:
         try:
-            return subprocess.check_output(c, shell=True, stderr=subprocess.DEVNULL, text=True).strip()
+            return subprocess.check_output(
+                c, shell=True, stderr=subprocess.DEVNULL, text=True
+            ).strip()
         except Exception:
             return ""
 
@@ -54,7 +69,7 @@ class CPUFeatureExtractor(Model_Feature_Collector):
         else:
             return 3
 
-    def collectFromMac(self) -> CPUDataObject:
+    def collect_from_mac(self):
         obj = CPUDataObject()
 
         machine = platform.machine()
@@ -83,9 +98,9 @@ class CPUFeatureExtractor(Model_Feature_Collector):
             freq = -1
         obj.freq = freq
 
-        return obj
+        return obj.to_dict()
 
-    def collectFromLinux(self):
+    def collect_from_linux(self):
         obj = CPUDataObject()
         obj.architecture = self.map_to_arch_enum(platform.machine())
 
@@ -97,7 +112,9 @@ class CPUFeatureExtractor(Model_Feature_Collector):
 
         vendor = kv("Vendor ID")
         if not vendor:
-            vendor = self.run_command("grep -m1 -E 'vendor_id|Hardware' /proc/cpuinfo | awk -F: '{print $2}'").strip()
+            vendor = self.run_command(
+                "grep -m1 -E 'vendor_id|Hardware' /proc/cpuinfo | awk -F: '{print $2}'"
+            ).strip()
         obj.vendor = self.map_to_vendor_enum(vendor, obj.architecture)
 
         cps = kv("Core(s) per socket")
@@ -109,13 +126,20 @@ class CPUFeatureExtractor(Model_Feature_Collector):
         except Exception:
             phys = None
         if phys is None or phys <= 0:
-            core_ids = self.run_command("awk -F: '/^core id|^cpu cores/ {print $2}' /proc/cpuinfo | sort -u | wc -l")
+            core_ids = self.run_command(
+                "awk -F: '/^core id|^cpu cores/ {print $2}' /proc/cpuinfo | sort -u | wc -l"
+            )
             if core_ids.isdigit() and int(core_ids) > 0:
                 phys = int(core_ids)
         if phys is None or phys <= 0:
             tpc = kv("Thread(s) per core")
             logical = kv("CPU(s)") or self.run_command("nproc")
-            if tpc and logical and tpc.replace('.', '', 1).isdigit() and logical.isdigit():
+            if (
+                tpc
+                and logical
+                and tpc.replace(".", "", 1).isdigit()
+                and logical.isdigit()
+            ):
                 tpcv = float(tpc)
                 if tpcv > 0:
                     phys = int(int(logical) / tpcv)
@@ -135,11 +159,15 @@ class CPUFeatureExtractor(Model_Feature_Collector):
             except Exception:
                 obj.freq = -1
         else:
-            khz = self.run_command("cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq 2>/dev/null")
+            khz = self.run_command(
+                "cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq 2>/dev/null"
+            )
             if khz.isdigit():
                 obj.freq = int(khz)
             else:
-                khz2 = self.run_command("grep -hoE 'cpu MHz\\s*:\\s*[0-9.]+' /proc/cpuinfo | awk '{print $4}' | sort -nr | head -1")
+                khz2 = self.run_command(
+                    "grep -hoE 'cpu MHz\\s*:\\s*[0-9.]+' /proc/cpuinfo | awk '{print $4}' | sort -nr | head -1"
+                )
                 if khz2:
                     try:
                         obj.freq = int(round(float(khz2) * 1000))
@@ -147,9 +175,9 @@ class CPUFeatureExtractor(Model_Feature_Collector):
                         obj.freq = -1
                 else:
                     obj.freq = -1
-        return obj
+        return obj.to_dict()
 
-    def collectFromWindows(self):
+    def collect_from_windows(self):
         obj = CPUDataObject()
         obj.architecture = self.map_to_arch_enum(platform.machine())
 
@@ -173,17 +201,37 @@ $max=[int]$cpu.MaxClockSpeed
                 pass
         else:
             # Fallback to WMIC (deprecated but often present)
-            vendor  = self.run_command('wmic cpu get Manufacturer /value').split('=')[-1].strip()
-            phys_s  = self.run_command('wmic cpu get NumberOfCores /value').split('=')[-1].strip()
-            logi_s  = self.run_command('wmic cpu get NumberOfLogicalProcessors /value').split('=')[-1].strip()
-            max_s   = self.run_command('wmic cpu get MaxClockSpeed /value').split('=')[-1].strip()
-            phys    = int(phys_s) if phys_s.isdigit() else None
-            logi    = int(logi_s) if logi_s.isdigit() else None
-            max_mhz = int(max_s)  if max_s.isdigit()  else None
+            vendor = (
+                self.run_command("wmic cpu get Manufacturer /value")
+                .split("=")[-1]
+                .strip()
+            )
+            phys_s = (
+                self.run_command("wmic cpu get NumberOfCores /value")
+                .split("=")[-1]
+                .strip()
+            )
+            logi_s = (
+                self.run_command("wmic cpu get NumberOfLogicalProcessors /value")
+                .split("=")[-1]
+                .strip()
+            )
+            max_s = (
+                self.run_command("wmic cpu get MaxClockSpeed /value")
+                .split("=")[-1]
+                .strip()
+            )
+            phys = int(phys_s) if phys_s.isdigit() else None
+            logi = int(logi_s) if logi_s.isdigit() else None
+            max_mhz = int(max_s) if max_s.isdigit() else None
 
         obj.vendor = self.map_to_vendor_enum(vendor, obj.architecture)
         obj.physical_core_count = int(phys) if isinstance(phys, int) and phys > 0 else 1
-        obj.thread_count = int(logi) if isinstance(logi, int) and logi > 0 else obj.physical_core_count
-        obj.freq = (int(max_mhz) * 1000) if (isinstance(max_mhz, int) and max_mhz > 0) else -1
+        obj.thread_count = (
+            int(logi) if isinstance(logi, int) and logi > 0 else obj.physical_core_count
+        )
+        obj.freq = (
+            (int(max_mhz) * 1000) if (isinstance(max_mhz, int) and max_mhz > 0) else -1
+        )
 
-        return obj
+        return obj.to_dict

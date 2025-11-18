@@ -1,9 +1,9 @@
 from gpu_collector import GPUCollector
-from base_collector import FeatureCollector
+from base_collector import DataCollector
 from typing import Dict
 
 
-class GPUAdapter(FeatureCollector):
+class GPUAdapter(DataCollector):
 
     def flatten_dict(self, old_dict: Dict[any, any]) -> dict:
         flat_dict = {}

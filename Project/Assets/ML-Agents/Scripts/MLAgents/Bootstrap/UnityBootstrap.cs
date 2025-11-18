@@ -40,7 +40,7 @@ public static class UnityBootstrap
                 UnityEngine.Debug.Log("Behavior is Null");
             }
 
-            var features = new Dictionary<string, object>
+            var attributes = new Dictionary<string, object>
             {
                 ["model"] = "",
                 ["inference_device"] = behavior.InferenceDevice.ToString(),
@@ -56,7 +56,7 @@ public static class UnityBootstrap
                 ["take_actions_between_decisions"] = behavior.GetComponent<DecisionRequester>().TakeActionsBetweenDecisions,
             };
 
-            string json = JsonConvert.SerializeObject(features);
+            string json = JsonConvert.SerializeObject(attributes);
             _channel.SendString(json);
         }
 

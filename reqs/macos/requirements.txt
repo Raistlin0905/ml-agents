@@ -17,8 +17,8 @@ idna==3.10
 Jinja2==3.1.6
 Markdown==3.9
 MarkupSafe==3.0.2
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c66ab9ca07afe2df56e809d5018c0476d11a9c76#egg=mlagents&subdirectory=ml-agents
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c66ab9ca07afe2df56e809d5018c0476d11a9c76#egg=mlagents_envs&subdirectory=ml-agents-envs
+-e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c954d3c0c7c065f135abf6eb7838fee401e5caff#egg=mlagents&subdirectory=ml-agents
+-e git+ssh://git@github.com/Raistlin0905/ml-agents.git@c954d3c0c7c065f135abf6eb7838fee401e5caff#egg=mlagents_envs&subdirectory=ml-agents-envs
 mpmath==1.3.0
 networkx==3.4.2
 numpy==1.23.5

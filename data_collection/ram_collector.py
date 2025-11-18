@@ -1,12 +1,12 @@
 import json
 import psutil
 import subprocess
-from base_collector import FeatureCollector
+from base_collector import DataCollector
 
 
-class RAMCollector(FeatureCollector):
+class RAMCollector(DataCollector):
     @staticmethod
-    def get_features():
+    def get_attributes():
         v_mem = psutil.virtual_memory()
         swap_mem = psutil.swap_memory()
 
@@ -58,7 +58,7 @@ class RAMCollector(FeatureCollector):
             35: "LPDDR5",
             36: "HBM3",
         }
-        features = self.get_features()
+        attributes = self.get_attributes()
 
         output = subprocess.run(
             args=[
@@ -72,18 +72,18 @@ class RAMCollector(FeatureCollector):
         )
         data = json.loads(output.stdout)
         if isinstance(data, int):
-            features["host_ram_type"] = symbios_mem_types[data]
+            attributes["host_ram_type"] = symbios_mem_types[data]
         elif isinstance(data, list):
             mem_type_nums = [num for num in data if isinstance(num, int)]
             for num in mem_type_nums:
                 if symbios_mem_types.get(num, "Unknown") != "Unknown":
-                    features["host_ram_type"] = symbios_mem_types.get(num)
+                    attributes["host_ram_type"] = symbios_mem_types.get(num)
                     break
 
-        return features
+        return attributes
 
     def collect_from_mac(self):
-        features = self.get_features()
+        attributes = self.get_attributes()
 
         output = subprocess.run(
             args=["system_profiler", "SPMemoryDataType", "-json"],
@@ -93,11 +93,11 @@ class RAMCollector(FeatureCollector):
         )
         data = json.loads(output.stdout)
         ram_type = data.get("SPMemoryDataType", [{}])[0].get("dimm_type")
-        features["host_ram_type"] = ram_type
+        attributes["host_ram_type"] = ram_type
 
-        return features
+        return attributes
 
     def collect_from_linux(self):
-        features = self.get_features()
+        attributes = self.get_attributes()
 
-        return features
+        return attributes
