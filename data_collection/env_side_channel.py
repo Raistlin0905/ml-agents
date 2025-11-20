@@ -16,7 +16,7 @@ class EnvSideChannel(SideChannel):
     def on_message_received(self, msg: IncomingMessage):
         global received_json_string
         received_json_string = msg.read_string()
-        print(msg.read_string())
+        print(received_json_string)
 
     def get_attributes(self):
         return json.loads(received_json_string)
