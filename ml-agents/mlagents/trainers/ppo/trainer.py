@@ -72,6 +72,18 @@ class PPOTrainer(OnPolicyTrainer):
         :param trajectory: The Trajectory tuple containing the steps to be processed.
         """
         super()._process_trajectory(trajectory)
+            
+        # --- START: Add runtime logging ---
+        # Increment step counter per trajectory processed
+        self._step += 1
+        # Log runtime and hardware stats at given interval
+        self.log_runtime_stats(step_interval=1000)
+        # Force flush TensorBoard writers so stats appear immediately
+        for writer in self._stats_reporter.writers:
+            if hasattr(writer, "writer") and writer.writer is not None:
+                writer.writer.flush()
+        # --- END: Runtime logging --
+
         agent_id = trajectory.agent_id  # All the agents should have the same ID
 
         agent_buffer_trajectory = trajectory.to_agentbuffer()
