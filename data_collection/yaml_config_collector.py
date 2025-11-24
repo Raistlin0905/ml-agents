@@ -185,11 +185,28 @@ class YAMLConfigCollector:
 
         return flat_dict
 
+    def deep_merge(self, old_dict: dict, override: dict) -> dict:
+        result = dict(old_dict)
+        for key, val in override.items():
+            if (
+                key in result
+                and isinstance(result[key], dict)
+                and isinstance(val, dict)
+            ):
+                result[key] = self.deep_merge(result[key], val)
+            else:
+                result[key] = val
+        return result
+
     def collect_data(self, yaml_path: str, env_name: str):
         path = yaml_path
 
         file = self.load_yaml(path)
         features = self.get_features()
+
+        default_settings = file.get("default_settings", {})
+        if default_settings:
+            default_settings = self.flatten_dict(file["default_settings"])
 
         behaviors = file.get("behaviors")
         features["behavior_count"] = len(behaviors)
@@ -197,8 +214,11 @@ class YAMLConfigCollector:
         for index, (_, value) in enumerate(behaviors.items()):
             if index > 1:
                 break
+
+            merged = self.deep_merge(default_settings, value)
+
             prefix = f"behaviors{index}_"
-            flat = self.flatten_dict(value)
+            flat = self.flatten_dict(merged)
 
             for key, val in flat.items():
                 new_key = prefix + key

@@ -234,4 +234,4 @@ $max=[int]$cpu.MaxClockSpeed
             (int(max_mhz) * 1000) if (isinstance(max_mhz, int) and max_mhz > 0) else -1
         )
 
-        return obj.to_dict
+        return obj.to_dict()

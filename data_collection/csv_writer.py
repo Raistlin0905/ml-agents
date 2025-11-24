@@ -6,7 +6,9 @@ from attributes import Attributes
 class CSVWriter:
 
     def append_row(csv_file_path: str, row: dict):
-        header_written = os.path.exists(csv_file_path)
+        header_written = (
+            os.path.exists(csv_file_path) and os.path.getsize(csv_file_path) > 0
+        )
 
         csv_headers = Attributes().get_csv_headers()
 

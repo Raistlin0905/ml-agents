@@ -10,11 +10,12 @@ from disk_adapter import DiskAdapter
 from yaml_config_collector import YAMLConfigCollector
 
 
-def get_row(docker_used: bool, env_name: str, yaml_path: str):
+def get_row(docker_used: bool, trainer_type: str, env_name: str, yaml_path: str):
     main = {
         "run_id": uuid.uuid4(),
         "host_os_name": sys.platform,
         "docker_used": docker_used,
+        "trainer_type": trainer_type,
     }
     cpu = CPUCollector().collect_data()
     ram = RAMCollector().collect_data()
@@ -70,7 +71,12 @@ def main():
     if not is_valid_trainer(trainer_type) or not yaml_path:
         print_usage_and_exit()
 
-    row = get_row(docker_used=docker_used, env_name=env_name, yaml_path=yaml_path)
+    row = get_row(
+        docker_used=docker_used,
+        trainer_type=trainer_type,
+        env_name=env_name,
+        yaml_path=yaml_path,
+    )
     CSVWriter.append_row(csv_file_path="human_readable.csv", row=row)
 
 
