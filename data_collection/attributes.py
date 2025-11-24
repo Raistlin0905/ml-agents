@@ -4,6 +4,7 @@ class Attributes:
         "run_id",
         "host_os_name",
         "docker_used",
+        "trainer_type",
     ]
 
     CPU = [

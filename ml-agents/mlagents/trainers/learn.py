@@ -34,7 +34,8 @@ from mlagents_envs.timers import (
 from mlagents_envs import logging_util
 from mlagents.plugins.stats_writer import register_stats_writer_plugins
 from mlagents.plugins.trainer_type import register_trainer_plugins
-from hw_collectors.hardware_summary import print_hardware_summary
+
+# from hw_collectors.hardware_summary import print_hardware_summary
 
 logger = logging_util.get_logger(__name__)
 
@@ -255,7 +256,7 @@ def run_cli(options: RunOptions) -> None:
     num_areas = options.env_settings.num_areas
 
     # print disk and gpu info ;)
-    print_hardware_summary()
+    # print_hardware_summary()
 
     # Add some timer metadata
     add_timer_metadata("mlagents_version", mlagents.trainers.__version__)

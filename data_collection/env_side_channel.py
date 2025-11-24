@@ -19,4 +19,11 @@ class EnvSideChannel(SideChannel):
         print(received_json_string)
 
     def get_attributes(self):
-        return json.loads(received_json_string)
+        if not received_json_string:
+            print("No data received on side channel. Returning empty dict.")
+            return {}
+        try:
+            return json.loads(received_json_string)
+        except json.JSONDecodeError as e:
+            print("Failed to decode JSON:", e, "Raw data:", received_json_string)
+            return {}
