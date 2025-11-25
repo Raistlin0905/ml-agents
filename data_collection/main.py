@@ -1,3 +1,4 @@
+import subprocess
 import uuid
 import sys
 import os
@@ -47,8 +48,9 @@ def string_to_bool(string: str):
 
 def print_usage_and_exit():
     print(
-        "Usage:\n"
-        "  python main.py <docker_used> <trainer_type> <env_name>\n\n"
+        "\nUsage:\n"
+        "  !!!WORKING DIRECTORY IS ROOT DIRECTORY!!!\n"
+        "  python data_collection/main.py <docker_used> <trainer_type> <env_name>\n\n"
         "Arguments:\n"
         "  docker_used    true | false\n"
         "  trainer_type   imitation | ppo | sac | poca\n"
@@ -56,6 +58,26 @@ def print_usage_and_exit():
         file=sys.stderr,
     )
     sys.exit(1)
+
+
+def launch_mlagents_training(yaml_path: str, run_id: str):
+    arg = [
+        sys.executable,
+        "-m",
+        "mlagents.trainers.learn",
+        yaml_path,
+        f"--run-id={run_id}",
+    ]
+
+    try:
+        subprocess.run(arg)
+    except KeyboardInterrupt:
+        print(
+            "Training interrupted by user (Ctrl+C).\n"
+            "Training results saved.\n"
+            "Exiting data_collection/main.py"
+        )
+        sys.exit(0)
 
 
 def main():
@@ -78,6 +100,8 @@ def main():
         yaml_path=yaml_path,
     )
     CSVWriter.append_row(csv_file_path="human_readable.csv", row=row)
+
+    launch_mlagents_training(yaml_path=yaml_path, run_id=row["run_id"])
 
 
 if __name__ == "__main__":
