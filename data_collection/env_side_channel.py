@@ -20,7 +20,7 @@ class EnvSideChannel(SideChannel):
 
     def get_attributes(self):
         if not received_json_string:
-            print("No data received on side channel. Returning empty dict.")
+            print("No agent data received on side channel. Returning empty dict.")
             return {}
         try:
             return json.loads(received_json_string)
