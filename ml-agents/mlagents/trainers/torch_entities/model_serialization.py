@@ -157,6 +157,14 @@ class ModelSerializer:
 
         :param output_filepath: file path to output the model (without file suffix)
         """
+
+        try:
+            import onnxscript
+        except ImportError as e:
+            logger.warning(f"ONNX export skipped: {e}")
+            logger.info(f"ONNX export skipped due to missing module: {e}")
+            return
+
         onnx_output_path = f"{output_filepath}.onnx"
         logger.debug(f"Converting to {onnx_output_path}")
 

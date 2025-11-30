@@ -2,9 +2,12 @@
 # ## ML-Agent Learning (PPO)
 # Contains an implementation of PPO as described in: https://arxiv.org/abs/1707.06347
 
+import time
 from typing import cast, Type, Union, Dict, Any
 
 import numpy as np
+
+from ...utils.training_utils import check_threshold
 
 from mlagents_envs.base_env import BehaviorSpec
 from mlagents_envs.logging_util import get_logger
@@ -65,6 +68,9 @@ class PPOTrainer(OnPolicyTrainer):
         self.shared_critic = self.hyperparameters.shared_critic
         self.policy: TorchPolicy = None  # type: ignore
 
+        # For logging time_to_threshold during training
+        self.time_to_threshold_class_label = None
+
     def _process_trajectory(self, trajectory: Trajectory) -> None:
         """
         Takes a trajectory and processes it, putting it into the update buffer.
@@ -72,17 +78,6 @@ class PPOTrainer(OnPolicyTrainer):
         :param trajectory: The Trajectory tuple containing the steps to be processed.
         """
         super()._process_trajectory(trajectory)
-            
-        # --- START: Add runtime logging ---
-        # Increment step counter per trajectory processed
-        self._step += 1
-        # Log runtime and hardware stats at given interval
-        self.log_runtime_stats(step_interval=1000)
-        # Force flush TensorBoard writers so stats appear immediately
-        for writer in self._stats_reporter.writers:
-            if hasattr(writer, "writer") and writer.writer is not None:
-                writer.writer.flush()
-        # --- END: Runtime logging --
 
         agent_id = trajectory.agent_id  # All the agents should have the same ID
 
@@ -223,3 +218,27 @@ class PPOTrainer(OnPolicyTrainer):
     @staticmethod
     def get_trainer_name() -> str:
         return TRAINER_NAME
+
+    def advance(self):
+        super().advance()
+
+        # --- START: Add runtime logging ---
+        # Increment step counter per trajectory processed
+        self._step += 1
+        # Log runtime and hardware stats at given interval
+        self.log_runtime_stats(step_interval=1000)
+
+        # Calc mean reward and std reward currently
+        mean_reward = self._policy_mean_reward() or 0.0
+        check_threshold(
+            mean_reward,
+            self.time_to_threshold_class_label,
+            self._start_time,
+            self.stats_reporter,
+        )
+
+        # Force flush TensorBoard writers so stats appear immediately
+        for writer in self._stats_reporter.writers:
+            if hasattr(writer, "writer") and writer.writer is not None:
+                writer.writer.flush()
+        # --- END: Runtime logging --

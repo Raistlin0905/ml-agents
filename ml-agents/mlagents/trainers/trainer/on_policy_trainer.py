@@ -56,7 +56,7 @@ class OnPolicyTrainer(RLTrainer):
         self.seed = seed
         self.policy: Policy = None  # type: ignore
         self.optimizer: TorchOptimizer = None  # type: ignore
-        self._start_time = time.time() # start tracking runtime for logging purposes 
+        self._start_time = time.time()  # start tracking runtime for logging purposes
 
     def _is_ready_update(self):
         """

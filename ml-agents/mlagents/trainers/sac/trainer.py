@@ -6,6 +6,8 @@ from typing import cast
 
 import numpy as np
 
+from ...utils.training_utils import check_threshold
+
 from mlagents_envs.logging_util import get_logger
 from mlagents_envs.base_env import BehaviorSpec
 from mlagents.trainers.buffer import BufferKey
@@ -81,6 +83,9 @@ class SACTrainer(OffPolicyTrainer):
         )
 
         self.checkpoint_replay_buffer = self.hyperparameters.save_replay_buffer
+
+        # For logging time_to_threshold during training
+        self.time_to_threshold_class_label = None
 
     def _process_trajectory(self, trajectory: Trajectory) -> None:
         """
@@ -179,3 +184,27 @@ class SACTrainer(OffPolicyTrainer):
     @staticmethod
     def get_trainer_name() -> str:
         return TRAINER_NAME
+
+    def advance(self):
+        super().advance()
+
+        # --- START: Add runtime logging ---
+        # Increment step counter per trajectory processed
+        self._step += 1
+        # Log runtime and hardware stats at given interval
+        self.log_runtime_stats(step_interval=1000)
+
+        # Calc mean reward and std reward currently
+        mean_reward = self._policy_mean_reward() or 0.0
+        check_threshold(
+            mean_reward,
+            self.time_to_threshold_class_label,
+            self._start_time,
+            self.stats_reporter,
+        )
+
+        # Force flush TensorBoard writers so stats appear immediately
+        for writer in self._stats_reporter.writers:
+            if hasattr(writer, "writer") and writer.writer is not None:
+                writer.writer.flush()
+        # --- END: Runtime logging --

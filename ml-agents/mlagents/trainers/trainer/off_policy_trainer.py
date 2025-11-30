@@ -3,6 +3,7 @@
 # and implemented in https://github.com/hill-a/stable-baselines
 
 from collections import defaultdict
+import time
 from typing import Dict, cast
 import os
 
@@ -77,6 +78,8 @@ class OffPolicyTrainer(RLTrainer):
         )
 
         self.checkpoint_replay_buffer = self.hyperparameters.save_replay_buffer
+
+        self._start_time = time.time()  # start tracking runtime for logging purposes
 
     def _checkpoint(self) -> ModelCheckpoint:
         """
