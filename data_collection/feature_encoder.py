@@ -76,7 +76,7 @@ def encode_and_save(input_path, output_path, class_label):
     X_final[class_label] = Y
 
     # Save everything to one csv
-    X_final.to_csv(output_path + ".csv", index=False)
+    X_final.to_csv(output_path, index=False)
 
 
 def print_usage_and_exit():
