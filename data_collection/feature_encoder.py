@@ -1,10 +1,7 @@
-import json
 import sys
 import pandas
 
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.feature_extraction.text import TfidfVectorizer
-from scipy.sparse import csr_matrix, hstack, save_npz
+from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 
 
 EXCLUDED_COLUMNS = ["run_id"]
@@ -17,6 +14,9 @@ def encode_and_save(input_path, output_path, class_label):
     except Exception as e:
         print(e, file=sys.stderr)
         sys.exit(1)
+
+    # Store run_id before dropping (keeping for traceability)
+    run_id = dataframe["run_id"] if "run_id" in dataframe.columns else None
 
     # Drop excluded columns
     dataframe = dataframe.drop(
@@ -36,56 +36,47 @@ def encode_and_save(input_path, output_path, class_label):
 
     # Get text and numeric columns
     numeric_cols = X.select_dtypes(include=["int64", "float64"]).columns.tolist()
-    text_cols = X.select_dtypes(exclude=["int64", "float64"]).columns.tolist()
+    categorical_cols = X.select_dtypes(exclude=["int64", "float64"]).columns.tolist()
 
-    categorical_cols = []
-    free_text_cols = []
+    # Normalize numerical cols using min/max and mult by 100 for prettiness
+    if numeric_cols:
+        scaler = MinMaxScaler(feature_range=(0, 1))
+        X[numeric_cols] = scaler.fit_transform(X[numeric_cols]) * 100
 
-    for col in text_cols:
-        unique_val_count = X[col].nunique()
-        avg_val_length = X[col].astype(str).str.len().mean()
-        if unique_val_count <= 100 and avg_val_length <= 60:
-            categorical_cols.append(col)
-        else:
-            free_text_cols.append(col)
-
-    sparse_parts = []  # Not using dense matrices because too much memory
+    X_parts = []
     feature_names = []  # For preserving feature-names
 
     if numeric_cols:
-        csr = csr_matrix(X[numeric_cols].values)
-        sparse_parts.append(csr)
+        X_parts.append(X[numeric_cols])
         feature_names.extend(numeric_cols)
 
     # One-Hot Encoding
     if categorical_cols:
-        one_hot_encoder = OneHotEncoder()
+        one_hot_encoder = OneHotEncoder(sparse_output=False)
         matrix = one_hot_encoder.fit_transform(X[categorical_cols])
-        sparse_parts.append(matrix)
-        feature_names.extend(one_hot_encoder.get_feature_names_out(categorical_cols))
-    # TF-IDF Vectorizing
-    if free_text_cols:
-        for col in free_text_cols:
-            vectorizer = TfidfVectorizer()
-            matrix = vectorizer.fit_transform(X[col].astype(str))
-            sparse_parts.append(matrix)
-            feature_names.extend(
-                [
-                    f"{col}__{category}"
-                    for category in vectorizer.get_feature_names_out()
-                ]
-            )
+        one_hot_feature_names = one_hot_encoder.get_feature_names_out(categorical_cols)
+        one_hot_dataframe = pandas.DataFrame(
+            matrix, columns=one_hot_feature_names, index=X.index
+        )
+
+        # Add encoded col and feature names
+        X_parts.append(one_hot_dataframe)
+        feature_names.extend(one_hot_feature_names)
 
     # Put together encoded cols and numeric cols
-    X_final = hstack(sparse_parts).tocsr()
+    if X_parts:
+        X_final = pandas.concat(X_parts, axis=1)
+    else:
+        X_final = pandas.DataFrame(index=X.index)
 
-    # Save encoded features to npz
-    save_npz(output_path + ".npz", X_final)
-    # Save class label to csv
-    Y.to_csv(output_path + "_class_label.csv", index=False)
-    # Save feature names to json
-    with open(output_path + "_features.json", "w") as f:
-        json.dump(feature_names, f)
+    # Add run_id
+    if run_id is not None:
+        X_final.insert(0, "run_id", run_id)
+    # Add class label
+    X_final[class_label] = Y
+
+    # Save everything to one csv
+    X_final.to_csv(output_path + ".csv", index=False)
 
 
 def print_usage_and_exit():
@@ -94,8 +85,8 @@ def print_usage_and_exit():
         "  !!!WORKING DIRECTORY IS ROOT DIRECTORY!!!\n"
         "  python data_collection/feature_encoder.py <input_path> <output_path>\n\n"
         "Arguments:\n"
-        "  input_path    Path to the .csv dataset file to be encoded\n"
-        "  output_path   Path prefix for output file to be created (output -> output.npz)\n"
+        "  input_path    Path to the .csv dataset file to be encoded (path/to/input.csv)\n"
+        "  output_path   Path of the output file to be created (path/to/output.csv)\n"
         "  class_label   Column name of class label (e.g., time_to_threshold)\n",
         file=sys.stderr,
     )
@@ -111,5 +102,4 @@ if __name__ == "__main__":
     output_path = args[2]
     class_label = args[3]
 
-    print("yuh")
     encode_and_save(input_path, output_path, class_label)

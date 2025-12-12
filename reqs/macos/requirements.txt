@@ -7,7 +7,6 @@ cloudpickle==3.1.1
 filelock==3.19.1
 fsspec==2025.9.0
 GPUtil==1.4.0
-grpcio @ https://github.com/pietrodn/grpcio-mac-arm-build/releases/download/1.50.0/grpcio-1.50.0-cp310-cp310-macosx_11_0_arm64.whl#sha256=0a9d14ca405681e18bc99df2c72d64cc447ff6375ed26a22a20803980c2f80bc
 gym==0.26.2
 gym-notices==0.1.0
 h5py==3.14.0
@@ -16,10 +15,7 @@ huggingface-hub==0.35.1
 idna==3.10
 Jinja2==3.1.6
 Markdown==3.9
-MarkupSafe==3.0.2
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@036d181b1011510bd1e9e5fa3ad4cd191e858196#egg=mlagents&subdirectory=ml-agents
--e git+ssh://git@github.com/Raistlin0905/ml-agents.git@036d181b1011510bd1e9e5fa3ad4cd191e858196#egg=mlagents_envs&subdirectory=ml-agents-envs
-mpmath==1.3.0
+MarkupSafe==3.0.2mpmath==1.3.0
 networkx==3.4.2
 numpy==1.23.5
 nvidia-ml-py==13.580.82
