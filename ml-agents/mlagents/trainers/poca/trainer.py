@@ -7,7 +7,6 @@ from typing import cast, Dict, Union, Any, Type
 
 import numpy as np
 
-from ...utils.training_utils import check_threshold
 
 from mlagents_envs.side_channel.stats_side_channel import StatsAggregationMethod
 from mlagents_envs.logging_util import get_logger
@@ -262,15 +261,6 @@ class POCATrainer(OnPolicyTrainer):
         self._step += 1
         # Log runtime and hardware stats at given interval
         self.log_runtime_stats(step_interval=1000)
-
-        # Calc mean reward and std reward currently
-        mean_reward = self._policy_mean_reward() or 0.0
-        check_threshold(
-            mean_reward,
-            self.time_to_threshold_class_label,
-            self._start_time,
-            self.stats_reporter,
-        )
 
         # Force flush TensorBoard writers so stats appear immediately
         for writer in self._stats_reporter.writers:

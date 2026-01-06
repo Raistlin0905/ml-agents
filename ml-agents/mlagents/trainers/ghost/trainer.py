@@ -6,7 +6,6 @@ from typing import Deque, Dict, DefaultDict, List
 
 import numpy as np
 
-from ...utils.training_utils import check_threshold
 
 from mlagents_envs.logging_util import get_logger
 from mlagents_envs.base_env import BehaviorSpec
@@ -331,15 +330,6 @@ class GhostTrainer(Trainer):
         self._step += 1
         # Log runtime and hardware stats at given interval
         self.log_runtime_stats(step_interval=1000)
-
-        # Calc mean reward and std reward currently
-        mean_reward = self._policy_mean_reward() or 0.0
-        check_threshold(
-            mean_reward,
-            self.time_to_threshold_class_label,
-            self._start_time,
-            self.stats_reporter,
-        )
 
         # Force flush TensorBoard writers so stats appear immediately
         for writer in self._stats_reporter.writers:

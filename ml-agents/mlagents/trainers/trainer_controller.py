@@ -6,7 +6,8 @@ import os
 import threading
 from typing import Dict, Set, List
 from collections import defaultdict
-
+from collections import deque
+import reward_stagnation_detector
 import numpy as np
 
 from mlagents_envs.logging_util import get_logger
@@ -29,6 +30,9 @@ from mlagents.trainers.behavior_id_utils import BehaviorIdentifiers
 from mlagents.trainers.agent_processor import AgentManager
 from mlagents import torch_utils
 from mlagents.torch_utils.globals import get_rank
+
+import time
+from ..utils.training_utils import treat_threshold
 
 
 class TrainerController:
@@ -67,6 +71,9 @@ class TrainerController:
         np.random.seed(training_seed)
         torch_utils.torch.manual_seed(training_seed)
         self.rank = get_rank()
+        # NOTE: Change this if params for detector changed
+        self.stagnation_window = 500
+        self.stagnation_rewards = deque(maxlen=self.stagnation_window)
 
     @timed
     def _save_models(self):
@@ -164,6 +171,7 @@ class TrainerController:
         for behavior_id in behavior_ids:
             self._create_trainer_and_manager(env_manager, behavior_id)
 
+    # TODO: maybe look at this to see if this is the point where we need to time training
     @timed
     def start_learning(self, env_manager: EnvManager) -> None:
         self._create_output_path(self.output_path)
@@ -171,12 +179,26 @@ class TrainerController:
             # Initial reset
             self._reset_env(env_manager)
             self.param_manager.log_current_lesson()
+            start = time.time()
             while self._not_done_training():
+                # TODO: check for stagnation
+                # collect 500 (has to be exactly 500, check documentation) data samples
+                # by appending to an outer array and check if array array reach limit
+                # if runCheck()==false empty array and repeat (CHECK STAGNATION DOCUMENTATION)
                 n_steps = self.advance(env_manager)
+                if self.check_stagnation():
+                    # self.logger.warning("Reward stagnation detected")
+                    self._reset_env(env_manager)
+                    self.end_trainer_episodes()
+                    self.stagnation_rewards.clear()
+                    continue
                 for _ in range(n_steps):
                     self.reset_env_if_ready(env_manager)
             # Stop advancing trainers
             self.join_threads()
+            end = time.time()
+            duration = end - start
+            treat_threshold(duration)
         except (
             KeyboardInterrupt,
             UnityCommunicationException,
@@ -202,8 +224,22 @@ class TrainerController:
     def end_trainer_episodes(self) -> None:
         # Reward buffers reset takes place only for curriculum learning
         # else no reset.
+        print("Reward buffer sizes:")
         for trainer in self.trainers.values():
+            """
+            print(
+                f"trainer: {trainer.get_trainer_name}, buffer_size: {len(trainer.reward_buffer)}"
+            )
+            """
             trainer.end_episode()
+
+    def check_stagnation(self) -> bool:
+        if len(self.stagnation_rewards) < self.stagnation_window:
+            return False
+        detector = reward_stagnation_detector.Reward_Stagnation_Detector(
+            self.stagnation_rewards
+        )
+        return detector.runCheck()
 
     def reset_env_if_ready(self, env: EnvManager) -> None:
         # Get the sizes of the reward buffers.
@@ -232,6 +268,26 @@ class TrainerController:
         with hierarchical_timer("env_step"):
             new_step_infos = env_manager.get_steps()
             self._register_new_behaviors(env_manager, new_step_infos)
+
+            """
+            for step in new_step_infos:
+                if len(step.rewards) > 0:
+                    self.stagnation_rewards.append(np.mean(step.rewards))
+            """
+
+            for step in new_step_infos:
+                all_rewards = []
+                for behavior_name, (
+                    decision_steps,
+                    terminal_steps,
+                ) in step.current_all_step_result.items():
+                    if len(decision_steps) > 0:
+                        all_rewards.extend(decision_steps.reward.tolist())
+                    if len(terminal_steps) > 0:
+                        all_rewards.extend(terminal_steps.reward.tolist())
+                if all_rewards:
+                    self.stagnation_rewards.append(np.mean(all_rewards))
+
             num_steps = env_manager.process_steps(new_step_infos)
 
         # Report current lesson for each environment parameter
