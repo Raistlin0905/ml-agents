@@ -1,6 +1,4 @@
-# Data Collection Script
-Script to collect hardware data (CPU, disk, GPU, RAM specs) and environmental data (agent behavior parameters including steps, inference device, and use of child sensors) and training configuration data from config/yaml files (including trainer type, learning rate, and summary frequency).
-
+# Data Collection Module
 # Prerequisites
 Packages list:
 ```
@@ -11,6 +9,9 @@ ml-agents/reqs/windows/requirements.txt
 ml-agents/reqs/macos/requirements.txt
 ```
 
+# Data Collection Script
+Script to collect hardware data (CPU, disk, GPU, RAM specs) and environmental data (agent behavior parameters including steps, inference device, and use of child sensors) and training configuration data from config/yaml files (including trainer type, learning rate, and summary frequency).
+
 # How to Run
 Usage: 
 ```
@@ -20,17 +21,17 @@ python {path/to/data_collection/main.py} {docker_used: true|false} {trainer: imi
 To run the data_collection script, run the command above, and once the terminal hangs, run the same game in unity. Afterwards, the collected data will be written to the `human_readable.csv` file.
 
 # Sample Run
-1. Current location is data_collection
+1. Current working directory is ml-agents
 2. Target scene is opened in Unity Hierarchy (in this case, Crawler)
 
 ```
-python main.py false ppo Crawler
+python data_collection/main.py false ppo Crawler
 ```
 
 3. Program waits for Unity connection through the side channel
 4. Hit the play button to run Unity scene; collector collects environment data
 5. Script writes data to csv and terminates successfully
-6. New data can be found at `human_readable.csv` in the data_collection directory
+6. New data can be found at `human_readable.csv` in the ml-agents directory
 
 # Classes
 ## main.py
@@ -68,3 +69,24 @@ Defines a common ID recognizable by unity's side channel and returns message rec
 
 ## yaml_config_collector.py
 Parses yaml configuration file for info and returns flatten dictionary.
+
+---
+---
+
+# Feature-Encoding Script
+Script to normalize numerical features, one-hot encode categorical features, and output a CSV to feed into the prediction model.
+
+# How to Run
+Usage: 
+```
+python {path/to/data_collection/feature_encoder.py} {path/to/input.csv} {path/to/output.csv} {class_label: name of class label in the input csv file}
+```
+
+# Sample Run
+1. Current working directory is ml-agents
+
+```
+python data_collection/feature_encoder.py human_readable.csv feature_encoded.csv time_to_threshold_class_label
+```
+
+3. Script saves encoded features to `feature_encoded.csv` in working directory (here it's `ml-agents`)

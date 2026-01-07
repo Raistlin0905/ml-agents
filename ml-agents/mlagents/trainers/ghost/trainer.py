@@ -6,6 +6,7 @@ from typing import Deque, Dict, DefaultDict, List
 
 import numpy as np
 
+
 from mlagents_envs.logging_util import get_logger
 from mlagents_envs.base_env import BehaviorSpec
 from mlagents.trainers.policy import Policy
@@ -140,6 +141,9 @@ class GhostTrainer(Trainer):
         )  # for learning policy
         self.current_opponent: int = 0
 
+        # For logging time_to_threshold during training
+        self.time_to_threshold_class_label = None
+
     @property
     def get_step(self) -> int:
         """
@@ -215,6 +219,9 @@ class GhostTrainer(Trainer):
             )
             self.change_current_elo(change)
             self._stats_reporter.add_stat("Self-play/ELO", self.current_elo)
+
+    def _policy_mean_reward(self) -> float:
+        return self.trainer._policy_mean_reward() if self.trainer else 0.0
 
     def advance(self) -> None:
         """
@@ -318,6 +325,18 @@ class GhostTrainer(Trainer):
             self._swap_snapshots()
             self.last_swap = self.ghost_step
 
+        # --- START: Add runtime logging ---
+        # Increment step counter per trajectory processed
+        self._step += 1
+        # Log runtime and hardware stats at given interval
+        self.log_runtime_stats(step_interval=1000)
+
+        # Force flush TensorBoard writers so stats appear immediately
+        for writer in self._stats_reporter.writers:
+            if hasattr(writer, "writer") and writer.writer is not None:
+                writer.writer.flush()
+        # --- END: Runtime logging --
+
     def end_episode(self):
         """
         Forwarding call to wrapped trainers end_episode
@@ -355,9 +374,9 @@ class GhostTrainer(Trainer):
                 parsed_behavior_id, behavior_spec
             )
             self.trainer.add_policy(parsed_behavior_id, internal_trainer_policy)
-            self.current_policy_snapshot[
-                parsed_behavior_id.brain_name
-            ] = internal_trainer_policy.get_weights()
+            self.current_policy_snapshot[parsed_behavior_id.brain_name] = (
+                internal_trainer_policy.get_weights()
+            )
 
             policy.load_weights(internal_trainer_policy.get_weights())
             self._save_snapshot()  # Need to save after trainer initializes policy
@@ -450,9 +469,9 @@ class GhostTrainer(Trainer):
                 parsed_behavior_id.brain_name
             )
 
-            self._internal_policy_queues[
-                parsed_behavior_id.brain_name
-            ] = internal_policy_queue
+            self._internal_policy_queues[parsed_behavior_id.brain_name] = (
+                internal_policy_queue
+            )
             self.trainer.publish_policy_queue(internal_policy_queue)
 
     def subscribe_trajectory_queue(
@@ -470,11 +489,11 @@ class GhostTrainer(Trainer):
         ]
         if parsed_behavior_id.team_id == self.wrapped_trainer_team:
             # With a future multiagent trainer, this will be indexed by 'role'
-            internal_trajectory_queue: AgentManagerQueue[
-                Trajectory
-            ] = AgentManagerQueue(parsed_behavior_id.brain_name)
+            internal_trajectory_queue: AgentManagerQueue[Trajectory] = (
+                AgentManagerQueue(parsed_behavior_id.brain_name)
+            )
 
-            self._internal_trajectory_queues[
-                parsed_behavior_id.brain_name
-            ] = internal_trajectory_queue
+            self._internal_trajectory_queues[parsed_behavior_id.brain_name] = (
+                internal_trajectory_queue
+            )
             self.trainer.subscribe_trajectory_queue(internal_trajectory_queue)

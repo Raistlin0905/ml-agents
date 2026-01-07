@@ -16,11 +16,10 @@ class EnvSideChannel(SideChannel):
     def on_message_received(self, msg: IncomingMessage):
         global received_json_string
         received_json_string = msg.read_string()
-        print(received_json_string)
 
     def get_attributes(self):
         if not received_json_string:
-            print("No data received on side channel. Returning empty dict.")
+            print("No agent data received on side channel. Returning empty dict.")
             return {}
         try:
             return json.loads(received_json_string)

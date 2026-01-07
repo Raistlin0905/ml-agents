@@ -5,6 +5,7 @@ class Attributes:
         "host_os_name",
         "docker_used",
         "trainer_type",
+        "time_to_threshold_class_label",
     ]
 
     CPU = [

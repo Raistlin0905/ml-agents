@@ -53,6 +53,8 @@ class Trainer(abc.ABC):
         self.summary_freq = self.trainer_settings.summary_freq
         self.policies: Dict[str, Policy] = {}
 
+        self._start_time = time.time()  # start tracking runtime for logging purposes
+
     @property
     def stats_reporter(self):
         """
@@ -110,7 +112,7 @@ class Trainer(abc.ABC):
         :return: the reward buffer.
         """
         return self._reward_buffer
-    
+
     # New method for logging hardware and runtime stats (requires pip psutil)
     def log_runtime_stats(self, step_interval: int = 1000):
         """
@@ -119,12 +121,15 @@ class Trainer(abc.ABC):
         """
         # Log hardware info once per run
         if not hasattr(self, "_hardware_info_logged"):
-            self._stats_reporter.add_property("SystemInfo", {
-                "CPU": platform.processor(),
-                "Machine": platform.machine(),
-                "Platform": platform.platform(),
-                "RAM_GB": round(psutil.virtual_memory().total / 1e9, 2)
-            })
+            self._stats_reporter.add_property(
+                "SystemInfo",
+                {
+                    "CPU": platform.processor(),
+                    "Machine": platform.machine(),
+                    "Platform": platform.platform(),
+                    "RAM_GB": round(psutil.virtual_memory().total / 1e9, 2),
+                },
+            )
             self._hardware_info_logged = True
 
         # Only log runtime stats at given step interval
@@ -136,7 +141,6 @@ class Trainer(abc.ABC):
             self._stats_reporter.add_stat("Runtime/Elapsed_Seconds", elapsed)
             self._stats_reporter.add_stat("System/CPU_Percent", cpu_percent)
             self._stats_reporter.add_stat("System/RAM_Used_GB", ram_used_gb)
-
 
     @abc.abstractmethod
     def save_model(self) -> None:

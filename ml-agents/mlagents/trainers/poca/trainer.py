@@ -7,6 +7,7 @@ from typing import cast, Dict, Union, Any, Type
 
 import numpy as np
 
+
 from mlagents_envs.side_channel.stats_side_channel import StatsAggregationMethod
 from mlagents_envs.logging_util import get_logger
 from mlagents_envs.base_env import BehaviorSpec
@@ -67,6 +68,9 @@ class POCATrainer(OnPolicyTrainer):
         self.optimizer: TorchPOCAOptimizer = None  # type: ignore
         self.collected_group_rewards: Dict[str, int] = defaultdict(lambda: 0)
 
+        # For logging time_to_threshold during training
+        self.time_to_threshold_class_label = None
+
     def _process_trajectory(self, trajectory: Trajectory) -> None:
         """
         Takes a trajectory and processes it, putting it into the update buffer.
@@ -74,6 +78,7 @@ class POCATrainer(OnPolicyTrainer):
         :param trajectory: The Trajectory tuple containing the steps to be processed.
         """
         super()._process_trajectory(trajectory)
+
         agent_id = trajectory.agent_id  # All the agents should have the same ID
 
         agent_buffer_trajectory = trajectory.to_agentbuffer()
@@ -247,3 +252,18 @@ class POCATrainer(OnPolicyTrainer):
     @staticmethod
     def get_trainer_name() -> str:
         return TRAINER_NAME
+
+    def advance(self):
+        super().advance()
+
+        # --- START: Add runtime logging ---
+        # Increment step counter per trajectory processed
+        self._step += 1
+        # Log runtime and hardware stats at given interval
+        self.log_runtime_stats(step_interval=1000)
+
+        # Force flush TensorBoard writers so stats appear immediately
+        for writer in self._stats_reporter.writers:
+            if hasattr(writer, "writer") and writer.writer is not None:
+                writer.writer.flush()
+        # --- END: Runtime logging --
