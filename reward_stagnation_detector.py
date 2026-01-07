@@ -35,8 +35,8 @@ class Reward_Stagnation_Detector:
         self,
         reward_data: list[float],
         windowSize: int = 1000,
-        iterationCount: int = 200,
-        pvalthresh: float = 0.05,
+        iterationCount: int = 100,
+        pvalthresh: float = 0.1,
         declarationThresh: float = 3 / 5,
     ):
         self.windowSize = windowSize

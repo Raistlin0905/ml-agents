@@ -72,7 +72,7 @@ class TrainerController:
         torch_utils.torch.manual_seed(training_seed)
         self.rank = get_rank()
         # NOTE: Change this if params for detector changed
-        self.stagnation_window = 200000
+        self.stagnation_window = 100000
         self.stagnation_rewards = deque(maxlen=self.stagnation_window)
 
     @timed
