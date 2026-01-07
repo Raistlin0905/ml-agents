@@ -187,11 +187,8 @@ class TrainerController:
                 # if runCheck()==false empty array and repeat (CHECK STAGNATION DOCUMENTATION)
                 n_steps = self.advance(env_manager)
                 if self.check_stagnation():
-                    # self.logger.warning("Reward stagnation detected")
-                    self._reset_env(env_manager)
-                    self.end_trainer_episodes()
-                    self.stagnation_rewards.clear()
-                    continue
+                    self.logger.warning("Reward stagnation detected")
+                    break
                 for _ in range(n_steps):
                     self.reset_env_if_ready(env_manager)
             # Stop advancing trainers
@@ -237,7 +234,7 @@ class TrainerController:
         if len(self.stagnation_rewards) < self.stagnation_window:
             return False
         detector = reward_stagnation_detector.Reward_Stagnation_Detector(
-            self.stagnation_rewards
+            list(self.stagnation_rewards)
         )
         return detector.runCheck()
 
