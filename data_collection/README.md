@@ -1,3 +1,20 @@
+# Automated Run Setup
+### Build the app:
+- In unity select File
+- Select Build Settings
+- Add open scenes (3DBall should be open)
+- Target platform:
+  - Mac:
+    - Select macOS, Apple Silicon
+    - Save to `data_collection/builds/macos/3DBall`
+    - Run `chmod -R 755 data_collection/builds/macos/3DBall.app`
+  - Windows: 
+    - Select Windows, x86_64
+    - Save to `data_collection/builds/windows/3DBall/3DBall.exe`
+### Now Run the script:
+- Activate venv if you haven't already
+- Run `python3 headless_train.py 3DBall --no-graphics`
+
 # Data Collection Module
 # Prerequisites
 Packages list:
