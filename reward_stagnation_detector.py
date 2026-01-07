@@ -34,9 +34,9 @@ class Reward_Stagnation_Detector:
     def __init__(
         self,
         reward_data: list[float],
-        windowSize: int = 100,
-        iterationCount: int = 5,
-        pvalthresh: float = 0.10,
+        windowSize: int = 1000,
+        iterationCount: int = 200,
+        pvalthresh: float = 0.05,
         declarationThresh: float = 3 / 5,
     ):
         self.windowSize = windowSize

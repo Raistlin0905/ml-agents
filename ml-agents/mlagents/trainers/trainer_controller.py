@@ -72,7 +72,7 @@ class TrainerController:
         torch_utils.torch.manual_seed(training_seed)
         self.rank = get_rank()
         # NOTE: Change this if params for detector changed
-        self.stagnation_window = 500
+        self.stagnation_window = 200000
         self.stagnation_rewards = deque(maxlen=self.stagnation_window)
 
     @timed
@@ -224,7 +224,7 @@ class TrainerController:
     def end_trainer_episodes(self) -> None:
         # Reward buffers reset takes place only for curriculum learning
         # else no reset.
-        print("Reward buffer sizes:")
+        # print("Reward buffer sizes:")
         for trainer in self.trainers.values():
             """
             print(
