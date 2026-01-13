@@ -2,7 +2,7 @@ behaviors:
   3DBall:
     trainer_type: ppo
     hyperparameters:
-      batch_size: 64
+      batch_size: 16
       buffer_size: 12000
       learning_rate: 0.0003
       beta: 0.001

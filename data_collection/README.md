@@ -10,7 +10,9 @@
     - Run `chmod -R 755 data_collection/builds/macos/3DBall.app`
   - Windows: 
     - Select Windows, x86_64
-    - Save to `data_collection/builds/windows/3DBall/3DBall.exe`
+    - Save to `data_collection/builds/windows/3DBall`
+    - Rename `UnityEnvironment.exe` to `3DBall.exe`
+    - Rename `UnityEnvironment_Data` to `3DBall_Data`
 ### Now Run the script:
 - Activate venv if you haven't already
 - Run `python3 headless_train.py 3DBall --no-graphics`
