@@ -7,6 +7,7 @@ import random
 import shutil
 import subprocess
 import sys
+import time
 from datetime import datetime
 from typing import Dict, List, Optional
 
@@ -30,6 +31,9 @@ PARAM_GRID = {
 TARGET_SAMPLES = 100
 
 RANDOM_SEED = 42
+
+# between runs in seconds (0 = no sleep, 300 = 5 min sleep)
+SLEEP_BETWEEN_RUNS = 0
 
 ENV_NAME = "3DBall"
 TRAINER_TYPE = "ppo"
@@ -273,6 +277,11 @@ def main():
         if param_hash in failed_hashes:
             print(f"Skipping run {i + 1} ({param_hash}) - previously failed")
             continue
+
+        # Sleep before run (skip sleep for first run)
+        if SLEEP_BETWEEN_RUNS > 0 and len(progress["completed"]) > 0:
+            print(f"Sleeping for {SLEEP_BETWEEN_RUNS} seconds...")
+            time.sleep(SLEEP_BETWEEN_RUNS)
 
         success = run_single_training(params, i)
 
