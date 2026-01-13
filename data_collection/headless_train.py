@@ -174,6 +174,13 @@ def parse_args():
         help="Skip training, only collect data from existing results",
     )
 
+    parser.add_argument(
+        "--config-path",
+        type=str,
+        default=None,
+        help="Custom config file path (overrides auto-generated path from trainer/env_name)",
+    )
+
     return parser.parse_args()
 
 
@@ -191,7 +198,14 @@ def main():
 
     run_id = args.run_id or generate_run_id(env_name, trainer)
 
-    config_path = os.path.join(config_dir, trainer, f"{env_name}.yaml")
+    # Use custom config path if provided, otherwise auto-generate from trainer/env_name
+    if args.config_path:
+        config_path = args.config_path
+        if not os.path.isabs(config_path):
+            config_path = os.path.abspath(config_path)
+    else:
+        config_path = os.path.join(config_dir, trainer, f"{env_name}.yaml")
+
     if not os.path.exists(config_path):
         print(f"Error: Config not found: {config_path}", file=sys.stderr)
         sys.exit(1)
@@ -218,7 +232,11 @@ def main():
 
     print("Collecting config data...")
     config_collector = ConfigCollector(config_dir)
-    config_data = config_collector.collect_data(trainer, env_name)
+    # Use collect_from_path if custom config provided, otherwise use trainer/env_name
+    if args.config_path:
+        config_data = config_collector.collect_from_path(config_path)
+    else:
+        config_data = config_collector.collect_data(trainer, env_name)
     row.update(config_data)
 
     # run training (if not selected --no-train)

@@ -11,7 +11,10 @@ class ConfigCollector:
     def collect_data(self, trainer_type: str, env_name: str) -> dict:
 
         yaml_path = os.path.join(self.config_base_dir, trainer_type, f"{env_name}.yaml")
+        return self.collect_from_path(yaml_path)
 
+    def collect_from_path(self, yaml_path: str) -> dict:
+        """Collect config data from a specific YAML file path."""
         if not os.path.exists(yaml_path):
             return self._get_empty_config()
 
