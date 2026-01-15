@@ -3,9 +3,13 @@ from typing import Any, Callable, TypeVar, Generic
 from numpy import array_split
 import time
 import random
+import warnings
+import numpy
 
 Features = TypeVar("Features")
 Label = TypeVar("Label")
+
+warnings.filterwarnings("ignore", category=numpy.VisibleDeprecationWarning)
 
 
 # this is the basic class of a ml model.
@@ -78,7 +82,9 @@ class KCrossValidation(Generic[Features, Label]):
         model: Model[Features, Label],
         loss_function: Callable[[Label, Label], float],
     ):
-        self.data = random.shuffle(validation_data)
+        # self.data = random.shuffle(validation_data)
+        self.data = validation_data.copy()
+        random.shuffle(self.data)
         self.folds = folds
         self.model = model
         self.loss = loss_function
