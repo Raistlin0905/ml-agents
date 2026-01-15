@@ -4,7 +4,7 @@ import pandas
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 
 
-EXCLUDED_COLUMNS = ["run_id"]
+EXCLUDED_COLUMNS = ["run_id", "RunID", "id"]
 
 
 def encode_and_save(input_path, output_path, class_label):

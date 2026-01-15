@@ -28,12 +28,12 @@ PARAM_GRID = {
     "learning_rate_schedule": ["linear", "constant"],
 }
 
-TARGET_SAMPLES = 100
+TARGET_SAMPLES = 1
 
 RANDOM_SEED = 42
 
 # between runs in seconds (0 = no sleep, 300 = 5 min sleep)
-SLEEP_BETWEEN_RUNS = 0
+SLEEP_BETWEEN_RUNS = 300
 
 ENV_NAME = "3DBall"
 TRAINER_TYPE = "ppo"
@@ -45,9 +45,6 @@ CONFIG_DIR = os.path.join(PROJECT_ROOT, "config")
 BASE_CONFIG_PATH = os.path.join(CONFIG_DIR, TRAINER_TYPE, f"{ENV_NAME}.yaml")
 TEMP_CONFIG_DIR = os.path.join(SCRIPT_DIR, "temp_configs")
 PROGRESS_FILE = os.path.join(SCRIPT_DIR, "batch_progress.json")
-
-
-
 
 
 def get_param_hash(params: Dict) -> str:
@@ -106,8 +103,6 @@ def create_temp_config(params: Dict, index: int) -> str:
     return temp_config_path
 
 
-
-
 def cleanup_temp_config(temp_config_path: str) -> None:
     if os.path.exists(temp_config_path):
         os.remove(temp_config_path)
@@ -138,7 +133,7 @@ def init_progress(combinations: List[Dict]) -> Dict:
         "param_grid": PARAM_GRID,
         "combinations": combinations,
         "target_samples": TARGET_SAMPLES,
-        "random_seed": RANDOM_SEED
+        "random_seed": RANDOM_SEED,
     }
 
 
@@ -155,11 +150,14 @@ def run_single_training(params: Dict, index: int) -> bool:
             sys.executable,
             os.path.join(SCRIPT_DIR, "headless_train.py"),
             ENV_NAME,
-            "--trainer", TRAINER_TYPE,
-            "--config-path", temp_config_path,
+            "--trainer",
+            TRAINER_TYPE,
+            "--config-path",
+            temp_config_path,
             "--no-graphics",
             "--force",
-            "--run-id", run_id,
+            "--run-id",
+            run_id,
         ]
 
         print(f"Run {index + 1}: {param_hash}")
@@ -264,9 +262,9 @@ def main():
         save_progress(progress)
         print(f"\nStarting new batch run with {len(combinations)} combinations.")
 
-    print('\n')
+    print("\n")
     print("Starting batch training...")
-    print('\n')
+    print("\n")
 
     for i, params in enumerate(combinations):
         param_hash = get_param_hash(params)
