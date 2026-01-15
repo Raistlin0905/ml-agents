@@ -12,7 +12,12 @@ We therefore use SHAP to:
 In this project, SHAP is used only for feature weighting and selection, not as part of the final runtime prediction model.
 
 ## Data preparation
-Before running SHAP, all features must be numeric. Thus, the dataset must be encoded using .... (see above) before giving it to SHAP.
+Before running SHAP, all features must be numeric. Thus, the dataset must be encoded using this command before giving it to SHAP:
+```
+ python data_collection/feature_encoder.py inputpath.csv outputpath.csv total_duration 
+ ```
+Mind that inputpath.csv and outputpath.csv are just placeholders.
+
 
 ## Install the required packages
 Open terminal / PowerShell in the folder where the script is.
