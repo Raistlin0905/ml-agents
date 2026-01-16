@@ -75,21 +75,22 @@ class FeatureImportance:
 # it works internally kinda, not a model we use for actually predicting anything
 
 
-selector = FeatureImportance(
-    csv_path="encoded_pool.csv", model=XGBRegressor(), target="total_duration"
-)
+if __name__ == "__main__":
+    selector = FeatureImportance(
+        csv_path="encoded_pool.csv", model=XGBRegressor(), target="total_duration"
+    )
 
-selector.load_data()
-selector.train_model()
+    selector.load_data()
+    selector.train_model()
 
-importances = selector.compute_shap()
-print(importances)
+    importances = selector.compute_shap()
+    print(importances)
 
-selector.plot_importance_bar(top_n=15, output_path="importance_bar.png")
-selector.plot_summary(top_n=15, output_path="shap_summary.png")
+    selector.plot_importance_bar(top_n=15, output_path="importance_bar.png")
+    selector.plot_summary(top_n=15, output_path="shap_summary.png")
 
-# for the real dataset, we have to set top_n to however much features we want to keep, it keeps the n most important ones
-clean_df = selector.select_features(top_n=10)
-selector.save_cleaned_dataset(clean_df, "cleaned_pool.xlsx")
+    clean_df = selector.select_features(top_n=10)
+    selector.save_cleaned_dataset(clean_df, "cleaned_pool.xlsx")
 
-clean_df.to_csv("cleaned_pool.csv", index=False)
+    clean_df.to_csv("cleaned_pool.csv", index=False)
+

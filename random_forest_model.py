@@ -10,14 +10,11 @@ TARGET_COLUMN = "total_duration"
 class RandomForestModel(Model[list[float], float]):
     """Random Forest Regressor for predicting ML-Agents training times. Expects cleaned data"""
 
-    def __init__(self, **kwargs):
+    def __init__(self, n_estimator = 100, max_depth = 10, min_sample_split = 2, **kwargs):
         self.model = RandomForestRegressor(
-            n_estimators=100,
-            max_depth=10,
-            min_samples_split=2,
-            min_samples_leaf=1,
-            max_features='sqrt',
-            random_state=42,
+            n_estimators=n_estimator,
+            max_depth=max_depth,
+            min_samples_split=min_sample_split,
             **kwargs
         )
         self.feature_columns = None
