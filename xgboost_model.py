@@ -6,14 +6,11 @@ from Model import Model
 
 
 class XGBoostModel(Model[list[float], int]):
-    def __init__(self, estimators=1000, max_depth=10, learning_rate=0.01, subsample=0.8, colsample_bytree=0.9, **kwargs):
+    def __init__(self, estimators=1000, max_depth=10, **kwargs):
         # Allow hyperparameters to be passed optionally
         self.model = XGBRegressor(
             n_estimators=estimators,
             max_depth=max_depth,
-            learning_rate=learning_rate,
-            subsample=subsample,
-            colsample_bytree=colsample_bytree,
             **kwargs
         )
 

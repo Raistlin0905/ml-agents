@@ -1,391 +1,391 @@
 model_type,model_name,num_features,features,RMSE,avg_loss,inference_time,score,estimators,max_depth,alpha,min_sample_split
-xgboost,xgboost_regressor,1,cpu_cores,326.27255327088164,106453.77901790029,2.663145181138506e-06,106722.82110260113,100.0,3.0,,
-xgboost,xgboost_regressor,1,cpu_cores,325.97030022978663,106256.63663189723,2.2075436858513096e-06,106603.37216317089,100.0,5.0,,
-xgboost,xgboost_regressor,1,cpu_cores,327.0064066637334,106933.18999912699,1.9089573951546157e-06,107350.10296857503,100.0,10.0,,
-xgboost,xgboost_regressor,1,cpu_cores,233.90955739419218,54713.681040346884,2.781550089518229e-06,55018.47913073511,500.0,3.0,,
-xgboost,xgboost_regressor,1,cpu_cores,233.9378199097251,54726.903584114974,3.0791711228096535e-06,54996.93940404183,500.0,5.0,,
-xgboost,xgboost_regressor,1,cpu_cores,234.91769090068698,55186.32149811071,2.4491797896371035e-06,55539.435132471765,500.0,10.0,,
-xgboost,xgboost_regressor,1,cpu_cores,235.03305064133437,55240.53489377205,3.608775685834177e-06,55462.39664703805,1000.0,3.0,,
-xgboost,xgboost_regressor,1,cpu_cores,234.19876854827245,54849.063189527296,3.0778841129359606e-06,55119.11264860413,1000.0,5.0,,
-xgboost,xgboost_regressor,1,cpu_cores,234.1307951808616,54817.22925202257,3.2303947829685393e-06,55071.971710419944,1000.0,10.0,,
-linear_regression,ridge_regression,1,cpu_cores,235.7660536613542,55585.63205904854,3.4170112146539726e-07,58456.58057388215,,,0.1,
-linear_regression,ridge_regression,1,cpu_cores,235.4385217255264,55431.29751230118,2.8861196417557566e-07,58840.72604087583,,,1.0,
-linear_regression,ridge_regression,1,cpu_cores,235.70641892416236,55557.51592205272,2.9215124132823044e-07,58924.843058113045,,,10.0,
-ensemble,random_forest,1,cpu_cores,234.06528956690673,54786.5597800399,6.4784859517003525e-06,54886.13027335149,50.0,5.0,,2.0
-ensemble,random_forest,1,cpu_cores,234.60561147214554,55039.7929342193,6.1264887512454135e-06,55147.97877355229,50.0,5.0,,5.0
-ensemble,random_forest,1,cpu_cores,235.37332102391844,55400.60024982857,6.039293832302737e-06,55510.78192256755,50.0,5.0,,10.0
-ensemble,random_forest,1,cpu_cores,233.9345427897027,54725.37031022725,5.960142725070639e-06,54838.42615693279,50.0,10.0,,2.0
-ensemble,random_forest,1,cpu_cores,233.9852084567217,54749.07777653551,5.951133655954791e-06,54862.36390983164,50.0,10.0,,5.0
-ensemble,random_forest,1,cpu_cores,234.33446835449524,54912.64305898394,6.039293832302737e-06,55023.312688913764,50.0,10.0,,10.0
-ensemble,random_forest,1,cpu_cores,234.14903324190118,54825.769768116945,5.945020359054751e-06,54939.15200094665,50.0,,,2.0
-ensemble,random_forest,1,cpu_cores,233.95711136627665,54735.92995885238,5.9807348830497215e-06,54848.39756149521,50.0,,,5.0
-ensemble,random_forest,1,cpu_cores,233.67486326507392,54603.941721951,5.9244282010756685e-06,54718.1304410665,50.0,,,10.0
-ensemble,random_forest,1,cpu_cores,235.08204572284495,55263.568221237765,1.0725296782417658e-05,55301.542166186264,100.0,5.0,,2.0
-ensemble,random_forest,1,cpu_cores,235.1090677974532,55276.27376058745,1.0751680484828357e-05,55314.006203130426,100.0,5.0,,5.0
-ensemble,random_forest,1,cpu_cores,233.79104543008995,54658.25292329438,1.1085981299520022e-05,54693.79868325746,100.0,5.0,,10.0
-ensemble,random_forest,1,cpu_cores,234.21156084572036,54855.055233788575,1.1072789448314673e-05,54890.511658301395,100.0,10.0,,2.0
-ensemble,random_forest,1,cpu_cores,234.09120796743952,54798.69364765502,1.108887707173583e-05,54834.07541083188,100.0,10.0,,5.0
-ensemble,random_forest,1,cpu_cores,235.11260104107154,55277.93516829808,1.1103034180346448e-05,55312.7227038612,100.0,10.0,,10.0
-ensemble,random_forest,1,cpu_cores,234.46324854428906,54973.014917941066,1.1126843863009763e-05,55007.914647919315,100.0,,,2.0
-ensemble,random_forest,1,cpu_cores,233.91559235820313,54716.504348289054,1.1148079525925691e-05,54751.489392774754,100.0,,,5.0
-ensemble,random_forest,1,cpu_cores,234.39334255662797,54940.23903486875,1.1136496437062458e-05,54975.0936434012,100.0,,,10.0
-ensemble,random_forest,1,cpu_cores,234.73252484485647,55099.35822004116,2.15143005535831e-05,55090.73957345334,200.0,5.0,,2.0
-ensemble,random_forest,1,cpu_cores,233.63905358312445,54587.207359218104,2.149982169250406e-05,54579.13216550729,200.0,5.0,,5.0
-ensemble,random_forest,1,cpu_cores,234.12375702394652,54813.93360300794,2.1594416918220467e-05,54805.427935276944,200.0,5.0,,10.0
-ensemble,random_forest,1,cpu_cores,233.9171961450836,54717.254652377516,2.155387610719915e-05,54708.932765083955,200.0,10.0,,2.0
-ensemble,random_forest,1,cpu_cores,233.84849934088606,54685.12064398439,2.150014344497248e-05,54676.946840930425,200.0,10.0,,5.0
-ensemble,random_forest,1,cpu_cores,234.06331219115185,54785.634113892615,2.155162383992019e-05,54777.24869571733,200.0,10.0,,10.0
-ensemble,random_forest,1,cpu_cores,234.43826817539235,54961.30158507718,2.153038817700426e-05,54952.78626448319,200.0,,,2.0
-ensemble,random_forest,1,cpu_cores,233.84683226476918,54684.340960267094,2.158637310650989e-05,54675.98214120279,200.0,,,5.0
-ensemble,random_forest,1,cpu_cores,234.4692948825142,54975.85024270339,2.159152114600466e-05,54967.18886902015,200.0,,,10.0
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,295.5300916470363,87338.03506890565,2.1612113303983744e-06,87713.40051217529,100.0,3.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,294.27492162783756,86597.72949906994,2.326592099167879e-06,86940.94497161762,100.0,5.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,293.3841550145942,86074.26241362747,2.055033015818731e-06,86474.79833815606,100.0,10.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,145.6027224897314,21200.152796421735,2.5801330442853303e-06,21566.52955645734,500.0,3.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,148.6779959912561,22105.146491975967,3.3951320468011978e-06,22377.580699540093,500.0,5.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,149.49098802401917,22347.555500397448,6.901590447676809e-06,22470.10208307887,500.0,10.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,143.0288522163083,20457.252566314564,4.503247548050565e-06,20658.857278881147,1000.0,3.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,152.34370746017984,23208.605202712853,6.135819572829686e-06,23348.374010409985,1000.0,5.0,,
-xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,170.39736794322167,29035.263001977662,1.1278067523168649e-05,29094.895411690508,1000.0,10.0,,
-linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,234.04142968230693,54775.39080773822,3.297962801337403e-07,57752.79030863781,,,0.1,
-linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,234.21931061466495,54858.6854648089,3.0791711228096535e-07,58051.454014453804,,,1.0,
-linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,232.97241048584448,54276.144047584814,3.040560826598874e-07,57510.73484956897,,,10.0,
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,138.56579925214123,19200.480722384702,7.126495423104599e-06,19321.601667640916,50.0,5.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,133.2415595065571,17753.313179739398,6.9826720697194455e-06,17878.77151820467,50.0,5.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,140.83047400719758,19833.222409091955,6.768706678218043e-06,19961.127897715807,50.0,5.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,147.82750897503567,21852.97240976425,8.340467486465186e-06,21951.016793422692,50.0,10.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,156.5840407676259,24518.561823117532,8.127467352369053e-06,24617.082820439307,50.0,10.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,138.97090812120805,19312.91330403325,7.861056308514676e-06,19420.809758116247,50.0,10.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,165.7426296494862,27470.619283126736,9.252957486913271e-06,27551.22221777643,50.0,,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,145.67742087734945,21221.910953476407,8.601730490824793e-06,21316.944719338968,50.0,,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,144.74300940665373,20950.538772094653,8.106875194389972e-06,21052.9403234956,50.0,,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,141.52582198465763,20029.558288432996,1.2787408352541698e-05,20087.73065913835,100.0,5.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,141.3138214225544,19969.596125045595,1.2794808659315432e-05,20027.783227205513,100.0,5.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,132.76733598303286,17627.165504031535,1.2696674156446367e-05,17688.299121680488,100.0,5.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,155.51194723613122,24183.96573317326,1.6070248787863212e-05,24222.008557653517,100.0,10.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,146.63810546602946,21502.733974666382,1.546535414722767e-05,21545.891900284776,100.0,10.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,147.68654353838969,21811.315142316675,1.4939610613824224e-05,21856.43997603721,100.0,10.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,166.42049884235874,27695.78243493953,1.859825793226399e-05,27721.85512929645,100.0,,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,155.06191590054914,24044.197762748972,1.6667743121725022e-05,24080.14968999829,100.0,,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,146.28606991053576,21399.61424987016,1.549785114653841e-05,21442.739710131886,100.0,,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,139.74956781698893,19529.941705035184,2.4645273823808885e-05,19550.98749428567,200.0,5.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,142.63258405428212,20344.054034001856,2.453169520245551e-05,20364.473571384882,200.0,5.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,139.82356031254096,19550.62801847478,2.4469596976049837e-05,19571.944430521526,200.0,5.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,149.43210222091884,22329.95317416314,3.135349103796337e-05,22339.517595965888,200.0,10.0,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,138.9639999308875,19310.993276791698,3.0203547715818994e-05,19324.7909768846,200.0,10.0,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,145.69359148717456,21226.622600431707,2.9149486629264718e-05,21239.701899328913,200.0,10.0,,10.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,155.66373520698906,24231.198458591603,3.6360281199096185e-05,24234.46979771033,200.0,,,2.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,154.01301970865688,23720.010239779134,3.219487374288994e-05,23727.351075063583,200.0,,,5.0
-ensemble,random_forest,2,cpu_cores+ disk_free_gb,146.53042985116863,21471.16687236825,3.0223818121329653e-05,21482.78219364194,200.0,,,10.0
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,286.722035541959,82209.52566532439,2.1573503007772963e-06,82590.84772265682,100.0,3.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,284.3559699671979,80858.31765598594,2.3729244546208143e-06,81198.8802554825,100.0,5.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,284.4521218722673,80913.0096376352,2.53026141167974e-06,81227.31270938109,100.0,10.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,137.03483432472322,18778.545818404342,3.046352371030491e-06,19088.028707313442,500.0,3.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,148.30548210121026,21994.516021272393,5.09205456526495e-06,22168.905889429054,500.0,5.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,156.5156133157447,24497.137211603724,8.763893734910066e-06,24586.7446071772,500.0,10.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,151.03957372601943,22812.952831337654,6.353324241483742e-06,22947.53779524895,1000.0,3.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,156.0374854598836,24347.696868643387,7.150305105767913e-06,24463.203343758723,1000.0,5.0,,
-xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,170.6301677219372,29114.654136816418,1.6736276397499157e-05,29145.2899299266,1000.0,10.0,,
-linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,205.88097487365806,42386.97581492782,3.5296245786020793e-07,45177.75134048026,,,0.1,
-linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,203.57417427061586,41442.44442996307,3.3011803260216345e-07,44430.22154108866,,,1.0,
-linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,203.8315184651518,41547.28791980952,4.330788224975751e-07,43814.789119259694,,,10.0,
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,139.44617601277668,19445.23600458629,7.390332447211591e-06,19561.102678721458,50.0,5.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.8370600634285,20402.42572756348,7.048631325746194e-06,20523.89481614641,50.0,5.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,137.9510122581414,19030.481783045874,6.96883671357725e-06,19154.947273560716,50.0,5.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.73284682793488,21824.994031886064,8.897421009305678e-06,21915.56115675629,50.0,10.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,148.48461595912667,22047.68117652934,8.276438745248977e-06,22146.458409398605,50.0,10.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,144.86268420241612,20985.19727432894,8.080491491979272e-06,21087.966925505676,50.0,10.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.4233457645526,21733.64287641483,9.889383869454284e-06,21813.02776763524,50.0,,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,154.81049259713802,23966.288618168528,8.973032839385122e-06,24053.76736913728,50.0,,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.99095063250516,21606.33956784757,8.483969087381917e-06,21702.602587503025,50.0,,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,132.6673613434158,17600.62876582446,1.306025444576454e-05,17659.596323700993,100.0,5.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,134.21931008680664,18014.823200178358,1.3057680426017154e-05,18073.391657267955,100.0,5.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,140.04023524489682,19611.267487446043,1.3177050591802147e-05,19667.54573658701,100.0,5.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.5593858272304,21773.77234570944,1.6722119288888538e-05,21811.79960591972,100.0,10.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,150.7986188648443,22740.223451544574,1.6000106749746964e-05,22779.982811104615,100.0,10.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.24091501865638,21386.405225493876,1.552841763103861e-05,21429.416882180445,100.0,10.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,151.6150414766394,22987.120801963083,1.903358902204053e-05,23016.67237992371,100.0,,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,148.75119199696312,22126.91712051738,1.7543553340772868e-05,22161.79119861007,100.0,,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,145.62541993332493,21206.762930757235,1.5967931502904648e-05,21248.1816869689,100.0,,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,140.16891605609237,19647.325028339867,2.5077065636432766e-05,19667.554777228306,200.0,5.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.052033203339,20178.780137202524,2.5039420597627255e-05,20198.53838340749,200.0,5.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,138.48002974897318,19176.718639276496,2.4544565301192434e-05,19198.284137406135,200.0,5.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.79433491831617,20390.222084764246,3.197929958904642e-05,20401.102091010016,200.0,10.0,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.99213540363857,20446.75078729251,3.042008712706778e-05,20459.17705214856,200.0,10.0,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.82930971982432,21558.846192800094,2.9580956689420177e-05,21571.09287935254,200.0,10.0,,10.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,149.60019449839544,22380.218193957742,3.9692349762086446e-05,22383.03174751058,200.0,,,2.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,150.51610033417865,22655.09645980853,3.401213168454395e-05,22661.842637261063,200.0,,,5.0
-ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.50055530020384,21756.413813868494,3.0714490635674976e-05,21767.215322367636,200.0,,,10.0
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,273.94012605925417,75043.19266536005,2.1998216266091535e-06,75422.73178423484,100.0,3.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,268.7880190851978,72246.99920374464,2.4163610378579413e-06,72588.59764581917,100.0,5.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,269.0645404456763,72395.72692524298,2.991976203866977e-06,72657.55845544217,100.0,10.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,104.40764115122894,10900.955530763795,3.822741077335579e-06,11151.646971832644,500.0,3.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.64730077593731,9731.289950378243,5.873913063533232e-06,9891.802923355122,500.0,5.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.07699513405964,9816.250964794477,9.36975363295088e-06,9913.161105917867,500.0,10.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,102.42200136219758,10490.266363038003,5.151900524391658e-06,10673.879223329974,1000.0,3.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,101.89856464128658,10383.31747595446,8.222384330553887e-06,10494.553382270327,1000.0,5.0,,
-xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,108.60362930963342,11794.748299224268,1.5044501918530174e-05,11849.423016342726,1000.0,10.0,,
-linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,187.99617668499624,35342.56244817633,3.77093892991945e-07,37959.07932600119,,,0.1,
-linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,187.27198837690315,35070.79763063895,3.5328421032863107e-07,37866.30904065858,,,1.0,
-linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,186.8530639439724,34914.067505250234,3.4684916096016784e-07,37762.25108524035,,,10.0,
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.10086585342535,9428.578149484903,7.301528765926798e-06,9556.107191041936,50.0,5.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,102.65120922394934,10537.270755139021,7.075336780625316e-06,10668.069512760416,50.0,5.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.72708107032445,9356.128212385118,6.979454545035214e-06,9490.049756309927,50.0,5.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,104.62934743212915,10947.30034407319,8.80282578358927e-06,11049.952929105046,50.0,10.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.85628220746355,9381.13940305182,8.578564313098325e-06,9488.327885732633,50.0,10.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.2528092744891,9264.603293231174,8.389052109197083e-06,9374.541668651555,50.0,10.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,104.08192978488854,10833.04810774647,9.932820452691411e-06,10922.891398727188,50.0,,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.54084039786572,9320.133864726182,8.781911873141764e-06,9424.684151613268,50.0,,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,93.44516620079595,8731.99908629438,8.143876728258634e-06,8846.05872973505,50.0,,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.32291886754426,9667.39637463369,1.2557033585150715e-05,9737.36562119856,100.0,5.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.05497029166077,9614.777198898475,1.2761024650130998e-05,9683.526034921633,100.0,5.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.80366936898498,9370.950403299763,1.248624804209762e-05,9441.66756236125,100.0,5.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,100.81716377960022,10164.100512562736,1.703389743079058e-05,10212.642882725077,100.0,10.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,94.81193815564953,8989.303616830712,1.6163235251237508e-05,9042.183115124899,100.0,10.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.71954047214554,9162.230428198709,1.5403577673290423e-05,9217.988180725768,100.0,10.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.40892340772322,9684.316206267134,1.8292271334793565e-05,9729.299786775144,100.0,,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.84201649580002,9185.692125981204,1.6722119288888538e-05,9236.307466411216,100.0,,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.29240226765626,9272.226734476133,1.579000238786664e-05,9326.285720456888,100.0,,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.87031216109823,9974.079251155204,2.4359235879380693e-05,10005.157362742535,200.0,5.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.05999568752125,9812.882745611729,2.404842299488392e-05,9844.652631108873,200.0,5.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.33731156289771,9474.55222229262,2.4506920262386923e-05,9505.882470889579,200.0,5.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,100.22372572624059,10044.795198448699,3.376052125423704e-05,10064.370798992053,200.0,10.0,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,92.90259493698717,8630.892146025913,3.1377944225563536e-05,8654.130773208859,200.0,10.0,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.24057109341527,9070.766382199889,3.059833799457421e-05,9094.377129440334,200.0,10.0,,10.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.4271538292852,9885.758918592343,3.8738997198148614e-05,9901.68694093621,200.0,,,2.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,93.7834952381449,8795.343979083145,3.338085334149771e-05,8816.50592798,200.0,,,5.0
-ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,91.85345408941943,8437.057028157082,3.095709199686604e-05,8460.922746858028,200.0,,,10.0
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,270.73010703364133,73294.7908544469,2.3407492077784984e-06,73648.70970812853,100.0,3.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,268.9980724188327,72359.96296504755,2.5730544899800205e-06,72676.24615126346,100.0,5.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,269.06899082613916,72398.12182419696,2.53637470857978e-06,72719.98721423373,100.0,10.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,104.67627056774943,10957.121619972686,3.3912710171801197e-06,11241.03919133184,500.0,3.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,101.90092346669856,10383.798203365955,5.821467411180257e-06,10545.19240018829,500.0,5.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,103.63549640990331,10740.316116127082,1.1239778979426293e-05,10818.545521019743,500.0,10.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,104.05614758671493,10827.681850588198,5.1200470300177655e-06,11012.164874701288,1000.0,3.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,101.94339657150807,10392.456104535764,8.067943145710769e-06,10506.010977005506,1000.0,5.0,,
-xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,106.14635816690593,11267.049352097076,1.5603707708649627e-05,11319.869634978566,1000.0,10.0,,
-linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,173.85090645397557,30224.137674868965,3.976860509710273e-07,32708.459867291185,,,0.1,
-linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,173.03444314313992,29940.918513856523,3.7934616027090714e-07,32547.092323078035,,,1.0,
-linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,172.66939564670193,29814.72019299729,3.754851306498292e-07,32448.12677871689,,,10.0,
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.35045774508414,9672.81253866758,8.029976354436836e-06,9787.673094081792,50.0,5.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.57208823563691,8943.879873249092,7.159314174883761e-06,9074.61417700804,50.0,5.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.54166463263685,9128.209680775251,7.218516629073623e-06,9257.614088166016,50.0,5.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.16605577695724,9833.906618358593,9.325351792308483e-06,9931.307272137708,50.0,10.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.4606068986144,8922.80625565456,8.715630864646593e-06,9028.619836876755,50.0,10.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.6304049839283,9727.95678729371,8.452437345476447e-06,9836.53790031989,50.0,10.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.99302145396835,9998.604339493775,1.0397109264626032e-05,10084.786315212461,50.0,,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.22991139860565,9846.575316175129,9.129082786570354e-06,9946.268770605544,50.0,,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.08357370744632,9232.05313639427,8.75005837876787e-06,9337.106035050485,50.0,,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,100.71222557226601,10142.95237971899,1.3801572133011503e-05,10205.264941128757,100.0,5.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.70543258856502,9546.351557318623,1.3684454234505473e-05,9609.88082740199,100.0,5.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.48504906432127,9309.364692944482,1.383793016194332e-05,9372.32047110868,100.0,5.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,93.5308849559526,8748.026440643642,1.784696591849591e-05,8795.31034728153,100.0,10.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.68993539244273,9543.323476979636,1.7132997191064916e-05,9592.147057369397,100.0,10.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.52559947456746,9905.344950772023,1.6058665698999977e-05,9957.71128011498,100.0,10.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,101.16268751289547,10233.889344831738,2.03334689944701e-05,10272.835455233724,100.0,,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.49698705053278,9899.650432133887,1.819317157451923e-05,9944.71645912111,100.0,,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.42206370845403,9491.058497214075,1.6966329412421717e-05,9540.507706566892,100.0,,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.38372450608323,9483.589798676714,2.5766581176263602e-05,9512.916169468434,200.0,5.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.47958862414265,9698.229375580366,2.585313259026943e-05,9727.211178363688,200.0,5.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.7568333164159,9556.39846005352,2.54303498467614e-05,9586.165154119752,200.0,5.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.39439867352347,9681.457690324276,3.475795390634884e-05,9700.546625813435,200.0,10.0,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.79343893900382,9176.382943760655,3.29374784400106e-05,9197.56711199938,200.0,10.0,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.45091869173322,9890.485228629732,3.1727367406271086e-05,9912.113273986855,200.0,10.0,,10.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.7346538543826,8974.654640909688,3.9770535611913275e-05,8990.824228975443,200.0,,,2.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.47097046436954,9500.590083266,3.430235241106165e-05,9520.242012753886,200.0,,,5.0
-ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.93583866880142,9203.685141086295,3.1975438559425346e-05,9225.755460151327,200.0,,,10.0
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,269.1781565146195,72456.879944609,2.76127968400757e-06,72746.5739926532,100.0,3.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,263.8465182793083,69614.98520811339,3.0910759641413105e-06,69868.88216877807,100.0,5.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,266.1877064871355,70855.89508488137,2.9015637602400683e-06,71129.68093563814,100.0,10.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,82.6389457135867,6829.195348653128,3.585287755639286e-06,7101.283793437294,500.0,3.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,72.80780074221782,5300.975848918493,5.761299699585125e-06,5469.246819009483,500.0,5.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.05506812296763,4768.602433467699,9.375545177382496e-06,4870.494295154482,500.0,10.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,73.5293673521626,5406.567863209275,3.87068219513063e-06,5659.513686368509,1000.0,3.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,73.91596946309207,5463.570541668759,8.462089919529142e-06,5576.281087628991,1000.0,5.0,,
-xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.83632009529705,5017.784244643386,1.6223081210364216e-05,5074.40703206531,1000.0,10.0,,
-linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,166.26612071698202,27644.422898274035,4.3565284224496034e-07,29912.18413564164,,,0.1,
-linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,165.42148734317513,27364.26847482825,3.9672079356575786e-07,29857.56865404199,,,1.0,
-linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,165.1505543204847,27274.70559236337,3.9414677381837254e-07,29784.556816566925,,,10.0,
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,73.47916413494816,5399.187561970652,7.213046837110429e-06,5532.426043424651,50.0,5.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,74.6722372790829,5575.9430202636595,6.966262693829864e-06,5713.916071008119,50.0,5.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,75.86639780046653,5755.710315218634,6.685372788896445e-06,5899.534894825448,50.0,5.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,63.98211567805893,4093.711126640515,8.766789507125875e-06,4203.684258248854,50.0,10.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,67.60018149415802,4569.7845380431045,8.454046107818563e-06,4683.501309699162,50.0,10.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,71.98506787000377,5181.84999624905,8.107196946858394e-06,5300.015340918832,50.0,10.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.10424836490033,4914.6056388076295,9.637773439147373e-06,5013.449438189855,50.0,,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.53466089800224,4835.069066200162,8.802504031120846e-06,4943.838034856018,50.0,,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,72.04992197311766,5191.191256332344,8.168008163390373e-06,5308.428933901348,50.0,,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.34262806615554,4948.085323253493,1.2732388680441337e-05,5021.677096011711,100.0,5.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.73448194480031,4862.897972109679,1.2337598401686119e-05,4939.088125747949,100.0,5.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,72.22601174873051,5216.596773127758,1.2207288651974739e-05,5293.298448995642,100.0,5.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,60.286702089508886,3634.486448829195,1.6894256859494928e-05,3690.043675180564,100.0,10.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,64.46307767739914,4155.488383642396,1.633472931690705e-05,4212.552152743783,100.0,10.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,66.0265062303233,4359.499524982923,1.5416769524495774e-05,4420.004457556447,100.0,10.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.32191430353396,4266.952488278233,1.882316290769178e-05,4315.8115701819415,100.0,,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.10977704148364,4239.28306639171,1.649142276902913e-05,4295.681365297809,100.0,,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.8919673811009,5025.671039163073,1.492899278236626e-05,5087.629123463465,100.0,,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,68.91891099949005,4749.816293355631,2.340105702841652e-05,4787.799589450561,200.0,5.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,74.6959541748789,5579.485570095609,2.3458328967795843e-05,5616.5348668813585,200.0,5.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.60772126369805,4985.450302052079,2.4063223608431386e-05,5022.022043598986,200.0,5.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,66.40493071161266,4409.614822814078,3.341045456859264e-05,4435.135959096341,200.0,10.0,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.87669043754404,4339.738343004006,3.2166237773200275e-05,4366.48710208028,200.0,10.0,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.23214039881312,4255.232141010467,2.9151095391606834e-05,4285.280937125215,200.0,10.0,,10.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,64.84117558844596,4204.378051691681,3.7352565811713215e-05,4226.945596217967,200.0,,,2.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.08589324020667,4236.173498875581,3.2602212367913664e-05,4262.61009042452,200.0,,,5.0
-ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,82.90172317750178,6872.695705799136,2.9565512570935866e-05,6899.646201813783,200.0,,,10.0
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,268.36267485117077,72018.5252532752,2.102330628676936e-06,72422.16930286124,100.0,3.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,264.2436425711576,69824.70263927369,3.2516304458844677e-06,70062.41595998687,100.0,5.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,264.5499875879465,69986.69593278265,2.577880777006368e-06,70304.62477154782,100.0,10.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,87.31033360043754,7623.094353419692,3.413793689969741e-06,7908.400501667592,500.0,3.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,78.47168844680249,6157.805887692035,5.688261889253068e-06,6327.448707631595,500.0,5.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.53752619001868,5261.692705767647,9.768083188858753e-06,5358.80524357013,500.0,10.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.04386837796157,5190.318970861051,4.3639287292233365e-06,5414.279965316423,1000.0,3.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,76.42794402259953,5841.230627521609,6.95049682287713e-06,5979.264004060091,1000.0,5.0,,
-xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,74.24201349445812,5511.876567711302,1.5562523392691466e-05,5570.621622668566,1000.0,10.0,,
-linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,164.27091184234104,26984.93247751418,4.427313965502699e-07,29216.653405501784,,,0.1,
-linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,164.83407419443026,27170.272015534938,4.2246099103961074e-07,29510.184198964947,,,1.0,
-linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,164.54798288231902,27076.03867063995,4.211739811659181e-07,29423.278341671376,,,10.0,
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,71.47220279701956,5108.275772658291,7.202429005652465e-06,5242.009545757645,50.0,5.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.19562008594649,4927.425079250534,6.924434872934854e-06,5066.913771637944,50.0,5.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,74.3855534377596,5533.21056024179,6.916069308755851e-06,5672.268150518952,50.0,5.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,69.846057973135,4878.471814386537,9.0032775714169e-06,4984.664004569148,50.0,10.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,62.95963523618019,3963.915669072862,8.660289440077808e-06,4075.421335213865,50.0,10.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,66.43955393394872,4414.21432694208,7.945355455241544e-06,4535.659805819965,50.0,10.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,63.278314365407006,4004.1450689272747,9.335004366361178e-06,4107.264601657955,50.0,,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,63.576953266654236,4042.0289866703365,8.71949189426767e-06,4152.672539381083,50.0,,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,69.88243441260991,4883.554639432727,8.06182984881073e-06,5002.712402800957,50.0,,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,69.82936357918567,4876.140017874102,1.2370738905933705e-05,4952.099792962346,100.0,5.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,71.44432486057953,5104.291554784021,1.2694421889167404e-05,5177.962020262745,100.0,5.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,74.27819367753301,5517.250055997105,1.2626532118330118e-05,5590.931115550465,100.0,5.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.10353236412018,4502.884055742526,1.6456029997502583e-05,4559.149169809767,100.0,10.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,68.84388977034173,4739.481158710963,1.5866901227819775e-05,4797.765955931617,100.0,10.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,66.44863353078144,4415.420898108091,1.4981438434719236e-05,4477.754741932289,100.0,10.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,62.45804057606052,3901.006832600822,1.9264607294368358e-05,3949.014488359663,100.0,,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,68.0436644261735,4629.94026854171,1.6832480385557682e-05,4684.719279128563,100.0,,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,63.264405228827606,4002.3849689573094,1.5383307267779764e-05,4063.3881112519525,100.0,,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.81593173160073,5302.159913941137,2.3536193065154246e-05,5339.345508832391,200.0,5.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,71.73111201441877,5145.352430825093,2.3355689930368854e-05,5183.023197420566,200.0,5.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,73.41643498424347,5389.972925795648,2.3315470871815958e-05,5427.472929465127,200.0,5.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,63.80864909941034,4071.5436998916803,3.245034520281793e-05,4098.288469354249,200.0,10.0,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,62.79936568207354,3943.760330070796,3.0868931820518095e-05,3972.2116006350343,200.0,10.0,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,78.70356074356282,6194.250473715683,2.9520788977825047e-05,6221.930656637063,200.0,10.0,,10.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.90176275469581,4610.649385194995,3.732972138645517e-05,4632.8270418260045,200.0,,,2.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,64.23820507465565,4126.546991213515,3.237955965976484e-05,4153.304125486276,200.0,,,5.0
-ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.81734023161374,5015.095677480139,3.0069698688954958e-05,5043.336651653712,200.0,,,10.0
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,267.67321971405926,71648.95255209104,2.483607303758382e-06,71979.94374256265,100.0,3.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,264.5081438837622,69964.55818083305,3.4446819269383644e-06,70184.89618794271,100.0,5.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,263.04601396126105,69193.20546090795,2.6882418736755123e-06,69496.00259225136,100.0,10.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,81.03521916605303,6566.706745290247,3.431811828201438e-06,6851.531306499204,500.0,3.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,72.80116765077888,5300.010011316814,5.432146924388232e-06,5478.799278329722,500.0,5.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,82.0708576475305,6735.625675001215,8.866211019868632e-06,6841.677800233458,500.0,10.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,82.40997555749321,6791.404071386628,5.693088176279416e-06,6960.26425904125,1000.0,3.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,79.29302243043367,6287.383406153257,8.23589793422766e-06,6402.51569161455,1000.0,5.0,,
-xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,77.71843932937519,6040.155811793772,1.4275191766530396e-05,6104.167254332104,1000.0,10.0,,
-linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,164.05002929439271,26912.412111491107,4.6975860389781544e-07,29014.25261992756,,,0.1,
-linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,164.89672617520836,27190.930303301648,4.3983562433446145e-07,29437.31601089154,,,1.0,
-linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,164.93116439987955,27202.288990300094,4.372616045870762e-07,29462.04716047094,,,10.0,
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,75.09894263177755,5639.851184411014,7.211759827236737e-06,5772.873743505893,50.0,5.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,69.8415441193628,4877.8412849769,6.9553231099034775e-06,5016.738216509613,50.0,5.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,75.99739879701382,5775.604623912356,6.884859319318805e-06,5915.075269592211,50.0,5.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,65.50721934837773,4291.195786756473,8.969493562232466e-06,4398.393605713054,50.0,10.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.34416742702406,4140.171881876904,8.604626263040602e-06,4252.2482625134435,50.0,10.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.85493512136458,4741.0020905673255,7.945355455241544e-06,4862.120781681585,50.0,10.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.62061998624895,4047.583287434699,9.353022504592875e-06,4150.453013445829,50.0,,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.85111115183274,4740.475506842027,8.763893734910066e-06,4849.839564120265,50.0,,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,69.24631205415622,4795.051733101581,8.010671206331446e-06,4915.090165884686,50.0,,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,72.15175500807732,5205.87575074561,1.2320545520859692e-05,5281.835112224573,100.0,5.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,75.41958601374569,5688.113954484783,1.2766494442094192e-05,5760.7558789394925,100.0,5.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,76.22557317176489,5810.338005364083,1.2730458165630799e-05,5883.07943564462,100.0,5.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.15226810667649,4115.513503230902,1.725494137659729e-05,4169.352402795471,100.0,10.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,65.4894814267468,4288.872177544215,1.6028099214499778e-05,4346.973735237192,100.0,10.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,69.63640140345545,4849.2284004231715,1.5040319136440673e-05,4910.867122905195,100.0,10.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.22780084537905,3997.754799742916,1.8092141299434358e-05,4049.029662122615,100.0,,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,67.08101397058533,4499.862435321865,1.6797409366499556e-05,4554.895562657834,100.0,,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,78.89596997412622,6224.574078158226,1.5134914362157083e-05,6284.421896435348,100.0,,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.02570922091579,4627.497115008588,2.3754662991213575e-05,4664.966615875402,200.0,5.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,72.53338963559173,5261.092612028567,2.3691599507402635e-05,5298.040573291839,200.0,5.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,73.37637667475926,5384.092653916155,2.3176473805457152e-05,5421.855763394624,200.0,5.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.59938694166796,4705.875888772685,3.327210100717068e-05,4731.225223397505,200.0,10.0,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.57622923042274,4170.089381620104,3.123412087217838e-05,4197.935560731917,200.0,10.0,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.6845578798209,4717.568491146468,2.9190992697691305e-05,4747.1080652731225,200.0,10.0,,10.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.05602804698364,4103.174729155955,3.717206267692782e-05,4125.97347829073,200.0,,,2.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,76.99522028189861,5928.263946258091,3.289372010430505e-05,5952.736621969282,200.0,,,5.0
-ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,65.85979314899897,4337.512353628933,2.9226385469217853e-05,4367.390498940301,200.0,,,10.0
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,270.88041057152435,73376.1968313976,2.398342899626244e-06,73719.77519104595,100.0,3.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,264.9554445973172,70201.38762176201,2.6187433404961094e-06,70513.048780399,100.0,5.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,263.98316046033904,69687.10900662912,2.499373174711117e-06,70017.52221482126,100.0,10.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,83.5781844893985,6985.312922543931,3.870360442662207e-06,7236.701478105882,500.0,3.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.79229743939834,4732.380186990651,4.812773422673646e-06,4935.428209531297,500.0,5.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,76.81608125525361,5900.710339413725,9.428634334672317e-06,6000.86952751821,500.0,10.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,71.93236673458277,5174.265384038509,5.855251420364688e-06,5339.877977869769,1000.0,3.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,82.39430764586697,6788.821932441772,8.310544506901832e-06,6902.3621694740605,1000.0,5.0,,
-xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,78.46281936190445,6156.414022218847,1.5211813202110218e-05,6215.995991038542,1000.0,10.0,,
-linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,164.7201906079907,27132.741193932787,4.919595242190135e-07,29138.296002771556,,,0.1,
-linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,164.41695865293326,27032.93629268037,4.6042778231354375e-07,29177.79662263507,,,1.0,
-linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,163.86065225756593,26850.313358274947,4.6139303971881327e-07,28990.812601402027,,,10.0,
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,72.97919590911275,5325.963035540659,7.264848984526558e-06,5458.286182917448,50.0,5.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.51382991536845,4694.144889672037,6.855258092223874e-06,4835.324173112413,50.0,5.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,74.9573889590072,5618.610159551895,6.878746022418765e-06,5758.366883318157,50.0,5.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,69.01837161145625,4763.535619897069,8.979789641222008e-06,4870.133267551385,50.0,10.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,65.07770818736176,4235.108102919413,8.633262232730263e-06,4346.704064583935,50.0,10.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.94435084593245,4753.323513567027,8.16575589611141e-06,4871.032827036792,50.0,10.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.86782770619828,4742.7776929706115,9.657078587252763e-06,4841.585900284637,50.0,,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,65.98061208836094,4353.441171554761,8.647419341340883e-06,4464.729167501826,50.0,,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,69.00389519545824,4761.537552145785,7.966912870625896e-06,4882.295148069671,50.0,,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,71.618422816453,5129.1984867162355,1.2307997174591188e-05,5205.317275681484,100.0,5.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,70.47487882550996,4966.708545470312,1.2182191959437732e-05,5043.828870467708,100.0,5.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,73.04614887957901,5335.739866137622,1.2371060658402128e-05,5411.23793895842,100.0,5.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,60.33097352401411,3639.826366355292,1.659824458854562e-05,3696.433874860125,100.0,10.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,63.72240357489652,4060.544717361984,1.6251395427585452e-05,4118.017350177339,100.0,10.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,62.900714421201876,3956.4998746975934,1.5192829806473251e-05,4018.363897578566,100.0,10.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,60.75505895613854,3691.17718876387,1.854613403237944e-05,3741.4056046425408,100.0,,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,72.6238009430791,5274.216463419977,1.6665169101977637e-05,5328.947638673904,100.0,,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,67.11598945387351,4504.556040372459,1.5018439968587898e-05,4566.636296209457,100.0,,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,73.33720857609859,5378.346161734189,2.367712064632359e-05,5415.2026808222245,200.0,5.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,70.33526373470372,4947.049324630328,2.3819013484898206e-05,4984.085542187595,200.0,5.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,75.2369282272292,5660.595369069239,2.4129182864458133e-05,5696.378365288717,200.0,5.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,66.86774044192815,4471.294711809074,3.323284720602306e-05,4496.914128067669,200.0,10.0,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,64.0709390590925,4105.085231913945,3.1573891478833236e-05,4132.651884094265,200.0,10.0,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,69.09112570808972,4773.583651611057,2.9714805716284212e-05,4802.4633251790265,200.0,10.0,,10.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,65.90522200028077,4343.498286906293,3.690114709851552e-05,4366.254217190815,200.0,,,2.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,64.51788481111019,4162.557460499683,3.285671857043638e-05,4188.830078659544,200.0,,,5.0
-ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.83149397081368,4737.77456225416,2.9086423145453778e-05,4767.417089284826,200.0,,,10.0
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,267.2541123701674,71424.76057876606,2.5711239751694816e-06,71742.2707780171,100.0,3.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,263.9134396455942,69650.3036255687,2.7204171205178286e-06,69948.24400958358,100.0,5.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,264.21658907753687,69810.40594376797,2.5489230548482834e-06,70132.9180907149,100.0,10.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,79.97607556599093,6396.172662937091,4.062446666310834e-06,6635.933568050173,500.0,3.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,72.67924146760564,5282.272140306526,5.781570105095785e-06,5449.9532642372305,500.0,5.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,77.50980294407883,6007.769552429931,9.804119465322147e-06,6103.759724001849,500.0,10.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,75.62197825262272,5718.683594840144,5.264835640808188e-06,5902.904363912907,1000.0,3.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.5642610755964,4839.186418993738,7.795740557424775e-06,4962.622409594019,1000.0,5.0,,
-xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,74.46982203862053,5545.754394463812,1.4915157426224063e-05,5607.254529792361,1000.0,10.0,,
-linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,165.4972027899294,27389.324131291014,4.86811484724243e-07,29416.11806162106,,,0.1,
-linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,168.03983534912697,28237.3862641617,4.7072386130308496e-07,30333.53661815728,,,1.0,
-linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,164.31067159105365,26997.996798703083,4.6814984155569964e-07,29107.067024584794,,,10.0,
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,75.60919530388196,5716.750414500565,7.168966748936456e-06,5850.523779610502,50.0,5.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,74.35355448612154,5528.451064720644,6.947922803129744e-06,5666.850522519497,50.0,5.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,74.95942229269511,5618.914990454596,6.830161399686867e-06,5759.705499997775,50.0,5.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,64.89848062230706,4211.812787083964,8.88648142537929e-06,4320.1314520114975,50.0,10.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.65910958606048,4443.43689080642,8.348511298175765e-06,4558.77528857858,50.0,10.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,70.2607722853932,4936.576122139877,7.923154534920346e-06,5057.851901916214,50.0,10.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.55849172759726,4430.032821052632,9.668661676115996e-06,4529.029718813942,50.0,,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,64.69984303185248,4186.06968834635,8.812478357641965e-06,4295.359074643983,50.0,,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.36304301579979,4811.231736411692,8.184739291748376e-06,4928.599106137659,50.0,,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,73.50838344296083,5403.482436397358,1.2401305390433904e-05,5478.715626352834,100.0,5.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.52544424020307,5115.889173758398,1.2371704163338974e-05,5191.60289276128,100.0,5.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,74.6689807903294,5575.45669226658,1.2306066659780649e-05,5651.141968808292,100.0,5.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,63.91732547915459,4085.4244964081845,1.658280047006131e-05,4141.642517147423,100.0,10.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,63.0765235716643,3978.6478258867223,1.611465062850561e-05,4036.7245103825353,100.0,10.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,73.32589115868295,5376.686314215018,1.536561088201649e-05,5436.3900212335775,100.0,10.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,63.02509766134974,3972.1629352226723,1.827650546384083e-05,4022.9058271965214,100.0,,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,64.9191884757109,4214.501032344875,1.635596497982298e-05,4271.426305164677,100.0,,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,70.98717366800761,5039.178825371873,1.5235944637241956e-05,5099.773909718845,100.0,,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,72.57566194662547,5267.226706990861,2.3761741545518883e-05,5304.043937691353,200.0,5.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,73.40194933443975,5387.846166095659,2.3261416457120867e-05,5425.447963395315,200.0,5.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,85.65258847422005,7336.365912334094,2.3365342504421547e-05,7371.827977465977,200.0,5.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.39717219701255,5097.556197729862,3.335897417364494e-05,5122.43558251343,200.0,10.0,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.93336688928902,4890.675804471905,3.1054261242329836e-05,4917.986828530668,200.0,10.0,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,67.77113540328543,4592.926793850447,2.920965434085985e-05,4622.5691232609515,200.0,10.0,,10.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,67.11920308530948,4504.987422807017,3.728081501125485e-05,4527.305883307708,200.0,,,2.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.64682184889969,4441.798862558974,3.247544189535493e-05,4468.149562324217,200.0,,,5.0
-ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.81333940448245,4873.9023588054615,2.9435202821224485e-05,4903.001383559595,200.0,,,10.0
+xgboost,xgboost_regressor,1,cpu_cores,234.4094601065144,54947.79498742756,2.053102501008192e-06,55379.91493480026,100.0,3.0,,
+xgboost,xgboost_regressor,1,cpu_cores,233.88413706773125,54701.7895719173,1.9958305616288693e-06,55148.132319504824,100.0,5.0,,
+xgboost,xgboost_regressor,1,cpu_cores,233.8895748673522,54704.33323163075,1.7432548739166878e-06,55223.268482009305,100.0,10.0,,
+xgboost,xgboost_regressor,1,cpu_cores,234.15940440274213,54830.62667024693,2.108122173108553e-06,55250.15185310049,500.0,3.0,,
+xgboost,xgboost_regressor,1,cpu_cores,234.0479339754495,54778.43539817637,1.8787126631228386e-06,55255.93633664358,500.0,5.0,,
+xgboost,xgboost_regressor,1,cpu_cores,234.93945637806252,55196.548163219544,1.8680948316648742e-06,55676.656345335345,500.0,10.0,,
+xgboost,xgboost_regressor,1,cpu_cores,234.61962200696033,55046.36703068894,2.278650981372828e-06,55430.176815027924,1000.0,3.0,,
+xgboost,xgboost_regressor,1,cpu_cores,233.98798634722638,54750.377754829795,2.4105694934263244e-06,55110.46710798794,1000.0,5.0,,
+xgboost,xgboost_regressor,1,cpu_cores,233.77635503123557,54651.384171690304,2.8230561579448168e-06,54950.958826269474,1000.0,10.0,,
+linear_regression,ridge_regression,1,cpu_cores,235.82612585455757,55613.961635569634,3.2110896348631496e-07,58672.55535329278,,,0.1,
+linear_regression,ridge_regression,1,cpu_cores,235.5053017809551,55462.74716693874,2.9054247898611464e-07,58849.12192143293,,,1.0,
+linear_regression,ridge_regression,1,cpu_cores,235.8535783266866,55626.910409502496,2.8475093455449774e-07,59083.12447536418,,,10.0,
+ensemble,random_forest,1,cpu_cores,234.58516828330255,55030.20117850538,6.221405729430246e-06,55135.90635506788,50.0,5.0,,2.0
+ensemble,random_forest,1,cpu_cores,233.94520911817125,54730.36086934487,6.057311970534434e-06,54840.72023884841,50.0,5.0,,5.0
+ensemble,random_forest,1,cpu_cores,233.68542687192496,54608.878732313795,6.372629389589132e-06,54711.19095143062,50.0,5.0,,10.0
+ensemble,random_forest,1,cpu_cores,233.99416641624896,54753.26991683521,6.004544565713035e-06,54865.057171192304,50.0,10.0,,2.0
+ensemble,random_forest,1,cpu_cores,233.82539195967803,54674.31392509706,5.826615450675027e-06,54791.265833713245,50.0,10.0,,5.0
+ensemble,random_forest,1,cpu_cores,234.62279430482042,55047.85560740207,5.923141191201976e-06,55161.63708874942,50.0,10.0,,10.0
+ensemble,random_forest,1,cpu_cores,233.71531380188978,54622.84790551581,5.75969093724301e-06,54741.84548462555,50.0,,,2.0
+ensemble,random_forest,1,cpu_cores,234.26782940958606,54881.41589627891,5.7207588885638074e-06,55001.33646373471,50.0,,,5.0
+ensemble,random_forest,1,cpu_cores,234.79998668040838,55131.03374511996,5.870695538849001e-06,55246.24027928013,50.0,,,10.0
+ensemble,random_forest,1,cpu_cores,234.2816849031615,54887.90788106425,1.0690547515827956e-05,54926.560551766226,100.0,5.0,,2.0
+ensemble,random_forest,1,cpu_cores,235.10689999696504,55275.254426182924,1.0854641274723769e-05,55312.105661678484,100.0,5.0,,5.0
+ensemble,random_forest,1,cpu_cores,234.50398206609967,54992.117604857594,1.1215969296762978e-05,55026.28407654101,100.0,5.0,,10.0
+ensemble,random_forest,1,cpu_cores,234.03946176949955,54774.46966535704,1.087008539320808e-05,54811.690793134265,100.0,10.0,,2.0
+ensemble,random_forest,1,cpu_cores,233.80188748308504,54663.32259065315,1.0410301115831383e-05,54704.71796885063,100.0,10.0,,5.0
+ensemble,random_forest,1,cpu_cores,233.750316711694,54639.21056281725,1.064904144740137e-05,54678.47651779814,100.0,10.0,,10.0
+ensemble,random_forest,1,cpu_cores,234.50123151807702,54990.827583494756,1.085174550250796e-05,55027.9878296504,100.0,,,2.0
+ensemble,random_forest,1,cpu_cores,234.50553857804275,54992.84762377789,1.0675746902280491e-05,55031.52503727527,100.0,,,5.0
+ensemble,random_forest,1,cpu_cores,236.1468817095407,55765.349741139806,1.1288685354626613e-05,55798.168665703924,100.0,,,10.0
+ensemble,random_forest,1,cpu_cores,234.12604931512683,54815.006967909205,2.6251140393708882e-05,54798.28554411529,200.0,5.0,,2.0
+ensemble,random_forest,1,cpu_cores,233.9506622283314,54732.91235707481,2.387660717674595e-05,54720.06144213041,200.0,5.0,,5.0
+ensemble,random_forest,1,cpu_cores,234.5408492780769,55009.40998008158,2.1745962330847777e-05,55000.38611835113,200.0,5.0,,10.0
+ensemble,random_forest,1,cpu_cores,233.8934022826098,54706.12363133474,2.1056446791016944e-05,54698.908901190865,200.0,10.0,,2.0
+ensemble,random_forest,1,cpu_cores,234.35683977944694,54923.12835140937,2.1189974065412554e-05,54915.39735254868,200.0,10.0,,5.0
+ensemble,random_forest,1,cpu_cores,234.5062534539459,54993.18290900632,2.1805808289974485e-05,54984.049067182124,200.0,10.0,,10.0
+ensemble,random_forest,1,cpu_cores,234.24472057390028,54870.589116744624,2.0318990133391056e-05,54864.93357195021,200.0,,,2.0
+ensemble,random_forest,1,cpu_cores,234.27000467419086,54882.43509004541,2.0371435785744034e-05,54876.640996617556,200.0,,,5.0
+ensemble,random_forest,1,cpu_cores,234.1574162425354,54829.69558137998,2.1539075493651686e-05,54821.29313381557,200.0,,,10.0
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,165.45836929108614,27376.471968465437,2.1129484601349e-06,27822.3678071411,100.0,3.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,166.3119713847082,27659.67182586799,2.921190660813881e-06,27974.338320359995,100.0,5.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,182.46371816890746,33293.00844802249,3.2770488908898977e-06,33564.86804281452,100.0,10.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,181.69644627471237,33013.59858885944,3.3243465037481024e-06,33281.395991432015,500.0,3.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,182.50671165510448,33308.699799159454,5.006468408664389e-06,33475.13269730374,500.0,5.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,179.52449264721,32229.043460238157,8.503595987955729e-06,32314.411725189137,500.0,10.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,188.01556227532768,35349.85165770762,5.233625651371141e-06,35505.5739358913,1000.0,3.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,188.2624080976129,35442.734302712146,8.5087440274505e-06,35524.81772700274,1000.0,5.0,,
+xgboost,xgboost_regressor,2,cpu_cores+ disk_free_gb,189.80383798924655,36025.49691544815,1.1358827392742863e-05,36077.50867496983,1000.0,10.0,,
+linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,233.5511695366392,54546.148791931984,3.709805960919049e-07,57187.161415039445,,,0.1,
+linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,233.1552910481121,54361.389743729866,3.098476270915043e-07,57534.42115149392,,,1.0,
+linear_regression,ridge_regression,2,cpu_cores+ disk_free_gb,233.11610565388057,54343.11871523121,3.0534309253358004e-07,57563.78008966667,,,10.0,
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,135.79626479634283,18440.62553263846,7.12456490829406e-06,18562.544355419057,50.0,5.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,137.74317146699255,18973.181285785307,7.007125257319606e-06,19096.919981806896,50.0,5.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,141.53206304949205,20031.32487104539,6.775141727586507e-06,20158.89193454876,50.0,5.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,149.16209844238264,22249.33161173505,8.443428276360597e-06,22345.517584749487,50.0,10.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,148.58709716677959,22078.125444449997,8.180234757190453e-06,22178.29319943349,50.0,10.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,140.81334754794193,19828.398847657485,7.888083515862221e-06,19935.343954438806,50.0,10.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,162.0622568787861,26264.17510464565,9.365570850861379e-06,26344.684986982254,50.0,,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,153.81675383977267,23659.593761805223,8.717883131925554e-06,23750.64091334698,50.0,,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,148.9319514545278,22180.72616405382,8.150955282563944e-06,22281.230444166165,50.0,,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,139.80895477547145,19546.54383540982,1.3235931293523585e-05,19602.54920989611,100.0,5.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,140.3003378953105,19684.184813538293,1.3261027986060591e-05,19739.909563918252,100.0,5.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,138.66524923094244,19228.051344279385,1.319989501706019e-05,19284.581471216643,100.0,5.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,156.06347602310578,24355.808548414516,1.660339262804039e-05,24391.681394479205,100.0,10.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,141.67178313459578,20070.894136535935,1.544025745469066e-05,20115.589001839257,100.0,10.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,139.31008474177224,19407.299710759766,1.486785981336586e-05,19455.15158705368,100.0,10.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,154.79192509609942,23960.54007495645,1.8279401236056637e-05,23991.28592198281,100.0,,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,150.88504463124352,22766.29669337235,1.646278679933947e-05,22804.273453865393,100.0,,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,147.2135401277741,21671.826396951757,1.5401968910948307e-05,21715.08133451478,100.0,,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,147.49577220824588,21755.002819306756,2.444031750142333e-05,21774.163815223626,200.0,5.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,136.5903320459034,18656.918808410144,2.4415542561354747e-05,18679.219406621356,200.0,5.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,136.59922047124155,18659.34703335086,2.4346365780643767e-05,18681.761578372276,200.0,5.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,141.46280854966295,20011.726202758593,3.219648250523205e-05,20022.77377006212,200.0,10.0,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,150.65437498033594,22696.740700715673,3.013211866782905e-05,22707.231138487998,200.0,10.0,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,140.5944648619168,19766.80354980876,2.898796689011629e-05,19781.533818916396,200.0,10.0,,10.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,159.804226366871,25537.390764714153,3.608614809599965e-05,25539.56483811956,200.0,,,2.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,156.84674763576865,24600.9022439185,3.226308526619565e-05,24607.29651748462,200.0,,,5.0
+ensemble,random_forest,2,cpu_cores+ disk_free_gb,146.88511639144846,21575.237417329365,3.0061011372307534e-05,21586.92786041809,200.0,,,10.0
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,162.21859058187707,26314.871130370655,2.083025480571546e-06,26768.627198999322,100.0,3.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,172.9637781315576,29916.46854554268,3.929884649320492e-06,30141.012471953745,100.0,5.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,171.40884610480612,29380.99252298111,5.295080372839965e-06,29540.466076487173,100.0,10.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,178.50060798903783,31862.46705245616,4.034132449089596e-06,32078.4893568186,500.0,3.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,181.21901773103977,32840.33238740291,5.27834924448196e-06,32996.94522563422,500.0,5.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,173.54754788449085,30118.75137671965,8.42444488072363e-06,30207.334808591604,500.0,10.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,195.31176918033174,38146.68718035118,5.712393324384805e-06,38283.598466810574,1000.0,3.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,166.9032919461101,27856.70886244846,9.60495468736821e-06,27932.965086186843,1000.0,5.0,,
+xgboost,xgboost_regressor,3,cpu_cores+ disk_free_gb+ ram_available_bytes,173.8581559273876,30226.65838247182,8.729466220788789e-06,30310.9862655364,1000.0,10.0,,
+linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,203.27587213210222,41321.08019106677,3.4684916096016784e-07,44162.85675837107,,,0.1,
+linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,202.07750963201812,40835.31989907838,3.2464824063896974e-07,43874.74153061636,,,1.0,
+linear_regression,ridge_regression,3,cpu_cores+ disk_free_gb+ ram_available_bytes,202.41077609220784,40970.122278249895,3.2464824063896974e-07,44009.409107408705,,,10.0,
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,138.20740574115322,19101.28700169975,6.988463614151063e-06,19225.27868265385,50.0,5.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,143.63907080341397,20632.18266126817,6.748436272707384e-06,20759.732955196963,50.0,5.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,136.8716865029735,18733.858566168252,6.678294234591135e-06,18864.86354283045,50.0,5.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.24965741960037,21682.46161018967,8.41414880173409e-06,21779.62658324737,50.0,10.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.639165340132,20345.931488929513,8.080169739510849e-06,20449.345333811387,50.0,10.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.18973525972152,21664.818165826906,8.081456749384541e-06,21766.8934147073,50.0,10.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,154.71860904335907,23937.847984311793,9.756178347527096e-06,24016.409287570805,50.0,,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.29865250087042,20248.906503563474,8.914152137663683e-06,20340.838765224504,50.0,,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.1266149861153,21352.98760730038,8.196644133080034e-06,21453.63576842713,50.0,,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,137.93751439164706,19026.75787654584,1.2561216367240216e-05,19087.341243259456,100.0,5.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,139.79441761334238,19542.47919585357,1.2513597001913588e-05,19602.84979040039,100.0,5.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,141.76379053219762,20096.972306056807,1.2516492774129397e-05,20156.769919082748,100.0,5.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,144.5771988819535,20902.566436551937,1.622275945789579e-05,20943.305664324034,100.0,10.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.30254121707566,21404.433566574124,1.552841763103861e-05,21447.42719491961,100.0,10.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.9113673341631,21582.949851993402,1.4937036594076838e-05,21628.314585753335,100.0,10.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,142.55161391973598,20320.962631121463,1.8423546341910216e-05,20354.92003495908,100.0,,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,150.90744628845133,22773.057345301822,1.667739569577772e-05,22810.245688299932,100.0,,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,146.5505550390597,21477.065182256465,1.5573462976617853e-05,21519.799911297585,100.0,,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,143.08907745566376,20474.484087112945,2.423278715929039e-05,20495.276007646426,200.0,5.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,138.65148323404838,19224.2338030016,2.4060649588684e-05,19246.571206855726,200.0,5.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,135.28614378624846,18302.34070055349,2.3881111711303877e-05,18325.912457344246,200.0,5.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,149.9787412183701,22493.622817446827,3.17872133653978e-05,22502.588385106534,200.0,10.0,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,148.83119683177546,22150.725150378687,3.0231218428103386e-05,22161.652814125475,200.0,10.0,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,144.59266540624776,20907.03888928312,2.919839300446504e-05,20920.380310569268,200.0,10.0,,10.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,152.98174939050642,23403.415646579713,3.6928496058331486e-05,23407.09158987644,200.0,,,2.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,147.93341771848787,21884.29607787262,3.2698094603503766e-05,21892.994603580726,200.0,,,5.0
+ensemble,random_forest,3,cpu_cores+ disk_free_gb+ ram_available_bytes,143.68514567728172,20645.421088301675,3.042523516656255e-05,20657.64312064555,200.0,,,10.0
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,108.56128210216531,11785.551971665916,2.2451887246568193e-06,12219.163276100096,100.0,3.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,110.86045686397867,12290.040896090077,2.800533485155196e-06,12634.825678723399,100.0,5.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,117.58940084512766,13827.267191116109,3.182131912705065e-06,14127.69465233753,100.0,10.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,115.87549960783139,13427.13140936453,3.262248277342432e-06,13720.24133920381,500.0,3.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,120.79861324133046,14592.304961028538,5.547334308083723e-06,14757.9794192483,500.0,5.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,123.06688383253159,15145.457896249824,7.019030098651263e-06,15272.782264803265,500.0,10.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,126.75227154641028,16066.13834217493,5.06760137766479e-06,16247.404220594659,1000.0,3.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,121.80453264083036,14836.34417185111,7.0959289386043985e-06,14962.433703438759,1000.0,5.0,,
+xgboost,xgboost_regressor,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,111.17445827482027,12359.760172699753,7.843681675219826e-06,12474.891562908544,1000.0,10.0,,
+linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,188.06164227254337,35367.18129424607,4.6074953478196694e-07,37502.190693957404,,,0.1,
+linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,186.41417192816843,34750.24349566474,3.539277152654774e-07,37540.928946714535,,,1.0,
+linear_regression,ridge_regression,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,187.2784464264421,35073.21649590174,3.481361708338605e-07,37910.58252524687,,,10.0,
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.9005878508427,9781.326277242255,7.132286967536216e-06,9911.752433438962,50.0,5.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.34955331814474,9870.333744514886,6.96175815927194e-06,10004.105286446296,50.0,5.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.04359454932019,9809.633621250128,6.81310851886044e-06,9946.599867865007,50.0,5.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.82422128403043,9182.28138469083,8.763571982441644e-06,9287.207825412099,50.0,10.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,99.80438955760974,9960.91617496712,8.459194147313333e-06,10069.169828949241,50.0,10.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,94.31800225783566,8895.885549909091,8.214984023780153e-06,9008.718446436575,50.0,10.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,102.6520200214851,10537.437214491378,9.74942154569021e-06,10629.469965191478,50.0,,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.2365009993693,9261.464124601609,9.066341055227838e-06,9362.500739261875,50.0,,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.86058355884775,9576.693814478223,8.372642733307502e-06,9686.55372292337,50.0,,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.50424021596484,9507.076860092577,1.2799313193873355e-05,9575.698975389347,100.0,5.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.44048409093718,9108.886003512433,1.2725310126136029e-05,9178.360664007023,100.0,5.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.16740562485506,9056.835093365697,1.2693456631762135e-05,9126.559005629812,100.0,5.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.32330049340206,9667.471419915839,1.675107701104662e-05,9717.501602523813,100.0,10.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,92.93515852168325,8636.943689450394,1.608730166868964e-05,8690.467574257513,100.0,10.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.54837790106059,9129.492519523885,1.5564453907502004e-05,9184.61198851261,100.0,10.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.9697189101654,9403.126385516489,1.8705723256717325e-05,9447.182833309207,100.0,,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,94.76490913952935,8980.388004223252,1.6960216115521678e-05,9030.369129043433,100.0,,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,95.86080815024145,9189.294539217399,1.592867770175702e-05,9242.885094878156,100.0,,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,98.26491536976818,9655.993592627703,2.4298424662848716e-05,9687.492530429825,200.0,5.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,96.32455803765487,9278.42048114954,2.44454655409181e-05,9310.04944278906,200.0,5.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,101.12520002420263,10226.306079934991,2.4230856644479853e-05,10257.349466242422,200.0,5.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.23970340806719,9455.559918888872,3.263277885241386e-05,9476.74839343982,200.0,10.0,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,92.73201229318168,8599.2261039428,3.054170956013174e-05,8623.368987380274,200.0,10.0,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,93.93571356244354,8823.91828248544,2.9376000367034624e-05,8849.13575811314,200.0,10.0,,10.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,97.15633482062472,9439.353395777336,3.6218710112989994e-05,9457.52408141609,200.0,,,2.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,92.15382345116979,8492.32717666937,3.2364437293748945e-05,8514.732961235653,200.0,,,5.0
+ensemble,random_forest,4,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size,94.33099657830512,8898.336915456211,3.0027227363123102e-05,8922.741686680141,200.0,,,10.0
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,105.99380987050611,11234.687730864998,2.080773213292584e-06,11704.04362052705,100.0,3.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,115.95024419863347,13444.459129722736,2.3944818700051663e-06,13848.641553688954,100.0,5.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,119.93114719621879,14383.480067801098,3.1016937955992745e-06,14691.501075700102,100.0,10.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,123.05659914923602,15142.926594175755,3.3925580270538122e-06,15422.546496109653,500.0,3.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,116.84724191600606,13653.277943377643,4.449836638292321e-06,13864.352016410403,500.0,5.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,112.83508217442211,12731.755769308591,7.967556375562743e-06,12844.533009379851,500.0,10.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,111.19083095965311,12363.400889498154,5.01161644815916e-06,12550.573907714974,1000.0,3.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,123.71550827950996,15305.526988857497,5.479444537246436e-06,15472.721712250319,1000.0,5.0,,
+xgboost,xgboost_regressor,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,120.5081460137313,14522.213255666784,8.550571848345511e-06,14624.642284706508,1000.0,10.0,,
+linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,175.91431529546796,30945.846325873314,4.771589106715481e-07,33010.63835142876,,,0.1,
+linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,173.55831959817294,30122.49030174154,3.6679781400240387e-07,32818.6654114398,,,1.0,
+linear_regression,ridge_regression,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,172.91140172807766,29898.35284756866,3.674413189392502e-07,32589.977492969778,,,10.0,
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,103.351940552881,10681.62361604625,7.0019772178248355e-06,10813.758795297586,50.0,5.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.5048768717762,9121.181506293133,6.853971082350181e-06,9257.961144615965,50.0,5.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.49221793794915,8928.77925083288,6.7059649468755275e-06,9068.971441930382,50.0,5.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.16442037690629,9636.253427933976,8.555076382903436e-06,9743.506838051117,50.0,10.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.33057690330185,9279.580046522951,8.280943279806902e-06,9391.059656125572,50.0,10.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,92.46545512977752,8549.8603923569,7.952755762015278e-06,8667.053108490822,50.0,10.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.63111687086445,9531.834981452392,9.296715822618821e-06,9629.86801336372,50.0,,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.78357942014182,8983.926927694332,8.610096055003795e-06,9091.085723636594,50.0,,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.212244884681,9065.371575980464,8.114919006100551e-06,9179.536023364873,50.0,,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.94813621435307,9206.04484300805,1.2414497241639255e-05,9277.389784687954,100.0,5.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,93.70693768100315,8780.990169551409,1.2481100002602849e-05,8852.33032253362,100.0,5.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.30815833164107,9275.261361232444,1.2440237439113108e-05,9346.370417686234,100.0,5.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.69973338858836,9350.838437424069,1.658505273734027e-05,9401.782854952191,100.0,10.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.11976227272413,9432.248223910448,1.6269735318285573e-05,9484.27979058192,100.0,10.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.9038304671663,9585.160020143641,1.5701842211518693e-05,9639.261654738362,100.0,10.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,99.61346181130183,9922.841774031689,1.8816406105854895e-05,9966.064043729759,100.0,,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,93.83063838204495,8804.188699182088,1.700944424319042e-05,8854.175378997046,100.0,,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,97.18921514655305,9445.743540802978,1.5922564404856982e-05,9499.101751108641,100.0,,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,95.780206578029,9173.847972129908,2.4683240615082818e-05,9205.187443117564,200.0,5.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.68043779857472,9347.107052924073,2.4620820636208725e-05,9378.37597629417,200.0,5.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.41117526009141,9295.114715032063,2.4558078904866206e-05,9326.539397817227,200.0,5.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,100.38426805939125,10077.001273819717,3.290337267835774e-05,10097.316293746137,200.0,10.0,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,94.9840644679318,9021.972502848224,3.0738622070806714e-05,9045.482892976874,200.0,10.0,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.75706342773074,9752.957576868834,2.9648846460257465e-05,9776.932744308242,200.0,10.0,,10.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,100.22603923808484,10045.258941354123,3.670326933043528e-05,10062.45921171418,200.0,,,2.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,98.30460571762714,9663.79550529813,3.240336934242815e-05,9684.992698026259,200.0,,,5.0
+ensemble,random_forest,5,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads,96.52948085098063,9317.940673359837,3.01369449548554e-05,9341.804596392238,200.0,,,10.0
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.55863545276944,4838.403766051273,2.152524013750949e-06,5298.136253765042,100.0,3.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,85.31654093545873,7278.912157191807,2.5807765492221766e-06,7659.113517319866,100.0,5.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,84.94453235484923,7215.5735769840285,3.4601260454226763e-06,7497.3648161278925,100.0,10.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,90.5052077025861,8191.192621288252,4.363606976754913e-06,8412.16963866549,500.0,3.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,75.46357942368977,5694.751819435533,3.5997666167183283e-06,5966.852854530649,500.0,5.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,80.14707363910703,6423.553412912446,7.044770296125116e-06,6559.079129378502,500.0,10.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,87.83407891043122,7714.825418043858,4.217531356090798e-06,7944.216120852851,1000.0,3.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,84.15657200693667,7082.3286119587165,6.481703476384584e-06,7229.526713428664,1000.0,5.0,,
+xgboost,xgboost_regressor,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,77.20639503494363,5960.827434291767,5.7497166107218915e-06,6128.788222078516,1000.0,10.0,,
+linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,163.9482745556284,26879.036729767708,4.202087237606486e-07,29231.927420449887,,,0.1,
+linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,164.89311739433674,27189.740164022514,3.915727540709873e-07,29716.354256233182,,,1.0,
+linear_regression,ridge_regression,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,165.8220306580076,27496.945851545213,3.9672079356575786e-07,29990.113353382232,,,10.0,
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,72.3554850366595,5235.316214890257,7.2355695099000505e-06,5368.2870203402545,50.0,5.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.65237946832504,4851.453965599548,6.960149396929824e-06,4990.2775885570245,50.0,5.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,73.79173855804532,5445.220679418913,6.790585846070818e-06,5587.038157815543,50.0,5.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,72.26063273237496,5221.599042883179,8.872002564300249e-06,5329.091568160307,50.0,10.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.33980966828682,4808.009204834241,8.477534038013452e-06,4921.1600260529685,50.0,10.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,67.24597145362883,4522.020676742262,8.131006629521709e-06,4640.48465836064,50.0,10.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,67.65042495695093,4576.579996856049,9.515507501146572e-06,4677.095026516324,50.0,,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,66.11196160361013,4370.79146707722,8.728822715851942e-06,4480.983662229627,50.0,,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.49784191836517,4829.950031310075,8.104301174642585e-06,4948.511349501729,50.0,,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,69.65502372812267,4851.822330565333,1.2562503377113908e-05,4926.572476885521,100.0,5.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,68.60175075203033,4706.200206243694,1.2595965633829918e-05,4780.884505271128,100.0,5.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,75.52468838186269,5703.978555177466,1.2524214833371552e-05,5778.119901323636,100.0,5.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.8286966017581,4333.417296286318,1.67813217430784e-05,4388.673940804588,100.0,10.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,64.04707133728338,4102.027346883067,1.6097919500147604e-05,4160.045148125887,100.0,10.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.6969502903353,4998.05878035414,1.5327644090742557e-05,5058.302319961628,100.0,10.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,66.14136985324174,4374.680806063316,1.829194958232514e-05,4424.97498357109,100.0,,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.02086764608458,4227.71322944965,1.6542581411508414e-05,4283.935573869868,100.0,,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,70.29705119292284,4941.675406420413,1.532088728890567e-05,5002.004102183953,100.0,,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,71.64020065969684,5132.318350561628,2.3951253749420125e-05,5168.93750002407,200.0,5.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,83.19031199755891,6920.628010251195,2.3845075434840482e-05,6955.644762675433,200.0,5.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,76.73958440261947,5888.963814286758,2.381643946515082e-05,5925.062654798271,200.0,5.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,64.79614594532184,4198.5405293674485,3.2625378545640126e-05,4224.992974192966,200.0,10.0,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,63.93827819239217,4088.1034182077324,3.154750777642254e-05,4115.713539799469,200.0,10.0,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,71.16330887664645,5064.216530272988,2.956390380859375e-05,5092.977346000779,200.0,10.0,,10.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,62.82145793155405,3946.5355766460157,3.690565163307344e-05,3969.685162008848,200.0,,,2.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,64.17474493573573,4118.397887566739,3.233290555184347e-05,4145.207733922381,200.0,,,5.0
+ensemble,random_forest,6,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch,65.75921949409039,4324.274948471957,2.9653672747283814e-05,4353.673309114774,200.0,,,10.0
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,78.60860984234982,6179.313541346776,2.2239530617408905e-06,6622.7840055832075,100.0,3.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,78.10447127895917,6100.308433765758,2.3513670392364624e-06,6519.492644215408,100.0,5.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,86.72582094406488,7521.368018422003,3.5083889156861503e-06,7798.877764123316,100.0,10.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,79.94833107530143,6391.735641726007,2.9086423145453778e-06,6729.146922013485,500.0,3.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,75.77657555119032,5742.089402265254,4.665410792135838e-06,5950.69071038023,500.0,5.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,83.5820194955307,6985.953982951273,8.016784503231487e-06,7103.706320186816,500.0,10.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,74.66141396562688,5574.326735346704,4.619721941619749e-06,5785.215653074374,1000.0,3.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.80517913679896,5013.373392594191,6.8729544779871475e-06,5153.85785469619,1000.0,5.0,,
+xgboost,xgboost_regressor,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,77.19198586963297,5958.602682497616,6.9202520908453525e-06,6097.147486175543,1000.0,10.0,,
+linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,166.15408945711803,27607.18144332398,4.311483076870361e-07,29898.961772328417,,,0.1,
+linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,165.48426260824843,27385.041170995726,4.0926913983426113e-07,29801.03605435303,,,1.0,
+linear_regression,ridge_regression,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,165.92251776712186,27530.281902180872,4.0508635774476e-07,29971.361043630557,,,10.0,
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.14619110800915,5205.072891393378,7.132286967536216e-06,5340.075300975932,50.0,5.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.91227845393027,5316.200349343464,6.922826110592738e-06,5455.333826629369,50.0,5.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,75.7138969914301,5732.594197628889,6.778681004739162e-06,5874.382927904395,50.0,5.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,63.625528488717826,4048.2078754686436,8.811834852705118e-06,4157.643410390853,50.0,10.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,66.6437824902057,4441.393744601846,8.52901443296116e-06,4554.199191961817,50.0,10.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.81807476277396,5302.472012156937,8.076308709889771e-06,5420.988482178963,50.0,10.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,75.90217042531559,5761.139475273653,9.55604831216789e-06,5860.024102263026,50.0,,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.79319018911347,5011.6757771519915,8.715630864646593e-06,5121.40048885269,50.0,,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,78.56684931093368,6172.74981064696,8.157390331932407e-06,6289.165285661778,50.0,,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,72.6981075954459,5285.014847959029,1.2623958098582732e-05,5358.9442912224495,100.0,5.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.95433679949122,4617.791889858686,1.2557677090087562e-05,4692.806660012436,100.0,5.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,69.74989588455496,4865.047975906257,1.260851398009842e-05,4939.49441551552,100.0,5.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,71.23075718855814,5073.820769655328,1.6928684373616206e-05,5127.818284727845,100.0,10.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,64.05018931045862,4102.426750705587,1.609566723286864e-05,4160.452844974372,100.0,10.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.83120352989246,4601.072172313696,1.533086161542679e-05,4661.699006118549,100.0,10.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,66.48196902899036,4419.852205971634,1.8859199184155176e-05,4468.456874596864,100.0,,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,60.052122579858676,3606.2574263463725,1.674078093205708e-05,3662.3855387835665,100.0,,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,68.54309268867104,4698.155555327749,1.5607246985802285e-05,4757.530198832352,100.0,,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.53369715987087,4975.002435040376,2.41481662600951e-05,5011.438444490429,200.0,5.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,70.21888097872059,4930.691245903728,2.402396980728376e-05,4967.385648596163,200.0,5.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,74.54470079663801,5556.912416860284,2.4057110311531347e-05,5592.92325664019,200.0,5.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,61.08232911904643,3731.0509306075073,3.315594836606992e-05,3757.4803802591528,200.0,10.0,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.76015311669758,4591.4383503983,3.117717068526748e-05,4618.921663477239,200.0,10.0,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,71.72519901830901,5144.504174216036,2.965849903431016e-05,5173.076817994693,200.0,10.0,,10.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.15940678528956,4510.385919751998,3.7561383163719843e-05,4532.498621582803,200.0,,,2.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,67.05521170643124,4496.401416994313,3.18248584042033e-05,4523.326993557523,200.0,,,5.0
+ensemble,random_forest,7,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes,68.21684783389733,4653.538328393102,2.8808750765204592e-05,4683.596465282775,200.0,,,10.0
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,92.53919686202323,8563.502955868289,2.4076737212105158e-06,8970.278122429994,100.0,3.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,87.41300469024337,7641.033388976509,2.8558749097239794e-06,7983.5477481066855,100.0,5.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,76.81318958562356,5900.2660943169485,3.6383769129291078e-06,6169.213658431333,100.0,10.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,81.61106150397264,6660.365359805204,3.8256368495513875e-06,6915.099381661547,500.0,3.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,85.89165128990426,7377.375761306513,4.518369914066454e-06,7591.317139657575,500.0,5.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,85.90173271199671,7379.107682923326,7.535121058002013e-06,7504.440444406465,500.0,10.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,78.88639265424861,6223.062946000288,5.21721627548156e-06,6408.512979816545,1000.0,3.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,74.79186953795507,5593.823748982491,7.62939453125e-06,5719.301925233509,1000.0,5.0,,
+xgboost,xgboost_regressor,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,76.17208821240006,5802.187022637656,5.688905394189915e-06,5972.165575618412,1000.0,10.0,,
+linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,164.37675091693697,27019.71624200874,4.5656675269246583e-07,29182.956754096544,,,0.1,
+linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,166.09309616333587,27586.916593123133,4.3468758483969087e-07,29859.832462614395,,,1.0,
+linear_regression,ridge_regression,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,166.7548520951882,27807.180697288088,4.3597459471338353e-07,30073.08515053914,,,10.0,
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,74.0458638012994,5482.789946080581,7.175723550773343e-06,5616.665925034151,50.0,5.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,67.36712922462806,4538.330099967737,6.793481618286627e-06,4680.99169711983,50.0,5.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,71.5713986624929,5122.46510650549,6.659954343891015e-06,5267.493820876254,50.0,5.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,69.84706954087514,4878.613123447847,8.663185212293617e-06,4989.165495059775,50.0,10.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.43391226501896,4023.8612252461226,8.318266566143988e-06,4140.054718447829,50.0,10.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,65.3297523586211,4267.976543238759,7.870708882567371e-06,4390.761925537807,50.0,10.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,62.42171941491959,3896.47105471495,9.247165942481656e-06,4000.7158245788155,50.0,,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.75593918114267,4193.331659231847,8.481716820102954e-06,4307.038986272968,50.0,,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.64560764446244,4712.219448877481,7.924763297262462e-06,4833.693963655157,50.0,,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,72.34870850535683,5234.335622393091,1.2193453295832543e-05,5311.112508344966,100.0,5.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,70.7349284663332,5003.430105137275,1.2161599801458649e-05,5080.652699266224,100.0,5.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,73.62924312373775,5421.2654429744825,1.2041264378268388e-05,5498.891934692688,100.0,5.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,64.58416749747326,4171.1146913416815,1.6472439373392166e-05,4227.651039420869,100.0,10.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.68984198302903,4718.294391653497,1.5674815004171148e-05,4777.372703456806,100.0,10.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,67.9555951384044,4617.962910614732,1.487011208064482e-05,4680.593936452603,100.0,10.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,65.24769776069326,4257.262063070776,1.771376039656872e-05,4309.458088034988,100.0,,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,67.9122322794018,4612.071293171424,1.6087945173626486e-05,4669.617563991411,100.0,,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,78.50256260252138,6162.652335162788,1.500943089947205e-05,6223.114460722115,100.0,,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,75.36825970339405,5680.374570718252,2.5724431602900168e-05,5713.567746997429,200.0,5.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,83.211817446583,6924.206562763456,2.460827228994022e-05,6957.919097708498,200.0,5.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,73.31338881258185,5374.852979184802,2.4255631584548435e-05,5410.705665324287,200.0,5.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.86513358342695,4078.7552876289697,3.5275010123104866e-05,4103.025213079068,200.0,10.0,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.656862971761264,4052.1962034055905,3.1977369074235884e-05,4079.416123356534,200.0,10.0,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,71.35609981628,5091.692980990914,3.015721536036606e-05,5119.760848269398,200.0,10.0,,10.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,63.88065218479356,4080.7377235545705,3.799349672881215e-05,4102.977279725988,200.0,,,2.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,62.51889250379798,3908.611919901447,3.266302358444564e-05,3935.318967227379,200.0,,,5.0
+ensemble,random_forest,8,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size,68.36571023540219,4673.870335990976,3.0110883004913123e-05,4702.407049344505,200.0,,,10.0
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,89.6701440127577,8040.734727268706,3.4939100546071083e-06,8318.906283175935,100.0,3.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,87.69430636331532,7690.291368543005,3.431811828201438e-06,7973.9923451287095,100.0,5.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,74.73477856117191,5585.287126587401,5.689548899126761e-06,5755.46269813864,100.0,10.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,77.1128086162915,5946.3852526928,4.070812230489836e-06,6186.090089697459,500.0,3.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,78.40342862694872,6147.097620461043,5.2667661556187265e-06,6330.820353862637,500.0,5.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,85.01460625739662,7227.48327710018,7.376175338600972e-06,7355.827408392328,500.0,10.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,74.67954464261688,5577.034388028606,5.913488617149281e-06,5740.562270338984,1000.0,3.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,75.98626579803161,5773.912589929108,7.318259894284803e-06,5904.7831822413555,1000.0,5.0,,
+xgboost,xgboost_regressor,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,72.43310076432158,5246.554086334364,6.8668411810871074e-06,5386.934899130234,1000.0,10.0,,
+linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,164.13361914346945,26939.844933133478,4.694368514293923e-07,29043.1170580427,,,0.1,
+linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,164.52722503041537,27069.207776208936,4.501317033240026e-07,29263.71059416539,,,1.0,
+linear_regression,ridge_regression,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,164.37196351925752,27018.142391176127,4.485229409818868e-07,29220.66461033445,,,10.0,
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,70.35660743310439,4950.052209495959,7.70371935145575e-06,5074.90958592949,50.0,5.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,77.47919667130671,6003.025916831025,6.796377390502436e-06,6144.1600998333815,50.0,5.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,72.28739779350957,5225.467879757091,6.904807972361041e-06,5365.0690318214165,50.0,5.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,61.96678997865742,3839.883060259037,9.464027106198865e-06,3941.7064417666707,50.0,10.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,67.84551382973125,4603.013746820255,8.651602123430384e-06,4713.996261133236,50.0,10.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,68.35408086057657,4672.280370294241,8.210479489222228e-06,4789.4036563476475,50.0,10.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,63.235945252748024,3998.7847720085456,1.0138420280013811e-05,4093.420683015655,50.0,,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,61.48519234330449,3780.4288774931492,9.255209754192234e-06,3884.6957027091726,50.0,,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,67.99330125931615,4623.089016140123,8.326953882791414e-06,4738.5578615907525,50.0,,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,70.20496368129993,4928.736925492642,1.2812505045078706e-05,5001.856938322303,100.0,5.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,72.16375218595257,5207.607129555576,1.284564554932629e-05,5280.246914070143,100.0,5.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,74.76576521959431,5589.919648871498,1.2474343200765963e-05,5664.494270465855,100.0,5.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,67.11373550967863,4504.2534940630985,1.7148441309549226e-05,4558.063578411691,100.0,10.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,77.684269948072,6034.845797364922,1.610982434147926e-05,6090.88487483345,100.0,10.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,66.77417743625354,4458.790772288271,1.6251395427585452e-05,4515.8651590487,100.0,10.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,66.7219973913599,4451.824935892638,1.905418118001961e-05,4499.855030308316,100.0,,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,63.882357605311924,4080.9556132129546,1.690873572057397e-05,4136.015684848942,100.0,,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,78.99524798786591,6240.249204664433,1.6494640293713363e-05,6294.634709170878,100.0,,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,69.19675603877107,4788.1910462892,2.5058725745732645e-05,4823.309114250127,200.0,5.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,70.72855449891829,5002.528421506455,2.4615029091777107e-05,5038.151479846252,200.0,5.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,81.02871948047407,6565.653380645357,2.519160951519141e-05,6598.7834838775225,200.0,5.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,65.43148610072217,4281.279373348999,3.405042022828631e-05,4306.366307151747,200.0,10.0,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,64.15854937715407,4116.3194581807165,3.228399917664315e-05,4143.178235535309,200.0,10.0,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,71.7614423697673,5149.704610989434,3.108772349904584e-05,5176.721944921189,200.0,10.0,,10.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,67.0287009739102,4492.846754249871,3.8397939581620066e-05,4514.396971547909,200.0,,,2.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,63.29587097503392,4006.3672824881414,3.340530652909787e-05,4032.296278891927,200.0,,,5.0
+ensemble,random_forest,9,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant,66.61922613204554,4438.1212904326185,3.0671697557374694e-05,4466.286516189717,200.0,,,10.0
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,78.01904448504234,6086.971302359016,2.563723668395749e-06,6470.9419696108735,100.0,3.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,90.15183090706986,8127.352615896916,3.595262082160404e-06,8397.369102908728,100.0,5.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,72.88161579502724,5311.729920893964,4.896107311995245e-06,5510.6620803073665,100.0,10.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,80.87393928327008,6540.594055194056,4.6116781299091704e-06,6750.894266552941,500.0,3.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,85.06522278417803,7236.092127321842,5.77095227363782e-06,7402.137662313164,500.0,5.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,75.21852126200343,5657.825940842464,6.154802968466652e-06,5814.642852943338,500.0,10.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,89.12081743853399,7942.520100912505,5.606215009805162e-06,8112.951046376331,1000.0,3.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,78.18454100716698,6112.822452501375,8.205974954664305e-06,6228.572054139213,1000.0,5.0,,
+xgboost,xgboost_regressor,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,75.7062415707189,5731.435012764047,6.329514558820428e-06,5883.693576937944,1000.0,10.0,,
+linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,166.1946578100939,27620.664284614206,4.919595242190135e-07,29625.73117036229,,,0.1,
+linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,165.3855269040908,27352.37250934374,4.6814984155569964e-07,29461.088359514808,,,1.0,
+linear_regression,ridge_regression,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,165.69855724042006,27456.01187155676,4.6461056440304486e-07,29580.89607021152,,,10.0,
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.32228716869919,5086.8686469743925,7.770000359950922e-06,5210.481901065419,50.0,5.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.21636220397176,4790.904796751411,7.226882193252625e-06,4924.486148933423,50.0,5.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,74.09177945656542,5489.591783040329,7.584670938139181e-06,5615.9470673443375,50.0,5.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,65.77704146240366,4326.619183546771,1.0045112064171095e-05,4421.843469680329,50.0,10.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.93885273044782,4480.810004868581,9.213381933297222e-06,4584.866972548364,50.0,10.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.80642039156928,5156.162009450775,8.497160938587266e-06,5268.692214361692,50.0,10.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.2763574184295,4799.213697165991,9.980439818018039e-06,4894.610468639205,50.0,,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.32578754327476,4399.11009323562,1.056570755807977e-05,4489.356797869226,50.0,,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,69.57738536328688,4841.012553991328,8.861062980373861e-06,4949.02481899725,50.0,,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,75.18837527979007,5653.2917772145465,1.3063793722917194e-05,5724.185928026367,100.0,5.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.07087675709117,5051.069523021642,1.325684520397109e-05,5121.451181618615,100.0,5.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,73.92069393718728,5464.268992155316,1.3161284720849412e-05,5534.785147658943,100.0,5.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,67.6859858643271,4581.392682425888,1.8825736927439166e-05,4629.930060278413,100.0,10.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,65.72883741604772,4320.280068065236,1.651587595662929e-05,4376.507590767426,100.0,10.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,67.44208213001211,4548.434442031299,1.5975010057209956e-05,4606.483777256942,100.0,10.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,65.67894790243561,4313.72419757085,2.1376268744629564e-05,4356.191322358031,100.0,,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,62.616637407279114,3920.843280194666,1.79052031152805e-05,3972.7721244919658,100.0,,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,70.37315874470741,4952.3814717077885,1.5971470780057302e-05,5010.040731566486,100.0,,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,73.15988991225848,5352.369491973779,2.521187992070207e-05,5386.680963621191,200.0,5.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,71.22994891741463,5073.705622777498,2.6794902065344023e-05,5105.95244915597,200.0,5.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,72.68092139943184,5282.516335470388,2.609219467430784e-05,5315.559456839311,200.0,5.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,67.62798578041378,4573.544460715848,4.5479711411613846e-05,4590.958742671828,200.0,10.0,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.27885032729543,4392.886000708029,3.349797124000374e-05,4418.345668846653,200.0,10.0,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,68.5159533881843,4694.435868691844,3.134802124600018e-05,4721.641372923123,200.0,10.0,,10.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,63.835223186190625,4074.935719230769,3.771678960596823e-05,4097.374174774345,200.0,,,2.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,60.35028835653507,3642.1573047169322,3.395260747788567e-05,3667.9679663349248,200.0,,,5.0
+ensemble,random_forest,10,cpu_cores+ disk_free_gb+ ram_available_bytes+ batch_size+ cpu_threads+ num_epoch+ ram_total_bytes+ buffer_size+ learning_rate_schedule_constant+ learning_rate,66.27312873568266,4392.127592416367,3.104911320283506e-05,4419.942503829132,200.0,,,10.0
