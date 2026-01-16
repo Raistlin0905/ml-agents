@@ -28,12 +28,12 @@ PARAM_GRID = {
     "learning_rate_schedule": ["linear", "constant"],
 }
 
-TARGET_SAMPLES = 20
+TARGET_SAMPLES = 1
 
 RANDOM_SEED = 42
 
 # between runs in seconds (0 = no sleep, 300 = 5 min sleep)
-SLEEP_BETWEEN_RUNS = 60
+SLEEP_BETWEEN_RUNS = 300
 
 ENV_NAME = "3DBall"
 TRAINER_TYPE = "ppo"
