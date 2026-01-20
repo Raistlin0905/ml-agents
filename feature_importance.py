@@ -55,7 +55,7 @@ class FeatureImportance:
 
 
 selector = FeatureImportance(
-    csv_path="encoded_pool.csv", model=XGBRegressor(), target="total_duration"
+    csv_path="encoded_data.csv", model=XGBRegressor(), target="total_duration"
 )
 
 selector.load_data()
@@ -66,6 +66,6 @@ print(importances)
 
 # for the real dataset, we have to set top_n to however much features we want to keep, it keeps the n most important ones
 clean_df = selector.select_features(top_n=10)
-selector.save_cleaned_dataset(clean_df, "cleaned_pool.xlsx")
+selector.save_cleaned_dataset(clean_df, "cleaned_data.xlsx")
 
-clean_df.to_csv("cleaned_pool.csv", index=False)
+clean_df.to_csv("cleaned_data.csv", index=False)
