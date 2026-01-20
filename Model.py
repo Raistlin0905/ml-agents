@@ -1,15 +1,13 @@
 from abc import ABC as AbstractBaseClass, abstractmethod
-from typing import Any, Callable, TypeVar, Generic
+from typing import Any, Callable, TypeVar, Generic, List, Tuple
 from numpy import array_split
 import time
 import random
 import warnings
 import numpy
-
+import sklearn as sk
 Features = TypeVar("Features")
 Label = TypeVar("Label")
-
-warnings.filterwarnings("ignore", category=numpy.VisibleDeprecationWarning)
 
 
 # this is the basic class of a ml model.
@@ -82,7 +80,7 @@ class KCrossValidation(Generic[Features, Label]):
         model: Model[Features, Label],
         loss_function: Callable[[Label, Label], float],
     ):
-        # self.data = random.shuffle(validation_data)
+        
         self.data = validation_data.copy()
         random.shuffle(self.data)
         self.folds = folds
@@ -90,7 +88,16 @@ class KCrossValidation(Generic[Features, Label]):
         self.loss = loss_function
 
     def run(self) -> tuple[float, float]:
-        partitions = array_split(self.data, self.folds)  # get data in k-fold partions
+    # get data in k-fold partions
+        partition_size = len(self.data) // self.folds
+        partitions = []
+        for i in range(self.folds):
+            start = i * partition_size
+            if i == self.folds - 1:
+                end = len(self.data)
+            else: 
+                end = (i + 1) * partition_size
+            partitions.append(self.data[start:end])
         totalLoss = 0
         totalInferenceDurations = 0
 
@@ -141,3 +148,15 @@ class KCrossValidation(Generic[Features, Label]):
     @staticmethod
     def SRLossStartegy(actual: Label, predicted: Label) -> float:
         return (actual - predicted) ** 2
+
+#We use ridge as we dont need feauture prioritization and our feautures are likely correlated
+class RidgeModel(Model):
+    def __init__(self, alpha):
+        super().__init__()
+        self.model = sk.linear_model.Ridge(alpha=alpha)
+    def train(self, training_data: List[Tuple[list[float], int]]) -> None:
+        features, labels = zip(*training_data)
+        self.model.fit(list(features), list(labels))
+    def predict(self, x: List[list[float]]) -> List[int]:
+        preds = self.model.predict(x)
+        return preds.tolist()
