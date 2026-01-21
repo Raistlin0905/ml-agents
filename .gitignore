@@ -1,0 +1,116 @@
+# ------------------------------
+# Python
+# ------------------------------
+# Virtual environment
+venv/
+.envs/
+.mypy_cache/
+
+# Bytecode
+__pycache__/
+*.pyc
+
+# Code coverage
+.coverage
+coverage.xml
+/htmlcov/
+
+# User-specific settings
+**/UserSettings/*
+
+# Temporary files
+*.swp
+*.swo
+*.swn
+
+# yamato-parser temporary output files
+.yamato/unfolded/
+
+# Notebook checkpoints
+*/.ipynb_checkpoints
+
+# ------------------------------
+# Unity
+# ------------------------------
+# Output Artifacts
+/models
+/summaries
+/results
+/Builds
+data_collection/builds/
+
+# Builds
+*.apk
+*.app
+*.exe
+*.dll
+*.json
+*.unitypackage
+*.x86_64
+*.x86
+
+# Generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Mm]emoryCaptures/
+Project/Library/ShaderCache/
+Project/Library/SplashScreenCache/
+Project/Library/StateCache/
+Project/Library/SourceAssetDB
+Project/Library/SourceAssetDB-lock
+
+# Plugins
+/com.unity.ml-agents/VideoRecorder*
+
+# Unity3D generated meta files
+*.pidb.meta
+
+# Unity3D Generated File On Crash Reports
+/com.unity.ml-agents/sysinfo.txt
+
+# Generated doc folders
+/docs/html
+
+# ------------------------------
+# IDE / editor
+# ------------------------------
+# VSCode
+*.vscode/
+
+# JetBrains IDEs (PyCharm, IntelliJ, Rider)
+.idea/
+*.iml
+*.iws
+*.ipr
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.cache
+*.settings.asset*
+
+# Visual Studio 2015 cache directory
+/Project/.vs/
+
+# Auto-generated VS / MD / Consulo solution and project files
+/com.unity.ml-agentsExportedObj/
+/com.unity.ml-agents.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.tmp
+*.pdb
+
+# ------------------------------
+# Other / temporary
+# ------------------------------
+*/build/
+*/dist/
+*.egg-info*
+*.eggs*
+*Grpc.Tools*
+*.giti*
