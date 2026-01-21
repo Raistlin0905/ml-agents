@@ -31,9 +31,15 @@ class FeatureImportance:
 
     # SHAP values - tells us how much each feature contributes to the prediction
     def compute_shap(self):
-        self.explainer = shap.TreeExplainer(self.model)  #  shap looks inside the XGBoost trees to understand how features influence predictions
-        self.shap_values = self.explainer.shap_values(self.X)  # a matrix: (rows = data samples, columns = features)
-        importance = np.abs(self.shap_values).mean(axis=0)  # mean absolute value, which is the standard SHAP importance metric
+        self.explainer = shap.TreeExplainer(
+            self.model
+        )  #  shap looks inside the XGBoost trees to understand how features influence predictions
+        self.shap_values = self.explainer.shap_values(
+            self.X
+        )  # a matrix: (rows = data samples, columns = features)
+        importance = np.abs(self.shap_values).mean(
+            axis=0
+        )  # mean absolute value, which is the standard SHAP importance metric
         self.feature_importances = pd.Series(importance, index=self.X.columns)
         return self.feature_importances.sort_values(ascending=False)
 
@@ -52,11 +58,16 @@ class FeatureImportance:
         plt.yticks(range(len(top_features)), top_features.index)
         for bar, val in zip(bars, top_features.values):
             width = bar.get_width()
-            plt.gca().text(width + max(top_features.values) * 0.01, bar.get_y() + bar.get_height() / 2,f"{val:.4f}", va='center')
+            plt.gca().text(
+                width + max(top_features.values) * 0.01,
+                bar.get_y() + bar.get_height() / 2,
+                f"{val:.4f}",
+                va="center",
+            )
         plt.xlabel("Mean Absolute SHAP Value")
         plt.title("Feature Importance (SHAP)")
         plt.tight_layout()
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        plt.savefig(output_path, dpi=300, bbox_inches="tight")
         print(f"Saved importance bar plot to {output_path}")
         plt.close()
 
@@ -65,11 +76,17 @@ class FeatureImportance:
         plt.figure(figsize=(12, 8))
         top_features = self.feature_importances.nlargest(top_n).index
         top_indices = [list(self.X.columns).index(f) for f in top_features]
-        shap.summary_plot(self.shap_values[:, top_indices], self.X[top_features], plot_type="dot", show=False)
+        shap.summary_plot(
+            self.shap_values[:, top_indices],
+            self.X[top_features],
+            plot_type="dot",
+            show=False,
+        )
         plt.tight_layout()
-        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        plt.savefig(output_path, dpi=300, bbox_inches="tight")
         print(f"Saved SHAP summary plot to {output_path}")
         plt.close()
+
 
 # here i used XGBRegressor works for well, you guessed it, regression. Also SHAP works best with regression trees.
 # it works internally kinda, not a model we use for actually predicting anything
@@ -93,4 +110,3 @@ if __name__ == "__main__":
     selector.save_cleaned_dataset(clean_df, "cleaned_pool.xlsx")
 
     clean_df.to_csv("cleaned_pool.csv", index=False)
-
