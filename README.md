@@ -1,123 +1,103 @@
-## **Setting up the Virtual Environment**
+# ML-Agents Training and Analysis Pipeline
 
-### Prerequisites
+**Group 5**
+\
+*P2-1: Artificial Intelligence & Machine Learning*
 
-> [!CAUTION]
-> Python 3.10.12 (required)
+This project trains RL agents in headless Unity environments and builds predictive models to understand which hardware and training factors impact performance. Data is collected across multiple machines, analyzed for feature importance, and used to optimize model accuracy through hyperparameter tuning.
 
-Download Python 3.10.12 from [python.org](https://www.python.org/downloads/release/python-31012/)  
-During installation, check "Add python.exe to PATH"  
+For detailed documentation on specific components, see the [blank/](blank/) directory.
 
-### 1. Clone the Repository
-```bash
-git clone --branch fix-numpy-release-21-branch https://github.com/YourUsername/ml-agents.git
-cd ml-agents
-```
+## 1. Setup Virtual Environment
 
-### 2. Set Up Python Environment
+Create and activate a Python virtual environment to isolate your Python dependencies for this project.
 
 ```bash
-# Create virtual environment
 python -m venv venv
-
-# Always activate the virtual environment after specifying the project path.
-# Activate it (Windows Command Prompt) 
-venv\Scripts\activate.bat
-
-# For PowerShell or macOS/Linux, use:
-# venv\Scripts\Activate.ps1  # Windows PowerShell
-# source venv/bin/activate    # macOS/Linux
 ```
 
-### 3. Install Dependencies
+Then activate it:
 
-#### For Mac users (Apple Silicon):
+**macOS/Linux:**
 ```bash
-# Install grpcio pre-built wheel for Apple Silicon
-pip install https://github.com/pietrodn/grpcio-mac-arm-build/releases/download/1.50.0/grpcio-1.50.0-cp310-cp310-macosx_11_0_arm64.whl
+source venv/bin/activate
 ```
 
-#### For all platforms:
+**Windows:**
 ```bash
-# Install mlagents_envs first
-pip install -e ./ml-agents-envs
-
-# Then install the main package
-pip install -e ./ml-agents
+venv\Scripts\activate
 ```
 
-### 4. Verify Installation
-```python
-python -c "from mlagents_envs.environment import UnityEnvironment; print('Import successful!')"
+## 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
 ```
 
-# **Testing the connection: Run a training session**
-This section guides you through the process of verifying that your Python environment can successfully communicate with the Unity Editor to train an agent.
-### Prerequisites
-- Unity Editor is installed and opened.
-- The ML-Agents package is installed in your Unity project.
-- An example scene (e.g., 3DBall) is available in your project.
-- Your Python virtual environment (venv) is activated.
+## 3. Run Headless Training
 
-### 1. Start the Python Training Process
-Open a terminal, navigate to your `ml-agents/ml-agents` project directory, and run the learn.py module. This will start the process and wait for a connection from Unity.
+Run the Unity environment without graphics and log the results. Replace `3DBall` with your environment name.
+
 ```bash
-python -m mlagents.trainers.learn
-```
-If this shows an error, you can either resume the training (keep the previous data) or force to overwrite previous data.
-```bash
-python -m mlagents.trainers.learn --resume
-```
-```bash
-python -m mlagents.trainers.learn --force
+python data_collection/headless_train.py 3DBall --no-graphics
 ```
 
-**Expected Output**  
-The command will start and hang at a message like:
-```bash
-[INFO] Listening on port 5004. Start training by pressing the Play button in the Unity Editor.
-```
-### 2. Start the Unity Simulation
-In the Unity Editor, open the example scene you want to train (e.g., `Assets/ML-Agents/Examples/3DBall/Scenes/3DBall.unity`).  
-**Press the Play button in the Unity Editor.** This will start the simulation and connect to the Python script waiting on port 5004.
+**Output:**
+- `training_data.csv` — Contains hardware info, training configurations, and results for each run.
 
-### 3. Look at the connection
-Look back at your terminal. A successful connection will be confirmed with logs similar to these:
+## 4. Encode Training Data
+
+Converts numeric features to 0-100, one-hot encodes categorical features, and preserves run_id.
+
 ```bash
-[INFO] Connected to Unity environment with package version 3.0.0-exp.1 and communication version 1.5.0
-[INFO] Connected new brain: 3DBall?team=0
-[WARNING] Behavior name 3DBall does not match any behaviors specified in the trainer configuration file. A default configuration will be used.
-[INFO] Hyperparameters for behavior name 3DBall:
- trainer_type:   ppo
-        hyperparameters:
-          batch_size:   1024
-          buffer_size:  10240
-```
-### 4. Stop the training
-You can stop the training at any time by pressing the **Play** button again in the Unity Editor to stop the simulation.  
-This will interrupt the Python process. It will finish its last step, save the training artifacts, and then exit.
-```bash
-[INFO] Learning was interrupted. Please wait while the graph is generated.
-[INFO] Exported results\ppo\Pyramids\Pyramids-34048.onnx
-[INFO] Copied results\ppo\Pyramids\Pyramids-34048.onnx to results\ppo\Pyramids.onnx.
-[INFO] Exported results\ppo\3DBall\3DBall-20432.onnx
-[INFO] Copied results\ppo\3DBall\3DBall-20432.onnx to results\ppo\3DBall.onnx.
+python data_collection/feature_encoder.py input.csv output.csv class_label
 ```
 
-# Checking the Results
-After a successful run, the training outputs will be saved in the `./results` directory. Key files include:
-- `.onnx` File: The trained neural network model (e.g., `results/ppo/3DBall.onnx`). This can be used in Unity for inference.
-- `.pt` Files: PyTorch checkpoints (e.g., `checkpoint.pt`) that allow you to pause and resume training.
-- `TensorBoard Log` Files: Data logs (e.g., `events.out.tfevents...`) used for visualizing training performance.
+**Arguments:**
+- `input` — raw training data CSV (`training_data.csv`)
+- `output` — encoded CSV ready for ML (`training_data_encoded.csv`)
+- `class_label` — column you want to predict (e.g., `total_steps` or `total_duration`)
 
-**Visualizing the Training Metrics with TensorBoard**
-### 1. Install or check that TensorBoard is in your virtual environment
+**Output:**
+- `ouput.csv` — Numeric features normalized, categorical features one-hot encoded, ready for ML models.
+
+## 5. Analyze Feature Importance with SHAP
+
+Identifies which features contribute most to predicting your target.
+
 ```bash
-pip install tensorboard
+python feature_importance.py 
 ```
-### 2. Run TensorBoard, pointing it to the results directory
+
+**Outputs:**
+- Console SHAP importance values
+- `importance_bar.png` — horizontal bar plot of top features
+- `shap_summary.png` — summary dot plot of feature contributions
+- `cleaned_pool.csv` — dataset with top N features + target
+- `cleaned_pool.xlsx` — Excel version of cleaned dataset
+
+## 6. Run Model Optimization
+
+Trains and evaluates multiple model types (XGBoost, Ridge, Random Forest) across various hyperparameter configurations and top SHAP-selected features.
+
 ```bash
-tensorboard --logdir results
+python model_optimisation.py
 ```
-### 3. Open the given URL (usually `http://localhost:6006/`) in your web browser
-### 4. Navigate to the "Scalars" tab to view graphs of key metrics
+
+**Outputs:**
+- Console logs:
+  - SHAP scores
+  - RMSE, inference time, and score for all models/configs
+  - Best model and feature subset
+- `model_comparision_results.csv` — full table of all tested configurations
+
+## Acknowledgments
+- Built on [Unity ML-Agents](https://github.com/Unity-Technologies/ml-agents)
+- Group 5 (AI/ML) team members
+- Uses [SHAP](https://github.com/shap/shap), [XGBoost](https://xgboost.readthedocs.io/), and other open-source libraries
+
+## License
+This project is licensed under the [LICENSE](LICENSE.md) file.
+
+## Disclaimer
+This project utilizes the Unity ML-Agents framework and example environments. Unity Technologies retains all rights to these components, and this project builds upon their work without claiming ownership of their intellectual property. 
