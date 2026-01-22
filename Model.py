@@ -67,7 +67,10 @@ class Model(AbstractBaseClass, Generic[Features, Label]):
         )
         a, t = cv.run()
 
-        s = w_0 * a + w_1 * (1 / t)
+        EPS = 1e-6  # minimum inference time to avoid division by zero
+        safe_t = max(t, EPS)
+
+        s = w_0 * a + w_1 * (1 / safe_t)
 
         return (a, t, s)
 
